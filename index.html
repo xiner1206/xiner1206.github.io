@@ -259,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/BFC和IFC/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/position属性/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xdd">
@@ -278,7 +278,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/02/BFC和IFC/" itemprop="url">Untitled</a></h1>
+                <a class="post-title-link" href="/2018/09/01/position属性/" itemprop="url">position</a></h1>
         
 
         <div class="post-meta">
@@ -290,1283 +290,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T17:08:49+08:00">
-                2018-09-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>###BFC 块级格式化上下文</p>
-<p>####BFC布局规则：<br>1、内部的Box会在垂直方向，一个接一个地放置；<br>2、Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠；<br>3、每个元素的margin box的左边，与包含块border box的左边相接触；<br>4、BFC的区域不会与float box重叠；<br>5、BFC就是页面上的一个隔离的独立容器，容器里的子元素不会影响到外面的元素。反之亦如此。<br>6、计算BFC的高度时，浮动元素也参与计算。<br>1、独立渲染区域；<br>2、与这个区域外部毫不相关；<br>3、需要触发（需要写一行声明，来告诉外界声明独立）<br>  建议使用overflow：hidden来声明<br>  在包住的div里触发，要触发哪一个就在哪一个地方写上overfolw:hidden</p>
-<p>####哪些元素会生产BFC？<br>1、根元素<br>2、float属性不为none<br>3、position为absolute或fixed<br>4、disply为inline-block，table-cell,table-caption,flex,inline-flex<br>5、overflow不为visible</p>
-<p>###IFC 行内格式化上下文</p>
-<p>解决垂直居中Vitical-align:middle，要配合line-height：数据，使用</p>
-<p>Box一个接一个的水平排列，起点是包含块的顶部。水平方向上的margin、border和Padding在框之间得到保留。</p>
-<p>框在垂直方向上可以以不同的方式对齐：它们的顶部或底部对齐，或根据其中的文字的基线对齐。包含那些框的长方形区域，会形成一行，叫做行框。</p>
-<p>一个行框的宽度由包含它的元素的宽度和包含它的元素里面有没有float元素来决定，高度的确定由行高度计算规则决定。</p>
-<p>行高的高度足以包含它的内部容器，也可能比它包含的容器们都高（比如在基线对齐的时候），当它包含的内部容器的高度小于行框的高度时，内部容器的垂直位置由vertical属性来确定，这个性质可以用来实现垂直居中。</p>
-<p>当几个行内框在水平方向无法放入一个行内框时，它们可以分配在两个或多个垂直堆叠的行框中。因此，一个段落就是行框在垂直方向上的堆叠。行框在堆叠时没有垂直方向上的分割且永不重叠。</p>
-<p>一个行内框超出包含它的行框的宽度，它将会被分割为几个框。如果一个行框不能被分割，行内框会益处行框。</p>
-<p>如果一个行内框被分割，margin、padding、border在所有分割处没有视觉效果。</p>
-<p>创建一个IFC的环境，让行框的高度是包含块的高度的100%,让行框内部的元素使用Vertical-align：middle,</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/AJAX/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xdd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiner">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/02/AJAX/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T17:08:49+08:00">
-                2018-09-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>什么是Ajax<br>Ajax是用JavaScript执行异步网络请求，请求是异步执行的，也就是说，要通过回调函数获得响应。在现代浏览器上写AJAX主要依靠XMLHttpRequest对象：</p>
-<p>‘use strict’;<br>function success(text) {<br>    var textarea = document.getElementById(‘test-response-text’);<br>    textarea.value = text;<br>}</p>
-<p>function fail(code) {<br>    var textarea = document.getElementById(‘test-response-text’);<br>    textarea.value = ‘Error code: ‘ + code;<br>}</p>
-<p>var request = new XMLHttpRequest(); // 新建XMLHttpRequest对象</p>
-<p>request.onreadystatechange = function () { // 状态发生变化时，函数被回调<br>    if (request.readyState === 4) { // 成功完成<br>        // 判断响应结果:<br>        if (request.status === 200) {<br>            // 成功，通过responseText拿到返回的数据</p>
-<pre><code>        return success(request.responseText);
-    } else {
-        // 失败，根据响应码判断失败原因:
-        return fail(request.status);
-    }
-} else {
-    // HTTP请求还在继续...
-}
-</code></pre><p>}</p>
-<p>// 发送请求:<br>request.open(‘GET’, ‘/api/categories’);<br>request.send();</p>
-<p>alert(‘请求已发送，请等待响应…’);<br>详细过程：</p>
-<p>创建XMLHttpRequest对象，也就是创建一个异步调用对象<br>创建一个新的HTTP请求，并指定请求方式、URL、是否异步调用<br>设置响应HTTP请求状态变化函数<br>发送HTTP请求<br>获取异步调用返回的函数<br>使用javascript和DOM实现局部刷新<br>1.创建XMLHttpRequest对象</p>
-<p>//创建XMLHttpRequest对象<br>var xhr;<br>if(window.XMLHttpRequest){<br>    //for ie7+,firefox,Chrome,Opera,Safari<br>    xhr=new XMLHttpRequest();<br>}else{<br>    //for ie6,ie5<br>    xhr=new ActiveXObject(“Microsoft.XMLHTTP”);<br>}<br>2.向服务器发送请求</p>
-<p>//向服务器发送请求<br>//open()规定发送请求的类型，url，是否异步处理<br>xhr.open(“GET”,”test.txt”,true);<br>xhr.send();<br>GET和POST,与POST相比，GET传输速度快，效率高，大部分情况下使用GET，在以下几种情况中使用POST：</p>
-<p>无法使用缓存文件(更新服务器上的文件或数据)<br>向服务器发送大量数据 (POST没有数据量限制)<br>发送包含未知字符的用户输入时，POST比GET更稳定，可靠。<br>3.服务器响应</p>
-<p>//如果来自服务器的响应不是XML文件，使用responseText属性<br>myDiv.innerHTML=xhr.responseText;</p>
-<p>//如果来自服务器的响应是XML文件<br>xmlDoc=xhr.responseXML;<br>txt=””;<br>x=xmlDoc.getElementsByTagName(“ARTIST”);<br>var myDiv= document.getElementById(“myDiv”);<br>for (i=0;i&lt;x.length;i++){<br>  txt=txt + x[i].childNodes[0].nodeValue + “<br>“;<br> }<br>myDiv.innerHTML=txt;<br>4.readyState</p>
-<p>//当readyState改变时，就会触发onreadystatechange事件<br>//readyState属性存有XMLHttpRequest对象的状态信息<br>//onreadystatechange事件会触发5次，对应readyStates的5个状态(0~4)<br>xhr.onreadystatechange==function(){<br>    if(xhr.readyState == 4 &amp;&amp; xhr.status ==200){<br>        myDiv.innerHTML=xhr.resopnseText;<br>    }<br>}</p>
-<p>//或者使用Callback函数<br>function myFun(){<br>    loadXMLDoc(“test.txt”,function(){<br>        if(xhr.readyState==4 &amp;&amp; xhr.status ==200){<br>            myDiv.innerHTML=xhr.resopnseText;<br>        }<br>    });<br>}<br>XMLHttpRequest对象的三个重要属性：</p>
-<p>onreadystatechange 存储函数，当readyState属性改变时就会调用该函数<br>readyState 存有XMLHttpRequest对象的状态</p>
-<p>0 （未初始化）还没有调用open()方法</p>
-<p>1 （载入）已调用send()方法，正在发送请求</p>
-<p>2 （载入完成）send()方法完成，已收到全部相应内容</p>
-<p>3 （解析）正在解析相应内容</p>
-<p>4 （完成）相应内容解析完成，可以在客户端调用了</p>
-<p>status</p>
-<p>200 ‘ok’</p>
-<p>404 未找到页面</p>
-<p>优点</p>
-<p>Ajax 最大的优点是无刷新数据读取：能在不刷新整个页面的前提下与服务器通信维护数据。更为迅捷地响应用户交互，避免了发送没有改变的信息，减少用户等待时间，带来非常好的用户体验；</p>
-<p>异步与服务器通信：AJAX使用异步方式与服务器通信，不需要打断用户的操作，具有更加迅速的响应能力。优化了Browser和Server之间的沟通，减少不必要的数据传输、时间及降低网络上数据流量；</p>
-<p>前端和后端负载平衡：把一些服务器负担的工作转嫁到客户端，用客户端闲置的能力来处理，减轻服务器和带宽的负担，节约空间和宽带租用成本。这种“按需取数据”的方式，可最大程度的减少冗余请求和对服务器造成的负担，提升站点性能；</p>
-<p>界面与应用分离：Ajax使WEB中的界面与应用分离（也可以说是数据与呈现分离），有利于分工合作、减少非技术人员对页面的修改造成的WEB应用程序错误、提高效率、适用于现在的发布系统。</p>
-<p>缺点</p>
-<p>AJAX干掉了Back和History功能：动态更新的页面，用户无法回到前一个页面状态，因为浏览器仅能记忆历史记录中的静态页面。解决方案是使用URL片断标识符（通常被称为锚点，即URL中#后面的location. hash）来保持跟踪；</p>
-<p>AJAX的安全问题：Ajax技术对企业数据建立了一个直接通道。会暴露比以前更多的数据和服务器逻辑。并会隐藏客户端的安全扫描技术，允许黑客从远端服务器上建立新的攻击。还有Ajax也难以避免跨站点脚步攻击、SQL注入攻击和基于Credentials的安全漏洞等等；</p>
-<p>对搜索引擎支持较弱：对搜索引擎的支持比较弱。如果使用不当，AJAX会增大网络数据的流量，从而降低整个系统的性能。</p>
-<p>违背URL和资源定位的初衷：你在一个URL地址下面看到的和我在这个URL地址下看到的内容是不同的。这个和资源定位的初衷是相背离的。</p>
-<p>Ajax在JQ和JS中的区别</p>
-<p>jquery是将原生的JS封装了的，不同浏览器对Ajax的实现可能不一样，jQuery解决了兼容问题，让我们用同一种方式调用；接口更清晰好用，比如jquery把jsonp（其实是通过script标签绕过同源策略）封装的就像一个普通的ajax请求。</p>
-<p>Ajax修改获取header：<br>利用xmlHttp.setRequestHeader来设置request请求头：例如：xmlHttp.setRequestHeader(‘cache-control’,’no-cache’);</p>
-<p>利用xmlHttp.getResponseHeader来获取response头信息;例如：xmlHttp.getResponseHeader(“Date”)；</p>
-<p>另外 request.setCharacterEncoding(“UTF-8”)也可以设置发送到服务端数据编码格式（一般来说发送的编码格式跟服务端解析格式必须是一致的）</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/作用域和闭包/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xdd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiner">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/02/作用域和闭包/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T17:08:49+08:00">
-                2018-09-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>作用域<br>作用域是什么？其实作用域是针对变量的，一个变量在某个区域内起作用，这份区域就是他的作用域。顺便说一句，在 js中没有块级作用域（ES6除外），比如</p>
-<p>if (true) {<br>    var name = “zhangsan”<br>}<br>console.log (name)      // “zhangsan”<br>学过java等高级语言的同学肯定会说这样写岂不是就报错了，但是在js中，这么写是完全ok的，因为js没有块级作用域，但实际上并不推荐这么写。</p>
-<p>在js中，只有函数和全局作用域，比如</p>
-<p>var a = 100<br>function fn () {<br>    var a = 200<br>    console.log (‘fn’,a)<br>}<br>console.log (‘global’,a)<br>fn()</p>
-<p>作用域链<br>在这里我们讲一个概念：<br>自由变量，即当前作用域没有定义的变量。</p>
-<p>比如</p>
-<p>var a = 100<br>function fn () {<br>    var b = 200<br>    console.log (a)<br>    console.log (b)<br>}<br>fn ()<br>在console.log (a) 中的a就是自由变量，在当前作用域中并没有定义a，所以要去函数定义时的父级作用域中找。我们再来看一个稍微复杂一点点的例子</p>
-<p>var a = 100<br>function fn () {<br>    var b = 200<br>    function fn1 () {<br>        var c = 300<br>        console.log (a)<br>        console.log (b)<br>        console.log (c)<br>    }<br>    fn1 ()<br>}<br>fn ()<br>在执行console.log (a) 时，由于当前作用域没有定义a，所以要去fn在定义时的父级作用域找，此时它的父级作用域是fn，fn中也没有定义a，所以再去fn在定义时的父级作用域（即全局作用域）中找，此时就能找到a。b，c也是同理。上述过程就形成了一条作用域链，简单来说作用域链就是自由变量的查找，子对象会一级一级地向上寻找所有父对象的变量。</p>
-<p>闭包<br>专业说法：当一个内部函数被其外部函数之外的变量引用时，就形成了一个闭包。（对内部函数的引用会添加到外部函数的活动对象上）</p>
-<p>还可以这么理解：闭包就是一个具有封闭功能与包裹功能的结构，是为了实现具有私有访问空间的函数的，函数可以构成闭包，因为函数内部定义的数据函数外部无法访问，即函数具有封闭性；函数可以封装代码即具有包裹性，所以函数可以构成闭包。创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量。</p>
-<p>而大家普遍认为的闭包是：</p>
-<p>;(function fn() {})();</p>
-<p>这只是闭包的一种形式而已，也就是闭包的一种应用，这样用闭包的好处是避免变量冲突和污染，能够自动执行；闭包前后最好都要写分号，因为防止多文件集成成一个文件后，高压缩出现语法错误。</p>
-<p>闭包有3个特性：</p>
-<p>1、函数嵌套函数</p>
-<p>2、函数内部可以引用外部的参数和变量</p>
-<p>function f1() {<br>   var n=999;<br>   function f2() {<br>       alert(n);    // 999<br>   }<br>}<br>f2被包在函数f1内部，f1内的所有局部变量，对f2都是可见的。反过来就不行，f2内的局部变量，对f1就是不可见的。</p>
-<p>3、参数和变量不会被垃圾回收机制回收，让这些变量的值始终保持在内存中。</p>
-<p>闭包有什么用，使用场景：</p>
-<p>当我们需要在模块中定义一些变量，并希望这些变量一直保存在内存中但又不会“污染”全局的变量时，就可以用闭包来定义这个模块。</p>
-<p>使用闭包的注意点：</p>
-<p>由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。<br>闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，不要随便改变父函数内部变量的值。<br>函数套函数就是闭包吗？<br>不是！当一个内部函数被其外部函数之外的变量引用时，才会形成了一个闭包。</p>
-<p>经典面试题：创建10个a标签，点击时弹出相应的序号<br>在这里我给大家说两种方法，其中一种就是和我们这篇文章的知识点相关的方法</p>
-<p>var i<br>for (var i = 0; i &lt; 10; i++) {<br>    (function (i) {<br>        var a = document.createElement(“a”)<br>        a.innerHTML = i + “<br>“<br>        a.addEventListener(“click”, function (e) {<br>            e.preventDefault()<br>            alert(i)<br>        })<br>        document.body.appendChild(a)<br>    })(i)<br>}<br>我们把参数 i 作为传给立即执行函数，这样，i的值就传给了立即执行函数的局部变量 i 了。立即执行函数会直接执行，但是其活动不会销毁，因为里面有个匿名函数。执行后局部变量 i 与全局变量i 联系就切断了，也就是执行的时候，传进去的变量i是多少，立即执行函数的局部变量 i 就是多少，并且该局部变量 i仍然没有消失，因为匿名函数的存在。</p>
-<p>这时候，return中的匿名函数的作用域链中会有两个变量 i。当点击a的时候，它向上搜索 i 的时候，它找到立即执行函数的局部变量 i ，就停止向上查找了，因此最后的结果就不会是全局变量 i 的值10了。</p>
-<p>还有一种方法是创建索引值</p>
-<p>var i<br>for (var i = 0; i &lt; 10; i++) {<br>    var a = document.createElement(“a”)<br>    a.innerHTML = i + “<br>“<br>    a.index = i;<br>    a.addEventListener(“click”, function (e) {<br>        e.preventDefault()<br>        alert(this.index)<br>    })<br>    document.body.appendChild(a)<br>}</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/语义化和Doctype/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xdd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiner">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/02/语义化和Doctype/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T17:08:49+08:00">
-                2018-09-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>语义化<br>去除或丢失样式的时候能让页面呈现清晰结构<br>有利于SEO：有利于爬虫抓取更多的有效信息，爬虫依赖于标签来确定上下文和各个关键字的权重<br>方便其他设备解析（屏幕阅读器，盲人阅读器，移动设备），有利于无障碍<br>方便团队开发维护代码，语义化更加具有可读性，遵循W3C标准，减少差异化<br>Doctype<br>声明位于稳当手部，告知浏览器以哪种模式解析文档<br>严格模式的排版以该浏览器支持的最高标准运行<br>在混杂模式中，页面以宽松的向后兼容的方式显示，模拟老式浏览器以防止站点无法工作<br>Doctype不存在或者不正确会导致文档以混杂模式呈现<br>HTML5为何只写&lt;!DOCTYPE HTML&gt;<br>html5不基于SGML，因此不需要对DTD进行引用，但是需要doctype来规范浏览器的行为（让浏览器按照他们应该的方式来运行）；<br>而html4.01基于SGML，所以需要对DTD进行引用，才能告知浏览器文档所使用的文档类型<br>文档类型定义是一套为了进行程序间的数据交换而建立的关于标记符的语法规则</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/关于this/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xdd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiner">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/02/关于this/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T17:08:49+08:00">
-                2018-09-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>执行上下文<br>每一个函数都有自己的执行上下文EC（执行环境 execution context），并且每个执行上下文中都有它自己的变量对象VO（Variable object），用于存储执行上下文中的变量 、函数声明 、函数参数，这解释了js如何找到我们定义的函数和变量。并且函数是js中唯一一个能创建出作用域的，注意：for，if()else()不能创建作用域。看一段代码</p>
-<p>console.log (a)       // undefined<br>var a = 10<br>此时打开控制台就会打印undefined，这是因为在代码还没执行之前，a会被提前声明，此时的代码可以理解为</p>
-<p>var a<br>console.log (a)      // undefined<br>var a = 10<br>代码执行到console.log (a) 时a只声明了，并没有赋值，所以结果当然是undefined。再来看一段代码</p>
-<p>fn (“zhangsan”,20)<br>function fn (name) {<br>    age = 20<br>    console.log (name,age)      // “zhangsan” 20<br>    var age<br>}<br>此时打印的结果就是“zhangsan”，20。我们可以将代码理解为</p>
-<p>function fn (name) {<br>    var age<br>    age = 20<br>    console.log (name,age)        // “zhangsan” 20<br>}<br>fn (“zhangsan”,20)<br>一段或者一个函数都会生成执行上下文，针对一段会生成全局的执行上下文，在执行之前先将变量定义和函数声明提前，针对一个函数会生成一个函数执行上下文，在函数执行之前，将函数中的变量定义，函数声明，this，arguments拿出来。<br>要注意的是函数声明和函数表达式的区别，看代码</p>
-<p>function fn () { }          // 函数的声明<br>var fn = function () { }    // 函数表达式<br>this<br>其实本质上来说，js里面的this是一个指向函数执行环境的指针<br>，this在哪个函数里面，就指向这个函数的context，this永远指向最后调用它的对象，并且this要在执行时才能确认值，定义时无法确认。 例如</p>
-<p>var a = {<br>    name :  “A”,<br>    fn : function （） {<br>        console.log (this.name)<br>    }<br>}<br>a.fn()                          // this === a<br>a.fn.call ({name : “B”})        // this === {name : “B”}，<br>var fn1 = a.fn<br>fn1()                           // this === window<br>第一种情况，是a调用了fn()，所以此时的this为a；</p>
-<p>第二种情况，使用call()，将this的值指定为了{name : “B”}；</p>
-<p>第三种情况，把a.fn赋给了fn1，但是调用时却是window在调用，所以this === window</p>
-<p>this其实有好几种使用场景，在这里我们主要介绍其中四种</p>
-<p>作为构造函数执行</p>
-<p>function  Foo (name,age) {<br>    this.name = name           // this === f<br>    this.age = age             // this === f<br>    //return  this<br>}<br>var f = new Foo (“zhangsan”,20)<br>在这里new操作符会改变函数this的指向问题，指向创建的对象f。</p>
-<p>为什么this会指向f？</p>
-<p>首先new关键字会创建一个空的对象，然后会自动调用一个函数apply方法，将this指向这个空对象，这样的话函数内部的this就会被这个空的对象替代。</p>
-<p>若构造函数中返回this或返回值是基本类型（number、string、boolean、null、undefined）的值，则返回新实例对象；若返回值是引用类型的值，则实际返回值为这个引用类型。例如：</p>
-<p>function Fn()<br>{<br>    this.user = ‘Jay’;<br>    return {};<br>}<br>var a = new Fn();<br>console.log(a.user);     //undefined</p>
-<p>function Fn()<br>{<br>    this.user = ‘Jay’;<br>    return function () {};<br>}<br>var a = new Fn;<br>console.log(a.user);    //undefined</p>
-<p>function Fn()<br>{<br>    this.user = ‘Jay’;<br>    return 1;<br>}<br>var a = new Fn();<br>console.log(a.user);    // Jay<br>还有一点就是虽然null也是对象，但是在这里this还是指向那个函数的实例，因为null比较特殊。</p>
-<p>function Fn()<br>{<br>    this.user = ‘Jay’;<br>    return null;<br>}<br>var a = new Fn;<br>console.log(a.user);          // Jay<br>知识点补充：在严格版中的默认的this不再是window，而是undefined</p>
-<p>作为普通函数执行<br>function  fn () {<br>   console.log (this)       // this === window<br>}<br>fn ()<br>作为对象属性执行<br>var obj = {<br>    name : “A”,<br>    printName : function () {<br>        console.log (this.name)        // this === obj<br>    }<br>}<br>obj.printName ()<br>call()、apply()、bind()<br>这三种方法都可以改变函数体内部this的指向，但是又存在一些差异。下面，我们看一个例子让你完全搞懂这三个方法的异同点。</p>
-<p>var name  = “小明” , age = “17”<br>var obj = {<br>    name : “安妮”,<br>    objAge ：this.age,<br>    fun : function () {<br>        console.log ( this.name + “今年” + this.age )<br>    }<br>}<br>console.log(obj.objAge)          // 17<br>obj.fun()                        // 安妮今年undefined<br>出现这样的结果是因为，在obj.objAge中，this的指向是obj，但是这句话外部没有函数包着，所以这里的执行环境是全局的；在obj.fun()中，this的指向也是obj，但是obj中没有定义age，所以是undefined。再来看第二个例子：</p>
-<p>var name1  = “Jay”<br>function show () {<br>    console.log (this.name1)<br>}<br>show()         // Jay<br>这个很明显this指向的是window，所以打印的结果就是Jay。<br>下面我们分别用这三个方法重新定义this，看看是什么结果</p>
-<p>var name  = “小明” , age = “17”<br>var obj = {<br>    name : “安妮”,<br>    objAge ：this.age,<br>    fun : function () {<br>        console.log ( this.name + “今年” + this.age )<br>    }<br>}</p>
-<p>var a = {<br>    name : “Jay”,<br>    age : 23<br>}</p>
-<p>obj.fun.call(a)              // Jay今年23<br>obj.fun.apply(a)             // Jay今年23<br>obj.fun.bind(a)()            // Jay今年23<br>我们会发现这三个方法的结果都一致，只有bind返回的是一个新的函数，你必须调用它才会被执行。<br>再来对比一下传参的情况：</p>
-<p>var name  = “小明” , age = “17”<br>var obj = {<br>  name : “安妮”,<br>  objAge ：this.age,<br>  fun : function (like,dislike) {<br>    console.log (this.name + “今年” + this.age ，”喜欢吃” + like + “不喜欢吃” + dislike)<br>  }<br>}</p>
-<p>var a = {<br>    name : “Jay”,<br>    age : 23<br>}</p>
-<p>obj.fun.call(a,”苹果”,”香蕉”)              // Jay今年23 喜欢吃苹果不喜欢吃香蕉<br>obj.fun.apply(a,[“苹果”,”香蕉”])           // Jay今年23 喜欢吃苹果不喜欢吃香蕉<br>obj.fun.bind(a,”苹果”,”香蕉”)()            // Jay今年23 喜欢吃苹果不喜欢吃香蕉<br>call，bind，apply 这三个函数的第一个参数都是 this 的指向对象，注意如果call和apply的第一个参数写的是null，那么this指向的是window对象；</p>
-<p>第二个参数有区别：</p>
-<p>① call的参数是直接放进去的，用逗号分隔；</p>
-<p>② apply的所有参数都必须放在一个数组里面传进去；</p>
-<p>③ bind除了返回是函数以外，它的参数和call一样。当然，三者的参数不限定是string类型，允许是各种类型，包括函数 、 object 等等。</p>
-<p>call和apply都是改变上下文中的this并立即执行这个函数，bind方法可以让对应的函数想什么时候调就什么时候调用，并且可以将参数在执行的时候添加。</p>
-<p>在非严格模式下，call和apply的第一个参数如果指定为null或undefined时，会自动指向全局对象。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/web安全/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xdd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiner">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/02/web安全/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T17:08:49+08:00">
-                2018-09-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>XSS<br>攻击者往页面里插入恶意HTML标签或者JS代码，窃取cookie中的用户私密信息；或者攻击者在论坛加一个恶意表单。</p>
-<p>防范</p>
-<p>对用户输入的地方检查长度对相关的标签字符予以过滤<br>任何内容写到页面之前都必须加以encode，避免标签泄露<br>避免直接在cookie中泄露用户隐私，例如email，密码<br>尽量采用POST而非GET提交表单<br>CSRF<br>基本步骤:<br>登录受信任网站A，并在本地生成Cookie，在不登出A的情况下，访问受害网站B</p>
-<p>攻击类型：</p>
-<p>使用Get更新请求资源，容易在危险网站B使用标签进行攻击<br>前端使用Post请求更新资源，而后端$_REQUEST去获取请求的数据，既可以获取GET请求，也可以获取POST请求的数据，这就造成了在后台处理程序无法区分这到底是GET请求的数据还是POST请求的数据<br>前端使用Post请求更新资源，后端也只接受获取post请求的数据，但是危险网站B通过iframe等手段同样造成攻击<br>防范手段：</p>
-<p>验证码：每次的用户提交都需要用户在表单中填写一个图片上的随机字符串，易用性差<br>添加隐藏输入框：包含token，服务端验证是否匹配<br>服务端验证HTTP Referer字段：Http请求的来源地址不是业务域名，直接过滤掉请求<br>SQL注入<br>通过把sql命令插入到web表单递交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的sql命令</p>
-<p>防范：</p>
-<p>对用户的输入进行校验，可以通过正则表达式，或限制长度，对单引号和&lt;&gt;进行转换等<br>永远不要使用动态拼装SQL，可以使用参数化的sql或者直接使用存储过程进行数据查询存取<br>永远不要使用管理员权限的数据库连接，为每个应用使用单独的权限有限的数据库连接<br>不要把机密信息明文存放，加密或者hash掉密码和敏感的信息<br>CSP<br>被设计为一个完整的框架来防御XSS和CSRF攻击，旨在减少XSS</p>
-<p>CSP是一种由开发者定义的安全性政策性申明，通过CSP所约束的规则制定可信的内容来源（脚本，图片，iframe，fton，style等可能远程的资源）。通过CSP协定，让web处于一个安全的运行环境中</p>
-<p>实例：</p>
-<p>Content-Security-Policy:default-src”self”<br>只允许本站资源<br>Content-Security-Policy:default-src”self”;img-src*;script-src <a href="http://trustedscripts.example.com" target="_blank" rel="noopener">http://trustedscripts.example.com</a><br>只允许本站的资源及任意位置的图片以及指定网址下的脚本。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/react组件编写规范/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xdd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiner">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/02/react组件编写规范/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T17:08:49+08:00">
-                2018-09-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>组件的私有方法都用 _ 开头，所有事件监听的方法都用 handle 开头。把事件监听方法传给组件的时候，属性名用 on 开头。例如：</p>
-<commentinput onsubmit="{this.handleSubmitComment.bind(this)}">
-
-<p>这样统一规范处理事件命名会给我们带来语义化组件的好处，监听（on）CommentInput 的 Submit 事件，并且交给 this 去处理（handle）。这种规范在多人协作的时候也会非常方便。</p>
-<p>另外，组件的内容编写顺序如下：</p>
-<p>static 开头的类属性，如 defaultProps、propTypes。<br>构造函数，constructor。<br>getter/setter（还不了解的同学可以暂时忽略）。<br>组件生命周期。<br>_ 开头的私有方法。<br>事件监听方法，handle<em>。<br>render</em>开头的方法，有时候 render() 方法里面的内容会分开到不同函数里面进行，这些函数都以render*开头。<br>render() 方法。</p>
-</commentinput>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/React的state/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xdd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiner">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/02/React的state/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T17:08:49+08:00">
-                2018-09-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>React 的核心思想是组件化的思想，应用由组件搭建而成，State是一个组件渲染时的数据依据。<br>一. 定义State<br>组件的任何UI改变，都可以从State的变化中反映出来；同时，State中的所有状态都是用于反映组件UI的变化，没有任何多余的状态，也不需要通过其他状态计算而来的中间状态。</p>
-<p>组件中用到的一个变量是不是应该作为组件State，可以通过下面的4条依据进行判断：</p>
-<p>这个变量是否是通过Props从父组件中获取？如果是，那么它不是一个状态。<br>这个变量是否在组件的整个生命周期中都保持不变？如果是，那么它不是一个状态。<br>这个变量是否可以通过其他状态（State）或者属性(Props)计算得到？如果是，那么它不是一个状态。<br>这个变量是否在组件的render方法中使用？如果不是，那么它不是一个状态。这种情况下，这个变量更适合定义为组件的一个普通属性，例如组件中用到的定时器，就应该直接定义为this.timer，而不是this.state.timer。<br>不是组件中用到的所有变量都是组件的状态！当存在多个组件共同依赖一个状态时，一般的做法是状态上移，将这个状态放到这几个组件的公共父组件中。</p>
-<p>二. State 与 Props 区别<br>除了State, 组件的Props也是和组件的UI有关的。<br>他们之间的主要区别是：<br>State是可变的，是组件内部维护的一组用于反映组件UI变化的状态集合；<br>而Props对于使用它的组件来说，是只读的，要想修改Props，只能通过该组件的父组件修改。在组件状态上移的场景中，父组件正是通过子组件的Props, 传递给子组件其所需要的状态。</p>
-<p>三. 如何正确修改State<br>不能直接修改State。</p>
-<p>直接修改state，组件并不会重新重发render。例如：</p>
-<p>// 错误<br>this.state.title = ‘React’;<br>正确的修改方式是使用setState():</p>
-<p>// 正确<br>this.setState({title: ‘React’});<br>State 的更新是异步的。</p>
-<p>调用setState，组件的state并不会立即改变，setState只是把要修改的状态放入一个队列中，React会优化真正的执行时机，并且React会出于性能原因，可能会将多次setState的状态修改合并成一次状态修改。所以不要依赖当前的State，计算下个State。当真正执行状态修改时，依赖的this.state并不能保证是最新的State，因为React会把多次State的修改合并成一次，这时，this.state将还是这几次State修改前的State。另外需要注意的事，同样不能依赖当前的Props计算下个状态，因为Props一般也是从父组件的State中获取，依然无法确定在组件状态更新时的值。</p>
-<p>举个例子，对于一个电商类应用，在我们的购物车中，当我们点击一次购买数量按钮，购买的数量就会加1，如果我们连续点击了两次按钮，就会连续调用两次this.setState({quantity: this.state.quantity + 1})，在React合并多次修改为一次的情况下，相当于等价执行了如下代码：</p>
-<p>Object.assign(<br>  previousState,<br>  {quantity: this.state.quantity + 1},<br>  {quantity: this.state.quantity + 1}<br>)<br>于是乎，后面的操作覆盖掉了前面的操作，最终购买的数量只增加了1个。</p>
-<p>如果你真的有这样的需求，可以使用另一个接收一个函数作为参数的setState，这个函数有两个参数，第一个是当前最新状态（本次组件状态修改后的状态）的前一个状态preState（本次组件状态修改前的状态），第二个参数是当前最新的属性props。如下所示：</p>
-<p>// 正确<br>this.setState((preState, props) =&gt; ({<br>  counter: preState.quantity + 1;<br>}))<br>State 的更新是一个浅合并（Shallow Merge）的过程。</p>
-<p>当调用setState修改组件状态时，只需要传入发生改变的State，而不是组件完整的State，因为组件State的更新是一个浅合并（Shallow Merge）的过程。</p>
-<p>四. State与Immutable<br>React官方建议把State当作是不可变对象，一方面是如果直接修改this.state，组件并不会重新render；另一方面State中包含的所有状态都应该是不可变对象。当State中的某个状态发生变化，我们应该重新创建这个状态对象，而不是直接修改原来的状态。那么，当状态发生变化时，如何创建新的状态呢？根据状态的类型，可以分成三种情况：</p>
-<p>状态的类型是不可变类型（数字，字符串，布尔值，null， undefined）<br>这种情况最简单，因为状态是不可变类型，直接给要修改的状态赋一个新值即可。如要修改count（数字类型）、title（字符串类型）、success（布尔类型）三个状态：</p>
-<p>this.setState({<br>  count: 1,<br>  title: ‘Redux’,<br>  success: true<br>})<br>状态的类型是数组<br>如有一个数组类型的状态books，当向books中增加一本书时，使用数组的concat方法或ES6的数组扩展语法（spread syntax）：</p>
-<p>// 方法一：将state先赋值给另外的变量，然后使用concat创建新数组</p>
-<p>var books = this.state.books;<br>this.setState({<br>  books: books.concat([‘React Guide’]);<br>})<br>// 方法二：使用preState、concat创建新数组</p>
-<p>this.setState(preState =&gt; ({<br>  books: preState.books.concat([‘React Guide’]);<br>}))<br>// 方法三：ES6 spread syntax</p>
-<p>this.setState(preState =&gt; ({<br>  books: […preState.books, ‘React Guide’];<br>}))<br>当从books中截取部分元素作为新状态时，使用数组的slice方法：</p>
-<p>// 方法一：将state先赋值给另外的变量，然后使用slice创建新数组</p>
-<p>var books = this.state.books;<br>this.setState({<br>  books: books.slice(1,3);<br>})<br>// 方法二：使用preState、slice创建新数组</p>
-<p>this.setState(preState =&gt; ({<br>  books: preState.books.slice(1,3);<br>}))<br>当从books中过滤部分元素后，作为新状态时，使用数组的filter方法：</p>
-<p>// 方法一：将state先赋值给另外的变量，然后使用filter创建新数组</p>
-<p>var books = this.state.books;<br>this.setState({<br>  books: books.filter(item =&gt; {<br>    return item != ‘React’;<br>  });<br>})<br>// 方法二：使用preState、filter创建新数组</p>
-<p>this.setState(preState =&gt; ({<br>  books: preState.books.filter(item =&gt; {<br>    return item != ‘React’;<br>  });<br>}))<br>注意不要使用push、pop、shift、unshift、splice等方法修改数组类型的状态，因为这些方法都是在原数组的基础上修改，而concat、slice、filter会返回一个新的数组。</p>
-<p>状态的类型是普通对象（不包含字符串、数组）<br>3.1 使用ES6 的Object.assgin方法<br>// 方法一：将state先赋值给另外的变量，然后使用Object.assign创建新对象</p>
-<p>var owner = this.state.owner;<br>this.setState({<br>  owner: Object.assign({}, owner, {name: ‘Jason’});<br>})<br>// 方法二：使用preState、Object.assign创建新对象</p>
-<p>this.setState(preState =&gt; ({<br>  owner: Object.assign({}, preState.owner, {name: ‘Jason’});<br>}))<br>3.2 使用对象扩展语法（object spread properties）</p>
-<p>// 方法一：将state先赋值给另外的变量，然后使用对象扩展语法创建新对象</p>
-<p>var owner = this.state.owner;<br>this.setState({<br>  owner: {…owner, name: ‘Jason’};<br>})<br>// 方法二：使用preState、对象扩展语法创建新对象</p>
-<p>this.setState(preState =&gt; ({<br>  owner: {…preState.owner, name: ‘Jason’};<br>}))<br>总结一下，创建新的状态对象的关键是，避免使用会直接修改原对象的方法，而是使用可以返回一个新对象的方法。当然，也可以使用一些Immutable的JS库，如Immutable.js，实现类似的效果。</p>
-<p>那么，为什么React推荐组件的状态是不可变对象呢？</p>
-<p>一方面是因为不可变对象方便管理和调试；</p>
-<p>另一方面是出于性能考虑，当对象组件状态都是不可变对象时，我们在组件的shouldComponentUpdate方法中，仅需要比较状态的引用就可以判断状态是否真的改变，从而避免不必要的render调用。当我们使用React 提供的PureComponent时，更是要保证组件状态是不可变对象，否则在组件的shouldComponentUpdate方法中，状态比较就可能出现错误，因为PureComponent执行的是浅比较（比较对象的引用）。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/React diff算法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xdd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiner">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/02/React diff算法/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T17:08:49+08:00">
-                2018-09-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>React有两大提高性能的神奇特色：虚拟DOM &amp; diff算法。React diff作为Virtual DOM的加速器，其算法的改进优化是React整的界面渲染的基础，以及性能提高的保障。</p>
-<p>React diff表示什么？表示React针对传统的diff算法进行了React风格的优化！</p>
-<p>传统diff算法<br>计算一棵树形结构转换成另一棵树形结构的最少操作，是一个复杂且值得研究的问题。</p>
-<p>传统 diff 算法通过循环递归对节点进行依次对比，效率低下，算法复杂度达到 O(n^3)，其中 n 是树中节点的总数。O(n^3) 到底有多可怕，这意味着如果要展示1000个节点，就要依次执行上十亿次的比较。代价太高。</p>
-<p>如果 React 只是单纯的引入 diff 算法而没有任何的优化改进，那么其效率是远远无法满足前端渲染所要求的性能。</p>
-<p>React diff优化<br>传统的diff算法的复杂度为O(n^3),显然无法满足性能要求。Facebook工程师通过大胆的策略，将O(n^3)复杂度简化成了O(n)</p>
-<p>diff策略</p>
-<p>Web UI 中 DOM 节点跨层级的移动操作特别少，可以忽略不计。<br>拥有相同类的两个组件将会生成相似的树形结构，拥有不同类的两个组件将会生成不同的树形结构。<br>对于同一层级的一组子节点，它们可以通过唯一 id 进行区分。</p>
-<p>基于以上三个前提策略，React团队对传统diff算法优化</p>
-<p>a-&gt;tree diff</p>
-<p>b-&gt;component diff<br>c-&gt;element diffd</p>
-<p>优化策略a: tree diff</p>
-<p>基于tree diff策略，React对Virtual DOM树进行 分层比较、层级控制，只对相同颜色框内的节点进行比较(同一父节点的全部子节点)，当发现某一子节点不在了直接删除该节点以及其所有子节点，不会用于进一步的比较，在算法层面上就是说只需要遍历一次就可以了，而无需在进行不必要的比较，便能完成整个DOM树的比较。<br>如图：</p>
-<p>同属于分层比较、层级控制范畴，还会出现DOM节点跨层级的移动操作(React中这种情况DOM节点不稳定，损害性能，所以开发中不推荐这种情况的出现)，React diff怎么解决的呢？如下图情况：</p>
-<p>上面描述的是同一层次不同DOM节点范畴，React diff用趋近于‘暴力’的方式，并不是把A B C 直接拼接到 D 节点上，而是删除A B C 三个节点之后在 D 下面在创建的 A B C。这里不做详细分析，想直观理解该过程，建议阅读这篇用在生命周期里打log的方式展示上述过程</p>
-<p>优化策略b: component diff</p>
-<p>React是基于组件构建应用的，对于组件间的比较所采用的策略也是简洁高效。</p>
-<p>对于同一类型的组件，根据Virtual DOM是否变化也分两种，可以用shouldComponentUpdate()判断Virtual DOM是否发生了变化，若没有变化就不需要在进行diff，这样可以节省大量时间，若变化了，就对相关节点进行update<br>对于非同一类的组件，则将该组件判断为 dirty component，从而替换整个组件下的所有子节点。</p>
-<p>如下图，当 component D 改变为 component G 时，即使这两个 component 结构相似，一旦 React 判断 D 和 G 是不同类型的组件，就不会比较二者的结构，而是直接删除 component D，重新创建 component G 以及其子节点。虽然当两个 component 是不同类型但结构相似时，React diff 会影响性能，但正如 React 官方博客所言：不同类型的 component 是很少存在相似 DOM tree 的机会，因此这种极端因素很难在实现开发过程中造成重大影响的。</p>
-<p>而如果上图中左一中的D节点只是单纯的改变什么state，update就好了。</p>
-<p>优化策略c: element diff</p>
-<p>所有同一层级的子节点.他们都可以通过key来区分—–并遵循策略a、b。</p>
-<p>没经过优化的算法，实现新老交替的方法是将A B C D全部删除之后，在新建B A D C，这样的实现方法显然很垃圾，React diff怎么优化呢？是通过为每一个节点添加key值标识。</p>
-<p>新老集合所包含的节点，如上图所示，新老集合进行 diff 差异化对比，通过 key 发现新老集合中的节点都是相同的节点，因此无需进行节点删除和创建，只需要将老集合中节点的位置进行移动，更新为新集合中节点的位置，此时 React 给出的 diff 结果为：B、D 不做任何操作，A、C 进行移动操作，即可。</p>
-<p>上述分析的是新老集合中存在相同节点但是位置不同，要是有新加入的节点且有旧节点需要删除呢？这里不再啰嗦，如下图：</p>
-<p>加了key的好处：</p>
-<p>如果不加key，map遍历的时候控制台发出warn，既然是warn就说明不加也能实现遍历，但是是经过删除、创建、插入实现，这样的话损害性能可想而知，而加上key就可以有助于React diff算法结合Virtual DOM找到最合适的方式进行diff，最大限度的实现高效diff，即哪里需要改变，就改变哪里！</p>
-<p>总结<br>React 通过分层求异的策略，对 tree diff 进行算法优化；<br>React 通过相同类生成相似树形结构，不同类生成不同树形结构的策略，对 component diff 进行算法优化；<br>React 通过设置唯一 key的策略，对 element diff 进行算法优化；<br>React 通过制定大胆的 diff 策略，将 O(n3) 复杂度的问题转换成 O(n) 复杂度的问题；<br>建议，开发时保持稳定的DOM结构有助于性能的提升；</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/position属性/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xdd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiner">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/02/position属性/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T17:08:49+08:00">
-                2018-09-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T17:04:31+08:00">
+                2018-09-01
               </time>
             
 
@@ -1661,6 +386,1418 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/AJAX/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xdd">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiner">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/01/AJAX/" itemprop="url">Ajax</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T17:04:31+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="什么是Ajax"><a href="#什么是Ajax" class="headerlink" title="什么是Ajax"></a>什么是Ajax</h3><p>Ajax是用JavaScript执行异步网络请求，请求是异步执行的，也就是说，要通过回调函数获得响应。在现代浏览器上写AJAX主要依靠XMLHttpRequest对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line">function success(text) &#123;</span><br><span class="line">    var textarea = document.getElementById(&apos;test-response-text&apos;);</span><br><span class="line">    textarea.value = text;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function fail(code) &#123;</span><br><span class="line">    var textarea = document.getElementById(&apos;test-response-text&apos;);</span><br><span class="line">    textarea.value = &apos;Error code: &apos; + code;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var request = new XMLHttpRequest(); // 新建XMLHttpRequest对象</span><br><span class="line"></span><br><span class="line">request.onreadystatechange = function () &#123; // 状态发生变化时，函数被回调</span><br><span class="line">    if (request.readyState === 4) &#123; // 成功完成</span><br><span class="line">        // 判断响应结果:</span><br><span class="line">        if (request.status === 200) &#123;</span><br><span class="line">            // 成功，通过responseText拿到返回的数据</span><br><span class="line"></span><br><span class="line">            return success(request.responseText);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            // 失败，根据响应码判断失败原因:</span><br><span class="line">            return fail(request.status);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        // HTTP请求还在继续...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 发送请求:</span><br><span class="line">request.open(&apos;GET&apos;, &apos;/api/categories&apos;);</span><br><span class="line">request.send();</span><br><span class="line"></span><br><span class="line">alert(&apos;请求已发送，请等待响应...&apos;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="详细过程："><a href="#详细过程：" class="headerlink" title="详细过程："></a>详细过程：</h3><pre><code>创建XMLHttpRequest对象，也就是创建一个异步调用对象
+创建一个新的HTTP请求，并指定请求方式、URL、是否异步调用
+设置响应HTTP请求状态变化函数
+发送HTTP请求
+获取异步调用返回的函数
+使用javascript和DOM实现局部刷新
+</code></pre><h4 id="1-创建XMLHttpRequest对象"><a href="#1-创建XMLHttpRequest对象" class="headerlink" title="1.创建XMLHttpRequest对象"></a>1.创建XMLHttpRequest对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//创建XMLHttpRequest对象</span><br><span class="line">var xhr;</span><br><span class="line">if(window.XMLHttpRequest)&#123;</span><br><span class="line">    //for ie7+,firefox,Chrome,Opera,Safari</span><br><span class="line">    xhr=new XMLHttpRequest();</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    //for ie6,ie5</span><br><span class="line">    xhr=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-向服务器发送请求"><a href="#2-向服务器发送请求" class="headerlink" title="2.向服务器发送请求"></a>2.向服务器发送请求</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//向服务器发送请求</span><br><span class="line">//open()规定发送请求的类型，url，是否异步处理</span><br><span class="line">xhr.open(&quot;GET&quot;,&quot;test.txt&quot;,true);</span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure>
+<p>GET和POST,与POST相比，GET传输速度快，效率高，大部分情况下使用GET，在以下几种情况中使用POST：</p>
+<pre><code>无法使用缓存文件(更新服务器上的文件或数据)
+向服务器发送大量数据 (POST没有数据量限制)
+发送包含未知字符的用户输入时，POST比GET更稳定，可靠。
+</code></pre><h4 id="3-服务器响应"><a href="#3-服务器响应" class="headerlink" title="3.服务器响应"></a>3.服务器响应</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//如果来自服务器的响应不是XML文件，使用responseText属性</span><br><span class="line">myDiv.innerHTML=xhr.responseText;</span><br><span class="line"></span><br><span class="line">//如果来自服务器的响应是XML文件</span><br><span class="line">xmlDoc=xhr.responseXML;</span><br><span class="line">txt=&quot;&quot;;</span><br><span class="line">x=xmlDoc.getElementsByTagName(&quot;ARTIST&quot;);</span><br><span class="line">var myDiv= document.getElementById(&quot;myDiv&quot;);</span><br><span class="line">for (i=0;i&lt;x.length;i++)&#123;</span><br><span class="line">  txt=txt + x[i].childNodes[0].nodeValue + &quot;&lt;br /&gt;&quot;;</span><br><span class="line"> &#125;</span><br><span class="line">myDiv.innerHTML=txt;</span><br></pre></td></tr></table></figure>
+<h4 id="4-readyState"><a href="#4-readyState" class="headerlink" title="4.readyState"></a>4.readyState</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//当readyState改变时，就会触发onreadystatechange事件</span><br><span class="line">//readyState属性存有XMLHttpRequest对象的状态信息</span><br><span class="line">//onreadystatechange事件会触发5次，对应readyStates的5个状态(0~4)</span><br><span class="line">xhr.onreadystatechange==function()&#123;</span><br><span class="line">    if(xhr.readyState == 4 &amp;&amp; xhr.status ==200)&#123;</span><br><span class="line">        myDiv.innerHTML=xhr.resopnseText;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//或者使用Callback函数</span><br><span class="line">function myFun()&#123;</span><br><span class="line">    loadXMLDoc(&quot;test.txt&quot;,function()&#123;</span><br><span class="line">        if(xhr.readyState==4 &amp;&amp; xhr.status ==200)&#123;</span><br><span class="line">            myDiv.innerHTML=xhr.resopnseText;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="XMLHttpRequest对象的三个重要属性："><a href="#XMLHttpRequest对象的三个重要属性：" class="headerlink" title="XMLHttpRequest对象的三个重要属性："></a>XMLHttpRequest对象的三个重要属性：</h4><p>onreadystatechange 存储函数，当readyState属性改变时就会调用该函数<br>readyState 存有XMLHttpRequest对象的状态</p>
+<pre><code>0 （未初始化）还没有调用open()方法
+
+1 （载入）已调用send()方法，正在发送请求
+
+2 （载入完成）send()方法完成，已收到全部相应内容
+
+3 （解析）正在解析相应内容
+
+4 （完成）相应内容解析完成，可以在客户端调用了
+</code></pre><p>status</p>
+<pre><code>200 ‘ok’
+
+404 未找到页面
+</code></pre><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ol>
+<li><p>Ajax 最大的优点是无刷新数据读取：能在不刷新整个页面的前提下与服务器通信维护数据。更为迅捷地响应用户交互，避免了发送没有改变的信息，减少用户等待时间，带来非常好的用户体验；</p>
+</li>
+<li><p>异步与服务器通信：AJAX使用异步方式与服务器通信，不需要打断用户的操作，具有更加迅速的响应能力。优化了Browser和Server之间的沟通，减少不必要的数据传输、时间及降低网络上数据流量；</p>
+</li>
+<li><p>前端和后端负载平衡：把一些服务器负担的工作转嫁到客户端，用客户端闲置的能力来处理，减轻服务器和带宽的负担，节约空间和宽带租用成本。这种“按需取数据”的方式，可最大程度的减少冗余请求和对服务器造成的负担，提升站点性能；</p>
+</li>
+<li><p>界面与应用分离：Ajax使WEB中的界面与应用分离（也可以说是数据与呈现分离），有利于分工合作、减少非技术人员对页面的修改造成的WEB应用程序错误、提高效率、适用于现在的发布系统。</p>
+</li>
+</ol>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ol>
+<li><p>AJAX干掉了Back和History功能：动态更新的页面，用户无法回到前一个页面状态，因为浏览器仅能记忆历史记录中的静态页面。解决方案是使用URL片断标识符（通常被称为锚点，即URL中#后面的location. hash）来保持跟踪；</p>
+</li>
+<li><p>AJAX的安全问题：Ajax技术对企业数据建立了一个直接通道。会暴露比以前更多的数据和服务器逻辑。并会隐藏客户端的安全扫描技术，允许黑客从远端服务器上建立新的攻击。还有Ajax也难以避免跨站点脚步攻击、SQL注入攻击和基于Credentials的安全漏洞等等；</p>
+</li>
+<li><p>对搜索引擎支持较弱：对搜索引擎的支持比较弱。如果使用不当，AJAX会增大网络数据的流量，从而降低整个系统的性能。</p>
+</li>
+<li><p>违背URL和资源定位的初衷：你在一个URL地址下面看到的和我在这个URL地址下看到的内容是不同的。这个和资源定位的初衷是相背离的。</p>
+</li>
+</ol>
+<h4 id="Ajax在JQ和JS中的区别"><a href="#Ajax在JQ和JS中的区别" class="headerlink" title="Ajax在JQ和JS中的区别"></a>Ajax在JQ和JS中的区别</h4><p>jquery是将原生的JS封装了的，不同浏览器对Ajax的实现可能不一样，jQuery解决了兼容问题，让我们用同一种方式调用；接口更清晰好用，比如jquery把jsonp（其实是通过script标签绕过同源策略）封装的就像一个普通的ajax请求。</p>
+<h4 id="Ajax修改获取header："><a href="#Ajax修改获取header：" class="headerlink" title="Ajax修改获取header："></a>Ajax修改获取header：</h4><p>利用xmlHttp.setRequestHeader来设置request请求头：例如：xmlHttp.setRequestHeader(‘cache-control’,’no-cache’);</p>
+<p>利用xmlHttp.getResponseHeader来获取response头信息;例如：xmlHttp.getResponseHeader(“Date”)；</p>
+<p>另外 request.setCharacterEncoding(“UTF-8”)也可以设置发送到服务端数据编码格式（一般来说发送的编码格式跟服务端解析格式必须是一致的）</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/React diff算法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xdd">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiner">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/01/React diff算法/" itemprop="url">diff</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T17:04:31+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>React有两大提高性能的神奇特色：虚拟DOM &amp; diff算法。React diff作为Virtual DOM的加速器，其算法的改进优化是React整的界面渲染的基础，以及性能提高的保障。</p>
+<p>React diff表示什么？表示React针对传统的diff算法进行了React风格的优化！</p>
+<h3 id="传统diff算法"><a href="#传统diff算法" class="headerlink" title="传统diff算法"></a>传统diff算法</h3><p>计算一棵树形结构转换成另一棵树形结构的最少操作，是一个复杂且值得研究的问题。</p>
+<p>传统 diff 算法通过循环递归对节点进行依次对比，效率低下，算法复杂度达到 O(n^3)，其中 n 是树中节点的总数。O(n^3) 到底有多可怕，这意味着如果要展示1000个节点，就要依次执行上十亿次的比较。代价太高。</p>
+<p>如果 React 只是单纯的引入 diff 算法而没有任何的优化改进，那么其效率是远远无法满足前端渲染所要求的性能。</p>
+<h3 id="React-diff优化"><a href="#React-diff优化" class="headerlink" title="React diff优化"></a>React diff优化</h3><p>传统的diff算法的复杂度为O(n^3),显然无法满足性能要求。Facebook工程师通过大胆的策略，将O(n^3)复杂度简化成了O(n)</p>
+<h3 id="diff策略"><a href="#diff策略" class="headerlink" title="diff策略"></a>diff策略</h3><p>Web UI 中 DOM 节点跨层级的移动操作特别少，可以忽略不计。<br>拥有相同类的两个组件将会生成相似的树形结构，拥有不同类的两个组件将会生成不同的树形结构。<br>对于同一层级的一组子节点，它们可以通过唯一 id 进行区分。</p>
+<p>基于以上三个前提策略，React团队对传统diff算法优化</p>
+<p>a-&gt;tree diff</p>
+<p>b-&gt;component diff<br>c-&gt;element diffd</p>
+<h3 id="优化策略a-tree-diff"><a href="#优化策略a-tree-diff" class="headerlink" title="优化策略a: tree diff"></a>优化策略a: tree diff</h3><p>基于tree diff策略，React对Virtual DOM树进行 分层比较、层级控制，只对相同颜色框内的节点进行比较(同一父节点的全部子节点)，当发现某一子节点不在了直接删除该节点以及其所有子节点，不会用于进一步的比较，在算法层面上就是说只需要遍历一次就可以了，而无需在进行不必要的比较，便能完成整个DOM树的比较。<br>如图：</p>
+<p>同属于分层比较、层级控制范畴，还会出现DOM节点跨层级的移动操作(React中这种情况DOM节点不稳定，损害性能，所以开发中不推荐这种情况的出现)，React diff怎么解决的呢？如下图情况：</p>
+<p>上面描述的是同一层次不同DOM节点范畴，React diff用趋近于‘暴力’的方式，并不是把A B C 直接拼接到 D 节点上，而是删除A B C 三个节点之后在 D 下面在创建的 A B C。这里不做详细分析，想直观理解该过程，建议阅读这篇用在生命周期里打log的方式展示上述过程</p>
+<h3 id="优化策略b-component-diff"><a href="#优化策略b-component-diff" class="headerlink" title="优化策略b: component diff"></a>优化策略b: component diff</h3><p>React是基于组件构建应用的，对于组件间的比较所采用的策略也是简洁高效。</p>
+<p>对于同一类型的组件，根据Virtual DOM是否变化也分两种，可以用shouldComponentUpdate()判断Virtual DOM是否发生了变化，若没有变化就不需要在进行diff，这样可以节省大量时间，若变化了，就对相关节点进行update<br>对于非同一类的组件，则将该组件判断为 dirty component，从而替换整个组件下的所有子节点。</p>
+<p>如下图，当 component D 改变为 component G 时，即使这两个 component 结构相似，一旦 React 判断 D 和 G 是不同类型的组件，就不会比较二者的结构，而是直接删除 component D，重新创建 component G 以及其子节点。虽然当两个 component 是不同类型但结构相似时，React diff 会影响性能，但正如 React 官方博客所言：不同类型的 component 是很少存在相似 DOM tree 的机会，因此这种极端因素很难在实现开发过程中造成重大影响的。</p>
+<p>而如果上图中左一中的D节点只是单纯的改变什么state，update就好了。</p>
+<h3 id="优化策略c-element-diff"><a href="#优化策略c-element-diff" class="headerlink" title="优化策略c: element diff"></a>优化策略c: element diff</h3><p>所有同一层级的子节点.他们都可以通过key来区分—–并遵循策略a、b。</p>
+<p>没经过优化的算法，实现新老交替的方法是将A B C D全部删除之后，在新建B A D C，这样的实现方法显然很垃圾，React diff怎么优化呢？是通过为每一个节点添加key值标识。</p>
+<p>新老集合所包含的节点，如上图所示，新老集合进行 diff 差异化对比，通过 key 发现新老集合中的节点都是相同的节点，因此无需进行节点删除和创建，只需要将老集合中节点的位置进行移动，更新为新集合中节点的位置，此时 React 给出的 diff 结果为：B、D 不做任何操作，A、C 进行移动操作，即可。</p>
+<p>上述分析的是新老集合中存在相同节点但是位置不同，要是有新加入的节点且有旧节点需要删除呢？这里不再啰嗦，如下图：</p>
+<p>加了key的好处：</p>
+<p>如果不加key，map遍历的时候控制台发出warn，既然是warn就说明不加也能实现遍历，但是是经过删除、创建、插入实现，这样的话损害性能可想而知，而加上key就可以有助于React diff算法结合Virtual DOM找到最合适的方式进行diff，最大限度的实现高效diff，即哪里需要改变，就改变哪里！</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>React 通过分层求异的策略，对 tree diff 进行算法优化；<br>React 通过相同类生成相似树形结构，不同类生成不同树形结构的策略，对 component diff 进行算法优化；<br>React 通过设置唯一 key的策略，对 element diff 进行算法优化；<br>React 通过制定大胆的 diff 策略，将 O(n3) 复杂度的问题转换成 O(n) 复杂度的问题；<br>建议，开发时保持稳定的DOM结构有助于性能的提升；</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/Cookie、sessionStorage、localStorage的区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xdd">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiner">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/01/Cookie、sessionStorage、localStorage的区别/" itemprop="url">浏览器存储</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T17:04:31+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="共同点：都是保存在浏览器端，并且是同源的"><a href="#共同点：都是保存在浏览器端，并且是同源的" class="headerlink" title="共同点：都是保存在浏览器端，并且是同源的"></a>共同点：都是保存在浏览器端，并且是同源的</h4><p><strong>Cookie</strong>：cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递。而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下,存储的大小很小只有4K左右。 （key：可以在浏览器和服务器端来回传递，存储容量小，只有大约4K左右）</p>
+<h4 id="cookie的作用："><a href="#cookie的作用：" class="headerlink" title="cookie的作用："></a>cookie的作用：</h4><ol>
+<li><p>保存用户登录状态。例如将用户id存储于一个cookie内，这样当用户下次访问该页面时就不需要重新登录了，现在很多论坛和社区都提供这样的功能。 cookie还可以设置过期时间，当超过时间期限后，cookie就会自动消失。因此，系统往往可以提示用户保持登录状态的时间：常见选项有一个月、三个 月、一年等。</p>
+</li>
+<li><p>跟踪用户行为。例如一个天气预报网站，能够根据用户选择的地区显示当地的天气情况。如果每次都需要选择所在地是烦琐的，当利用了 cookie后就会显得很人性化了，系统能够记住上一次访问的地区，当下次再打开该页面时，它就会自动显示上次用户所在地区的天气情况。因为一切都是在后 台完成，所以这样的页面就像为某个用户所定制的一样，使用起来非常方便</p>
+</li>
+<li><p>定制页面。如果网站提供了换肤或更换布局的功能，那么可以使用cookie来记录用户的选项，例如：背景色、分辨率等。当用户下次访问时，仍然可以保存上一次访问的界面风格。</p>
+</li>
+</ol>
+<p><strong>sessionStorage</strong>：仅在当前浏览器窗口关闭前有效，自然也就不可能持久保持，localStorage：始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据；cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭。（key：本身就是一个回话过程，关闭浏览器后消失，session为一个回话，当页面不同即使是同一页面打开两次，也被视为同一次回话）</p>
+<p><strong>localStorage</strong>：localStorage 在所有同源窗口中都是共享的；cookie也是在所有同源窗口中都是共享的。（key：同源窗口都会共享，并且不会失效，不管窗口或者浏览器关闭与否都会始终生效）</p>
+<p>SessionStorage和LocalStorage都属于web storage,其功能却比cookie强大的多。cookie的大小只有4Kb左右（浏览器不同，大小也不同），而web Storage的大小有5MB。其API提供的方法有以下几种：</p>
+<pre><code>setItem (key, value) ——  保存数据，以键值对的方式储存信息。
+getItem (key) ——  获取数据，将键值传入，即可获取到对应的value值。
+removeItem (key) ——  删除单个数据，根据键值移除对应的信息。
+clear () ——  删除所有的数据
+key (index) —— 获取某个索引的key
+</code></pre><p>localStorage例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var storage = null;  </span><br><span class="line">    if(window.localStorage)&#123;              //判断浏览器是否支持localStorage  </span><br><span class="line">       storage = window.localStorage;       </span><br><span class="line">       storage.setItem(&quot;name&quot;, &quot;Rick&quot;);    //调用setItem方法，存储数据  </span><br><span class="line">       alert(storage.getItem(&quot;name&quot;));     //调用getItem方法，弹框显示 name 为 Rick  </span><br><span class="line">       storage.removeItem(&quot;name&quot;);     //调用removeItem方法，移除数据  </span><br><span class="line">       alert(storage.getItem(&quot;name&quot;));   //调用getItem方法，弹框显示 name 为 null  </span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>SessionStorage用法同上，不过区别在于 sessionStorage 在关闭页面后即被清空，而 localStorage 则会一直保存。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/css选择器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xdd">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiner">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/01/css选择器/" itemprop="url">css选择器</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T17:04:31+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="css有三大特性：继承，优先级，层叠"><a href="#css有三大特性：继承，优先级，层叠" class="headerlink" title="css有三大特性：继承，优先级，层叠"></a>css有三大特性：继承，优先级，层叠</h4><pre><code>继承：即子元素可以继承父元素的样式
+优先级：指不同类别样式的权重比较
+层叠：指当数量相同时，通过层叠（后者覆盖前者）的样式
+</code></pre><p>首先，我们来看一下css选择器都有哪些：</p>
+<pre><code>标签选择器（div，p，ul）
+类选择器（class=”logo”）
+ID选择器（id=”btn”）
+全局选择器（*）
+组合选择器(如：.div .btn,注意两选择器用空格键分开)
+后代选择器 (如：#header .nav ul li 从父集到子孙集的选择器)
+群组选择器 div,span,img {color:Red} 即具有相同样式的标签分组显示
+继承选择器(如：div p,注意两选择器用空格键分开)
+伪类选择器(如：就是链接样式,a元素的伪类，4种不同的状态：link（默认）、visited（已访问的）、active（鼠标按下）、hover（鼠标悬停处）。)
+字符串匹配的属性选择符(^ $ *三种，分别对应开始、结尾、包含)
+子选择器 (如：div&gt;p ,带大于号&gt;)
+CSS 相邻兄弟选择器器 (如：h1+p,带加号+)
+</code></pre><h4 id="css优先级"><a href="#css优先级" class="headerlink" title="css优先级"></a>css优先级</h4><p>当两个规则都作用到了同一个HTML元素上，如果定义的属性有冲突，那么应该用谁的值呢？</p>
+<p><strong>不同级别</strong>：</p>
+<ol>
+<li>在属性后面使用 !important 会覆盖页面内任何位置定义的元素样式。</li>
+<li>作为style属性写在元素内的样式</li>
+<li>id选择器</li>
+<li>类选择器</li>
+<li>标签选择器</li>
+<li>通配符选择器</li>
+<li>浏览器自定义或继承</li>
+</ol>
+<h3 id="总结排序：-important-gt-行内样式-gt-ID选择器-gt-类选择器-gt-标签-gt-通配符-gt-继承-gt-浏览器默认属性"><a href="#总结排序：-important-gt-行内样式-gt-ID选择器-gt-类选择器-gt-标签-gt-通配符-gt-继承-gt-浏览器默认属性" class="headerlink" title="总结排序：!important &gt; 行内样式&gt;ID选择器 &gt; 类选择器 &gt; 标签 &gt; 通配符 &gt; 继承 &gt; 浏览器默认属性"></a>总结排序：!important &gt; 行内样式&gt;ID选择器 &gt; 类选择器 &gt; 标签 &gt; 通配符 &gt; 继承 &gt; 浏览器默认属性</h3><p><strong>同一级别</strong><br>在同一级别中，到底div是应用那条规则呢，我们可以用权值来计算，权值实际并不是按十进制，用数字表示只是说明思想，一万个class也不如一个id权值高。</p>
+<pre><code>内联样式表的权值为 1000
+ID 选择器的权值为 100
+Class 类选择器的权值为 10
+HTML 标签选择器的权值为 1
+</code></pre><p>我们可以把选择器中规则对应做加法，比较权值，如果权值相同那就后面的覆盖前面的了.</p>
+<p>css选择器使用强烈建议采用低权重原则，利于充分发挥css的继承性，复用性，模块化、组件化。</p>
+<h4 id="简洁、高效的css"><a href="#简洁、高效的css" class="headerlink" title="简洁、高效的css"></a>简洁、高效的css</h4><p>所谓高效就是让浏览器查找更少的元素标签来确定匹配的style元素。</p>
+<p>不要再ID选择器前使用标签名<br>解释：ID选择是唯一的，加上标签名相当于画蛇添足了，没必要。<br>不要在类选择器前使用标签名<br>解释：如果没有相同的名字出现就是没必要，但是如果存在多个相同名字的类选择器则有必要添加标签名防止混淆如（p.colclass{color：red;} 和 span.colclass{color:red;}<br>尽量少使用层级关系；<br>使用类选择器代替层级关系</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/React的state/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xdd">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiner">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/01/React的state/" itemprop="url">react的state</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T17:04:31+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>React 的核心思想是组件化的思想，应用由组件搭建而成，State是一个组件渲染时的数据依据。</p>
+<h3 id="一-定义State"><a href="#一-定义State" class="headerlink" title="一. 定义State"></a>一. 定义State</h3><p>组件的任何UI改变，都可以从State的变化中反映出来；同时，State中的所有状态都是用于反映组件UI的变化，没有任何多余的状态，也不需要通过其他状态计算而来的中间状态。</p>
+<p>组件中用到的一个变量是不是应该作为组件State，可以通过下面的4条依据进行判断：</p>
+<p>这个变量是否是通过Props从父组件中获取？如果是，那么它不是一个状态。<br>这个变量是否在组件的整个生命周期中都保持不变？如果是，那么它不是一个状态。<br>这个变量是否可以通过其他状态（State）或者属性(Props)计算得到？如果是，那么它不是一个状态。<br>这个变量是否在组件的render方法中使用？如果不是，那么它不是一个状态。这种情况下，这个变量更适合定义为组件的一个普通属性，例如组件中用到的定时器，就应该直接定义为this.timer，而不是this.state.timer。<br>不是组件中用到的所有变量都是组件的状态！当存在多个组件共同依赖一个状态时，一般的做法是状态上移，将这个状态放到这几个组件的公共父组件中。</p>
+<h3 id="二-State-与-Props-区别"><a href="#二-State-与-Props-区别" class="headerlink" title="二. State 与 Props 区别"></a>二. State 与 Props 区别</h3><p>除了State, 组件的Props也是和组件的UI有关的。<br>他们之间的主要区别是：<br>State是可变的，是组件内部维护的一组用于反映组件UI变化的状态集合；<br>而Props对于使用它的组件来说，是只读的，要想修改Props，只能通过该组件的父组件修改。在组件状态上移的场景中，父组件正是通过子组件的Props, 传递给子组件其所需要的状态。</p>
+<h3 id="三-如何正确修改State"><a href="#三-如何正确修改State" class="headerlink" title="三. 如何正确修改State"></a>三. 如何正确修改State</h3><p>不能直接修改State。</p>
+<p>直接修改state，组件并不会重新重发render。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 错误</span><br><span class="line">this.state.title = &apos;React&apos;;</span><br><span class="line">正确的修改方式是使用setState():</span><br><span class="line"></span><br><span class="line">// 正确</span><br><span class="line">this.setState(&#123;title: &apos;React&apos;&#125;);</span><br><span class="line">State 的更新是异步的。</span><br></pre></td></tr></table></figure></p>
+<p>调用setState，组件的state并不会立即改变，setState只是把要修改的状态放入一个队列中，React会优化真正的执行时机，并且React会出于性能原因，可能会将多次setState的状态修改合并成一次状态修改。所以不要依赖当前的State，计算下个State。当真正执行状态修改时，依赖的this.state并不能保证是最新的State，因为React会把多次State的修改合并成一次，这时，this.state将还是这几次State修改前的State。另外需要注意的事，同样不能依赖当前的Props计算下个状态，因为Props一般也是从父组件的State中获取，依然无法确定在组件状态更新时的值。</p>
+<p>举个例子，对于一个电商类应用，在我们的购物车中，当我们点击一次购买数量按钮，购买的数量就会加1，如果我们连续点击了两次按钮，就会连续调用两次this.setState({quantity: this.state.quantity + 1})，在React合并多次修改为一次的情况下，相当于等价执行了如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Object.assign(</span><br><span class="line">  previousState,</span><br><span class="line">  &#123;quantity: this.state.quantity + 1&#125;,</span><br><span class="line">  &#123;quantity: this.state.quantity + 1&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>于是乎，后面的操作覆盖掉了前面的操作，最终购买的数量只增加了1个。</p>
+<p>如果你真的有这样的需求，可以使用另一个接收一个函数作为参数的setState，这个函数有两个参数，第一个是当前最新状态（本次组件状态修改后的状态）的前一个状态preState（本次组件状态修改前的状态），第二个参数是当前最新的属性props。如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 正确</span><br><span class="line">this.setState((preState, props) =&gt; (&#123;</span><br><span class="line">  counter: preState.quantity + 1; </span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure></p>
+<p>State 的更新是一个浅合并（Shallow Merge）的过程。</p>
+<p>当调用setState修改组件状态时，只需要传入发生改变的State，而不是组件完整的State，因为组件State的更新是一个浅合并（Shallow Merge）的过程。</p>
+<h3 id="四-State与Immutable"><a href="#四-State与Immutable" class="headerlink" title="四. State与Immutable"></a>四. State与Immutable</h3><p>React官方建议把State当作是不可变对象，一方面是如果直接修改this.state，组件并不会重新render；另一方面State中包含的所有状态都应该是不可变对象。当State中的某个状态发生变化，我们应该重新创建这个状态对象，而不是直接修改原来的状态。那么，当状态发生变化时，如何创建新的状态呢？根据状态的类型，可以分成三种情况：</p>
+<p>状态的类型是不可变类型（数字，字符串，布尔值，null， undefined）<br>这种情况最简单，因为状态是不可变类型，直接给要修改的状态赋一个新值即可。如要修改count（数字类型）、title（字符串类型）、success（布尔类型）三个状态：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">this.setState(&#123;</span><br><span class="line">  count: 1,</span><br><span class="line">  title: &apos;Redux&apos;,</span><br><span class="line">  success: true</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>状态的类型是数组<br>如有一个数组类型的状态books，当向books中增加一本书时，使用数组的concat方法或ES6的数组扩展语法（spread syntax）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 方法一：将state先赋值给另外的变量，然后使用concat创建新数组</span><br><span class="line"></span><br><span class="line">var books = this.state.books; </span><br><span class="line">this.setState(&#123;</span><br><span class="line">  books: books.concat([&apos;React Guide&apos;]);</span><br><span class="line">&#125;)</span><br><span class="line">// 方法二：使用preState、concat创建新数组</span><br><span class="line"></span><br><span class="line">this.setState(preState =&gt; (&#123;</span><br><span class="line">  books: preState.books.concat([&apos;React Guide&apos;]);</span><br><span class="line">&#125;))</span><br><span class="line">// 方法三：ES6 spread syntax</span><br><span class="line"></span><br><span class="line">this.setState(preState =&gt; (&#123;</span><br><span class="line">  books: [...preState.books, &apos;React Guide&apos;];</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure></p>
+<p>当从books中截取部分元素作为新状态时，使用数组的slice方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 方法一：将state先赋值给另外的变量，然后使用slice创建新数组</span><br><span class="line"></span><br><span class="line">var books = this.state.books; </span><br><span class="line">this.setState(&#123;</span><br><span class="line">  books: books.slice(1,3);</span><br><span class="line">&#125;)</span><br><span class="line">// 方法二：使用preState、slice创建新数组</span><br><span class="line"></span><br><span class="line">this.setState(preState =&gt; (&#123;</span><br><span class="line">  books: preState.books.slice(1,3);</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure></p>
+<p>当从books中过滤部分元素后，作为新状态时，使用数组的filter方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// 方法一：将state先赋值给另外的变量，然后使用filter创建新数组</span><br><span class="line"></span><br><span class="line">var books = this.state.books; </span><br><span class="line">this.setState(&#123;</span><br><span class="line">  books: books.filter(item =&gt; &#123;</span><br><span class="line">    return item != &apos;React&apos;; </span><br><span class="line">  &#125;);</span><br><span class="line">&#125;)</span><br><span class="line">// 方法二：使用preState、filter创建新数组</span><br><span class="line"></span><br><span class="line">this.setState(preState =&gt; (&#123;</span><br><span class="line">  books: preState.books.filter(item =&gt; &#123;</span><br><span class="line">    return item != &apos;React&apos;; </span><br><span class="line">  &#125;);</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure></p>
+<p>注意不要使用push、pop、shift、unshift、splice等方法修改数组类型的状态，因为这些方法都是在原数组的基础上修改，而concat、slice、filter会返回一个新的数组。</p>
+<p>状态的类型是普通对象（不包含字符串、数组）<br>3.1 使用ES6 的Object.assgin方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 方法一：将state先赋值给另外的变量，然后使用Object.assign创建新对象</span><br><span class="line"></span><br><span class="line">var owner = this.state.owner;</span><br><span class="line">this.setState(&#123;</span><br><span class="line">  owner: Object.assign(&#123;&#125;, owner, &#123;name: &apos;Jason&apos;&#125;);</span><br><span class="line">&#125;)</span><br><span class="line">// 方法二：使用preState、Object.assign创建新对象</span><br><span class="line"></span><br><span class="line">this.setState(preState =&gt; (&#123;</span><br><span class="line">  owner: Object.assign(&#123;&#125;, preState.owner, &#123;name: &apos;Jason&apos;&#125;);</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure></p>
+<p>3.2 使用对象扩展语法（object spread properties）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 方法一：将state先赋值给另外的变量，然后使用对象扩展语法创建新对象</span><br><span class="line"></span><br><span class="line">var owner = this.state.owner;</span><br><span class="line">this.setState(&#123;</span><br><span class="line">  owner: &#123;...owner, name: &apos;Jason&apos;&#125;;</span><br><span class="line">&#125;)</span><br><span class="line">// 方法二：使用preState、对象扩展语法创建新对象</span><br><span class="line"></span><br><span class="line">this.setState(preState =&gt; (&#123;</span><br><span class="line">  owner: &#123;...preState.owner, name: &apos;Jason&apos;&#125;;</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure></p>
+<p>总结一下，创建新的状态对象的关键是，避免使用会直接修改原对象的方法，而是使用可以返回一个新对象的方法。当然，也可以使用一些Immutable的JS库，如Immutable.js，实现类似的效果。</p>
+<h4 id="那么，为什么React推荐组件的状态是不可变对象呢？"><a href="#那么，为什么React推荐组件的状态是不可变对象呢？" class="headerlink" title="那么，为什么React推荐组件的状态是不可变对象呢？"></a>那么，为什么React推荐组件的状态是不可变对象呢？</h4><p>一方面是因为不可变对象方便管理和调试；</p>
+<p>另一方面是出于性能考虑，当对象组件状态都是不可变对象时，我们在组件的shouldComponentUpdate方法中，仅需要比较状态的引用就可以判断状态是否真的改变，从而避免不必要的render调用。当我们使用React 提供的PureComponent时，更是要保证组件状态是不可变对象，否则在组件的shouldComponentUpdate方法中，状态比较就可能出现错误，因为PureComponent执行的是浅比较（比较对象的引用）。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/语义化和Doctype/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xdd">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiner">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/01/语义化和Doctype/" itemprop="url">语义化和doctype</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T17:04:31+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="语义化"><a href="#语义化" class="headerlink" title="语义化"></a>语义化</h3><pre><code>去除或丢失样式的时候能让页面呈现清晰结构
+有利于SEO：有利于爬虫抓取更多的有效信息，爬虫依赖于标签来确定上下文和各个关键字的权重
+方便其他设备解析（屏幕阅读器，盲人阅读器，移动设备），有利于无障碍
+方便团队开发维护代码，语义化更加具有可读性，遵循W3C标准，减少差异化
+</code></pre><h3 id="Doctype"><a href="#Doctype" class="headerlink" title="Doctype"></a>Doctype</h3><pre><code>声明位于稳当手部，告知浏览器以哪种模式解析文档
+严格模式的排版以该浏览器支持的最高标准运行
+在混杂模式中，页面以宽松的向后兼容的方式显示，模拟老式浏览器以防止站点无法工作
+Doctype不存在或者不正确会导致文档以混杂模式呈现
+HTML5为何只写&lt;!DOCTYPE HTML&gt;
+html5不基于SGML，因此不需要对DTD进行引用，但是需要doctype来规范浏览器的行为（让浏览器按照他们应该的方式来运行）；
+而html4.01基于SGML，所以需要对DTD进行引用，才能告知浏览器文档所使用的文档类型
+文档类型定义是一套为了进行程序间的数据交换而建立的关于标记符的语法规则
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/float和清除浮动/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xdd">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiner">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/01/float和清除浮动/" itemprop="url">css预处理器</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T17:04:31+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="浮动的定义："><a href="#浮动的定义：" class="headerlink" title="浮动的定义："></a>浮动的定义：</h4><p>浮动元素脱离文档流，按照指定方向移动，遇到父级边界或者相邻的浮动元素停了下来</p>
+<h4 id="浮动的特征："><a href="#浮动的特征：" class="headerlink" title="浮动的特征："></a>浮动的特征：</h4><p>浮动元素会从普通文档流中脱离，但浮动元素影响的不仅是自己，它会影响周围的元素对齐进行环绕。<br>不管一个元素是行内元素还是块级元素，如果被设置了浮动，那浮动元素会生成一个块级框，可以设置它的width和height，因此float常常用于制作横向配列的菜单，可以设置大小并且横向排列。</p>
+<p>浮动会导致父元素高度塌陷</p>
+<p><strong>高度塌陷：</strong>浮动元素父元素高度自适应（父元素不写高度时，子元素写了浮动后，父元素会发生高度塌陷）<br>浮动元素的展示在不同情况下会有不同的规则：</p>
+<ol>
+<li>浮动元素在浮动的时候，其margin不会超过包含块的padding。PS：如果想要元素超出，可以设置margin属性</li>
+<li>如果两个元素一个向左浮动，一个向右浮动，左浮动元素的marginRight不会和右浮动元素的marginLeft相邻。</li>
+<li>如果有多个浮动元素，浮动元素会按顺序排下来而不会发生重叠的现象。</li>
+<li>如果有多个浮动元素，后面的元素高度不会超过前面的元素，并且不会超过包含块。</li>
+<li>如果有非浮动元素和浮动元素同时存在，并且非浮动元素在前，则浮动元素不会高于非浮动元素</li>
+<li>浮动元素会尽可能地向顶端对齐、向左或向右对齐<h4 id="重叠问题"><a href="#重叠问题" class="headerlink" title="重叠问题"></a>重叠问题</h4>行内元素与浮动元素发生重叠，其边框，背景和内容都会显示在浮动元素之上<br>块级元素与浮动元素发生重叠时，边框和背景会显示在浮动元素之下，内容会显示在浮动元素之上</li>
+<li>对内联元素float之后的改变：<br>当display不等于none引起对象浮动时，对象将被视作块对象(block-level)，即display属性等于block。<strong>也就是说</strong>，浮动对象的display特性将被忽略。float在绝对定位和display为none时不会被应用。对应的脚本特性为stylefloat（ie）或cssfloat（非ie）。(注意这里为stylefloat或cssfloat，而不是float)<br>因为只有块元素才会有物理属性，在css世界里边，有三种形态的东西，<br><strong>块元素</strong>。 特性：有物理属性，width,height写值起作用，而且要占据一行。<br><strong>内联元素</strong>。 特性：没有物理属性。但是margin，padding值有用。不占据一行，后边可以有兄弟元素。<br><strong>即是块又是内联</strong>，根据兄弟元素决定。</li>
+</ol>
+<p>为什么是float之后才会有物理属性，这就是块与内联元素相互转化的问题。</p>
+<pre><code>块元素 -&gt; 内联元素：　`display:inline`;
+
+内联元素 -&gt; 块元素：　`display:block`;
+</code></pre><p>float就是隐性的把内联元素转化为块元素，这是对内部的特性就是有物理特性，但是他不占据一行。对外是内联元素的属性。他有个坏处就是会影响兄弟元素。相当于：display:inline-block;</p>
+<ol start="2">
+<li>对块元素float之后的改变<br>其实和内联元素一样，但相当于变成了：inline-block元素，最明显的是宽度自适应发生了变化<br>当div的默认宽度是width:auto;意思是自动调整宽度。在不带float的情况下,div的宽度会自动调整至最大化,而在带float的情况下则正好相反,它会自动调整至最小化。</li>
+</ol>
+<h4 id="一个重要的div-css的布局方法："><a href="#一个重要的div-css的布局方法：" class="headerlink" title="一个重要的div+css的布局方法："></a>一个重要的div+css的布局方法：</h4><p>左右分开的网页,左侧的宽度固定,右侧的宽度随分辨率自动适应,并占满右侧的空间.</p>
+<p>方法就是左侧的div用float:left.而右侧的div不带float.这样就可以实现这个效果了.</p>
+<h4 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h4><p>浮动会使当前标签产生向上浮的效果，同时会影响到前后标签、父级标签的位置及 width height 属性。而且同样的代码，在各种浏览器中显示效果也有可能不相同，这样让清除浮动更难了。解决浮动引起的问题有多种方法，但有些方法在浏览器兼容性方面还有问题。</p>
+<pre><code>父级div定义 height
+
+原理：父级div手动定义height，就解决了父级div无法自动获取到高度的问题
+
+优点：简单、代码少、容易掌握
+
+缺点：只适合高度固定的布局，要给出精确的高度，如果高度和父级div不一样时，会产生问题
+
+建议：不建议使用，只建议高度固定的布局时使用
+
+
+
+结尾处加空div标签 clear:both
+
+原理：添加一个空div，利用css提高的clear:both清除浮动，让父级div能自动获取到高度
+
+优点：简单、代码少、浏览器支持好、不容易出现怪问题
+
+缺点：不少初学者不理解原理；如果页面浮动布局多，就要增加很多空div，让人感觉很不好
+
+建议：不推荐使用，但此方法是以前主要使用的一种清除浮动方法
+
+父级div定义 伪类:after 和 zoom
+
+zoom
+
+原理：IE8以上和非IE浏览器才支持:after，原理和方法2有点类似，zoom(IE转有属性)可解决ie6,ie7浮动问题
+
+优点：浏览器支持好、不容易出现怪问题（目前：大型网站都有使用，如：腾迅，网易，新浪等等）
+
+缺点：代码多、不少初学者不理解原理，要两句代码结合使用才能让主流浏览器都支持。
+
+建议：推荐使用，建议定义公共类，以减少CSS代码。
+
+父级div定义 overflow：hidden
+
+原理：必须定义width或zoom:1，同时不能定义height，使用overflow:hidden时，浏览器会自动检查浮动区域的高度
+
+优点：简单、代码少、浏览器支持好
+
+缺点：不能和position配合使用，因为超出的尺寸的会被隐藏。
+
+建议：只推荐没有使用position或对overflow:hidden理解比较深的朋友使用。
+
+父级div定义 overflow:auto
+
+原理：必须定义width或zoom:1，同时不能定义height，使用overflow:auto时，浏览器会自动检查浮动区域的高度
+
+优点：简单、代码少、浏览器支持好
+
+缺点：内部宽高超过父级div时，会出现滚动条。
+
+建议：不推荐使用，如果你需要出现滚动条或者确保你的代码不会出现滚动条就使用吧。
+
+父级div 也一起浮动
+
+原理：所有代码一起浮动，就变成了一个整体
+
+优点：没有优点
+
+缺点：会产生新的浮动问题
+
+推荐：不推荐使用，只做了解
+
+父级div定义 display:table
+
+原理：将div属性变成表格
+
+优点：没有优点
+
+缺点：会产生新的未知问题
+
+建议：不推荐使用，只做了解
+
+结尾处加 br 标签 clear：both
+
+原理：父级div定义zoom:1来解决IE浮动问题，结尾处加 br标签 clear:both
+
+建议：不推荐使用，只作了解。
+</code></pre><h3 id="外边距塌陷"><a href="#外边距塌陷" class="headerlink" title="外边距塌陷"></a>外边距塌陷</h3><p>原理：</p>
+<p>在css中，相邻的两个或者多个盒子（可以是兄弟或者祖先关系）的外边距会组合成为一个共同的外边距。这个过程成为外边距塌陷，产生的边距成为塌陷边距。外边距的高度等于两个发生叠加的外边距的高度中的较大者，根据规范，一个盒子如果没有上补白（padding-top）和上边框（border-top），那么这个盒子的上边距会和其内部文档流中的第一个子元素的上边距重叠。</p>
+<p>注意：</p>
+<p>只有普通文档流中块框的垂直外边距才会发生外边距合并。行内框，浮动框，或绝对定位之间的外边距不会合并。</p>
+<h4 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h4><p>在父级元素加入overflow：hidden<br>在父级元素用padding-top<br>在父级元素中加position:absolute</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/BFC和IFC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xdd">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiner">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/01/BFC和IFC/" itemprop="url">BFC和IFC</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T17:04:31+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="BFC-块级格式化上下文"><a href="#BFC-块级格式化上下文" class="headerlink" title="BFC 块级格式化上下文"></a>BFC 块级格式化上下文</h3><h4 id="BFC布局规则："><a href="#BFC布局规则：" class="headerlink" title="BFC布局规则："></a>BFC布局规则：</h4><p>1、内部的Box会在垂直方向，一个接一个地放置；<br>2、Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠；<br>3、每个元素的margin box的左边，与包含块border box的左边相接触；<br>4、BFC的区域不会与float box重叠；<br>5、BFC就是页面上的一个隔离的独立容器，容器里的子元素不会影响到外面的元素。反之亦如此。<br>6、计算BFC的高度时，浮动元素也参与计算。<br>1、独立渲染区域；<br>2、与这个区域外部毫不相关；<br>3、需要触发（需要写一行声明，来告诉外界声明独立）<br>  建议使用overflow：hidden来声明<br>  在包住的div里触发，要触发哪一个就在哪一个地方写上overfolw:hidden</p>
+<h4 id="哪些元素会生产BFC？"><a href="#哪些元素会生产BFC？" class="headerlink" title="哪些元素会生产BFC？"></a>哪些元素会生产BFC？</h4><p>1、根元素<br>2、float属性不为none<br>3、position为absolute或fixed<br>4、disply为inline-block，table-cell,table-caption,flex,inline-flex<br>5、overflow不为visible</p>
+<h3 id="IFC-行内格式化上下文"><a href="#IFC-行内格式化上下文" class="headerlink" title="IFC 行内格式化上下文"></a>IFC 行内格式化上下文</h3><p>解决垂直居中Vitical-align:middle，要配合line-height：数据，使用</p>
+<p>Box一个接一个的水平排列，起点是包含块的顶部。水平方向上的margin、border和Padding在框之间得到保留。</p>
+<p>框在垂直方向上可以以不同的方式对齐：它们的顶部或底部对齐，或根据其中的文字的基线对齐。包含那些框的长方形区域，会形成一行，叫做行框。</p>
+<p>一个行框的宽度由包含它的元素的宽度和包含它的元素里面有没有float元素来决定，高度的确定由行高度计算规则决定。</p>
+<p>行高的高度足以包含它的内部容器，也可能比它包含的容器们都高（比如在基线对齐的时候），当它包含的内部容器的高度小于行框的高度时，内部容器的垂直位置由vertical属性来确定，这个性质可以用来实现垂直居中。</p>
+<p>当几个行内框在水平方向无法放入一个行内框时，它们可以分配在两个或多个垂直堆叠的行框中。因此，一个段落就是行框在垂直方向上的堆叠。行框在堆叠时没有垂直方向上的分割且永不重叠。</p>
+<p>一个行内框超出包含它的行框的宽度，它将会被分割为几个框。如果一个行框不能被分割，行内框会益处行框。</p>
+<p>如果一个行内框被分割，margin、padding、border在所有分割处没有视觉效果。</p>
+<p>创建一个IFC的环境，让行框的高度是包含块的高度的100%,让行框内部的元素使用Vertical-align：middle,</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/css预处理器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xdd">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiner">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/01/css预处理器/" itemprop="url">css预处理器</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T17:04:31+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在这篇文章中,我们将介绍三种不同CSS预处器的蛮量、功能以及他们的好处—— sass 、 less 和 stylus。</p>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>CSS预处理器是一种语言，用来编写一些CSS的特性,而且无需考虑浏览器兼容性的问题。他们通过编译的代码编写成一般的CSS。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>这三种CSS预处器的语法和CSS都差不多。</p>
+<h3 id="sass和less"><a href="#sass和less" class="headerlink" title="sass和less"></a>sass和less</h3><p>sass和less都使用的是标准的CSS语法。这使用CSS预处器非常容易的将预处器代码转换成CSS代码。默认sass使用.scss扩展名，而less使用.less扩展名。sass和less基本设置可以像下面所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/* style.scss 或者 style.less */</span><br><span class="line"></span><br><span class="line">h1 &#123;</span><br><span class="line">  color: #0982C1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>重要的一点是，sass也同时支持老的语法,就是不使用花括号和分号，而且文件使用.sass扩展名，他的语法类似于：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">/* style.sass */</span><br><span class="line"></span><br><span class="line">h1</span><br><span class="line">  color: #0982c1</span><br><span class="line">stylus</span><br><span class="line">stylus的语法花样多一些，它使用.styl的扩展名，stylus也接受标准的CSS语法，但是他也接受不带花括号和分号的语法，如下所示：</span><br><span class="line"></span><br><span class="line">/* style.styl */</span><br><span class="line">h1 &#123;</span><br><span class="line">  color: #0982C1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 省略花括号 */</span><br><span class="line">h1</span><br><span class="line">  color: #0982C1;</span><br><span class="line"></span><br><span class="line">/* 省略花括号和分号 */</span><br><span class="line">h1</span><br><span class="line">  color #0982C1</span><br></pre></td></tr></table></figure></p>
+<p>你也可以在同一个样式单中使用不同的变量，例如下面的写法也不会报错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">h1 &#123;</span><br><span class="line">  color #0982c1</span><br><span class="line">&#125;</span><br><span class="line">h2</span><br><span class="line">  font-size: 1.2em</span><br></pre></td></tr></table></figure></p>
+<h3 id="变量-Variables"><a href="#变量-Variables" class="headerlink" title="变量(Variables)"></a>变量(Variables)</h3><p>你可以在CSS预处理器中声明变量,并在整个样式表中使用。CSS预处理器支持任何变量（例如：颜色、数值（不管是否包括单位）、文本）,并且可以在任意地方引用变量。</p>
+<p>sass</p>
+<p>sass声明变量必须是$开头，后面紧跟变量名和变量值，而且变量名和变量值需要使用冒号:隔开，就像CSS属性一样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$mainColor: #0982c1;</span><br><span class="line">$siteWidth: 1024px;</span><br><span class="line">$borderStyle: dotted;</span><br><span class="line">body &#123;</span><br><span class="line">  color: $mainColor;</span><br><span class="line">  border: 1px $borderStyle $mainColor;</span><br><span class="line">  max-width: $siteWidth;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>less</p>
+<p>less声明变量和sass声明变量一样，唯一区别是变量名前面使用是的@字符：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@mainColor: #0982c1;</span><br><span class="line">@siteWidth: 1024px;</span><br><span class="line">@borderStyle: dotted;</span><br><span class="line">body &#123;</span><br><span class="line">  color: @mainColor;</span><br><span class="line">  border: 1px @borderStyle @mainColor;</span><br><span class="line">  max-width: @siteWidth;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>stylus</p>
+<p>stylus声明变量没有任何限定，你可以使用$符号开始，结尾的分号;可有可无，但变量名和变量值之间的等号=是需要的。有一点需要注意的是，如果我们使用@符号开头来声明变量，stylus会进行编译，但其对应的值并不会赋值给变量。换句话说，在stylus中不要使用@符号开头声明变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mainColor = #0982c1</span><br><span class="line">siteWidth = 1024px</span><br><span class="line">$borderStyle = dotted</span><br><span class="line">body</span><br><span class="line">  color mainColor</span><br><span class="line">  border 1px $borderStyle mainColor</span><br><span class="line">  max-width siteWidth</span><br></pre></td></tr></table></figure></p>
+<p>转译出来的CSS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">  color: #0982c1;</span><br><span class="line">  border: 1px dotted #0982c1;</span><br><span class="line">  max-width: 1024px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h3><p>如果我们在CSS中多个元素有一个相同的父元素，那么写样式会变得很乏味，我们需要一遍一遍的在每个元素前写这个父元素。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">section &#123;</span><br><span class="line">  margin: 10px;</span><br><span class="line">&#125;</span><br><span class="line">section nav &#123;</span><br><span class="line">  height: 25px;</span><br><span class="line">&#125;</span><br><span class="line">section nav a &#123;</span><br><span class="line">  color: #0982C1;</span><br><span class="line">&#125;</span><br><span class="line">section nav a:hover &#123;</span><br><span class="line">  text-decoration: underline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>相反，使用CSS预处理器，我们可以在父元素的花括号{}写这些元素，同时可以使用&amp;符号来引用父选择器。</p>
+<p>sass、less和stylus<br>对于嵌套选择器来说，三个CSS预处器都具有相同的语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">section &#123;</span><br><span class="line">  margin: 10px;</span><br><span class="line">  nav &#123;</span><br><span class="line">    height: 25px;</span><br><span class="line">    a &#123;</span><br><span class="line">      color: #0982C1;</span><br><span class="line">      &amp;:hover &#123;</span><br><span class="line">        text-decoration: underline;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="混合（Mixins）"><a href="#混合（Mixins）" class="headerlink" title="混合（Mixins）"></a>混合（Mixins）</h3><p>Mixins是预处器中的函数。平时你在写样式时肯定有碰到过，某段CSS样式经常要用到多个元素中，这样你就需要重复的写多次。在CSS预处器中，你可以为这些公用的CSS样式定义一个Mixin，然后在你CSS需要使用这些样式的地方，直接调用你定义好的Mixin。这是一个非常有用的特性。Mixins是一个公认的选择器，还可以在Mixins中定义变量或者是默认参数。</p>
+<p>sass<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/* Sass定义了一个名叫error的mixin，这个error设置了一个参数“$borderWidth”,在没特别定义外，这个参数的值是默认值2px*/</span><br><span class="line">@mixin error($borderWidth: 2px) &#123;</span><br><span class="line">  border: $borderWidth solid #F00;</span><br><span class="line">  color: #F00;</span><br><span class="line">&#125;</span><br><span class="line">.generic-error &#123;</span><br><span class="line">  padding: 20px;</span><br><span class="line">  margin: 4px;</span><br><span class="line">  @include error(); /* 调用error mixins */</span><br><span class="line">&#125;</span><br><span class="line">.login-error &#123;</span><br><span class="line">  left: 12px;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 20px;</span><br><span class="line">  @include error(5px); /* 调用error mixins，并将参数$borderWidth的值指定为5px*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>less<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/* LESS 定义了一个名叫error的mixin，这个error设置了一个参数“$borderWidth”,在没特别定义外，这个参数的值是默认值2px */</span><br><span class="line">.error(@borderWidth: 2px) &#123;</span><br><span class="line">  border: @borderWidth solid #F00;</span><br><span class="line">  color: #F00;</span><br><span class="line">&#125;</span><br><span class="line">.generic-error &#123;</span><br><span class="line">  padding: 20px;</span><br><span class="line">  margin: 4px;</span><br><span class="line">  .error(); /* 调用error mixins */</span><br><span class="line">&#125;</span><br><span class="line">.login-error &#123;</span><br><span class="line">  left: 12px;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 20px;</span><br><span class="line">  .error(5px); /* 调用error mixins，并将参数$borderWidth的值指定为5px */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>stylus<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/* Stylus 定义了一个名叫error的mixin，这个error设置了一个参数“$borderWidth”,在没特别定义外，这个参数的值是默认值2px */</span><br><span class="line">error(borderWidth= 2px) &#123;</span><br><span class="line">  border: borderWidth solid #F00;</span><br><span class="line">  color: #F00;</span><br><span class="line">&#125;</span><br><span class="line">.generic-error &#123;</span><br><span class="line">  padding: 20px;</span><br><span class="line">  margin: 4px;</span><br><span class="line">  error(); /* 调用error mixins */</span><br><span class="line">&#125;</span><br><span class="line">.login-error &#123;</span><br><span class="line">  left: 12px;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 20px;</span><br><span class="line">  error(5px); /* 调用error mixins，并将参数$borderWidth的值指定为5px */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>转译出来的CSS<br>上面三种CSS预处器转译出来的CSS代码都是一样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.generic-error &#123;</span><br><span class="line">  padding: 20px;</span><br><span class="line">  margin: 4px;</span><br><span class="line">  border: 2px solid #f00;</span><br><span class="line">  color: #f00;</span><br><span class="line">&#125;</span><br><span class="line">.login-error &#123;</span><br><span class="line">  left: 12px;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 20px;</span><br><span class="line">  border: 5px solid #f00;</span><br><span class="line">  color: #f00;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Mixins在三种预处器中都有所不同：</p>
+<p>sass：在sass定义Mixins和less、stylus有所不同，在声明Mixins时需要使用“@mixin”,然后后面紧跟Mixins的名，他也可以定义参数，同时可以给这个参数设置一个默认值，但参数名是使用“$”符号开始，而且和参数值之间需要使用冒号（：）分开。另外在sass中调用Mixins需要使用“@include”，然后在其后紧跟你要调用的Mixins名。</p>
+<p>less：less中声明Mixins和CSS定义样式非常类似，可以将Mixins看成是一个选择器，当然Mixins也可以设置参数，并给参数设置默认值。不过设置参数的变量名是使用“@”开始，同样参数和默认参数值之间需要使用冒号（：）分开。</p>
+<p>stylus：stylus和前两者也略有不同，他可以不使用任何符号，就是直接定义Mixins名，然后在定义参数和默认值之间用等号（=）来连接。<br>上面只是Mixins在三个CSS预处器的简单区别，详细的还可以进入他们的官网了解，或者对比一下上面的三段代码。</p>
+<h3 id="继承（Inheritance）"><a href="#继承（Inheritance）" class="headerlink" title="继承（Inheritance）"></a>继承（Inheritance）</h3><p>在多个元素应用相同的样式时，我们在CSS通常都是这样写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">p,</span><br><span class="line">ul,</span><br><span class="line">ol &#123;</span><br><span class="line">  /* 样式写在这 */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样做非常的好，但往往我们需要给单独元素添加另外的样式，这个时候我们就需要把其中选择器单独出来写样式，这样一回来我们维护样式就相当的麻烦。为了应对这个问题，CSS预处理器可以从一个选择继承另一个选择器下的所有样式。</p>
+<p>sass和stylus<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.block &#123;</span><br><span class="line">  margin: 10px 5px;</span><br><span class="line">  padding: 2px;</span><br><span class="line">&#125;</span><br><span class="line">p &#123;</span><br><span class="line">  @extend .block; /* 继承.block所有样式 */</span><br><span class="line">  border: 1px solid #EEE;</span><br><span class="line">&#125;</span><br><span class="line">ul, ol &#123;</span><br><span class="line">  @extend .block; /* 继承.block所有样式 */</span><br><span class="line">  color: #333;</span><br><span class="line">  text-transform: uppercase;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>转译出来的CSS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.block, p, ul, ol &#123;</span><br><span class="line">  margin: 10px 5px;</span><br><span class="line">  padding: 2px;</span><br><span class="line">&#125;</span><br><span class="line">p &#123;</span><br><span class="line">  border: 1px solid #EEE;</span><br><span class="line">&#125;</span><br><span class="line">ul, ol &#123;</span><br><span class="line">  color: #333;</span><br><span class="line">  text-transform: uppercase;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>less</p>
+<p>less支持的继承和sass与stylus不一样,他不是在选择器上继承，而是将Mixins中的样式嵌套到每个选择器里面。这种方法的缺点就是在每个选择器中会有重复的样式产生。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> .block &#123;</span><br><span class="line">  margin: 10px 5px;</span><br><span class="line">  padding: 2px;</span><br><span class="line">&#125;</span><br><span class="line">p &#123;</span><br><span class="line">  .block; /* 继承 &apos;.block&apos;中的样式 */</span><br><span class="line">  border: 1px solid #EEE;</span><br><span class="line">&#125;</span><br><span class="line">ul, ol &#123;</span><br><span class="line">  .block; /*继承&apos;.block&apos; 中的样式*/</span><br><span class="line">  color: #333;</span><br><span class="line">  text-transform: uppercase;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>转译出来的CSS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">.block &#123;</span><br><span class="line">  margin: 10px 5px;</span><br><span class="line">  padding: 2px;</span><br><span class="line">&#125;</span><br><span class="line">p &#123;</span><br><span class="line">  margin: 10px 5px;</span><br><span class="line">  padding: 2px;</span><br><span class="line">  /* 继承 &apos;.block&apos;中的样式 */</span><br><span class="line">  border: 1px solid #EEE;</span><br><span class="line">&#125;</span><br><span class="line">ul,</span><br><span class="line">ol &#123;</span><br><span class="line">  margin: 10px 5px;</span><br><span class="line">  padding: 2px;</span><br><span class="line">  /*继承&apos;.block&apos; 中的样式*/</span><br><span class="line">  color: #333;</span><br><span class="line">  text-transform: uppercase;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h3><p>在CSS中，并不喜欢用@import来导入样式，因为这样的做法会增加HTTP的请求。但是在CSS预处理器中的导入@import规则和CSS的有所不同，它只是在语义上导入不同的文件，但最终结果是生成一个CSS文件。如果你是通过@import ‘file.css’导入file.css样式文件，那效果跟普通CSS导入样式文件一样。注意：导入文件中定义了变量、混合等信息也将会被引入到主样式文件中，因此需要避免他们的相互冲突。</p>
+<p>sass、less和stylus<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/* file.&#123;type&#125; */</span><br><span class="line">body &#123;</span><br><span class="line">  background: #EEE;</span><br><span class="line">&#125;</span><br><span class="line">@import &quot;reset.css&quot;;</span><br><span class="line">@import &quot;file.&#123;type&#125;&quot;;</span><br><span class="line">p &#123;</span><br><span class="line">  background: #0982C1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>转译出来的CSS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@import &quot;reset.css&quot;;</span><br><span class="line">body &#123;</span><br><span class="line">  background: #EEE;</span><br><span class="line">&#125;</span><br><span class="line">p &#123;</span><br><span class="line">  background: #0982C1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="颜色函数"><a href="#颜色函数" class="headerlink" title="颜色函数"></a>颜色函数</h3><p>颜色函数是CSS预处里器中内置的颜色函数功能，这些功能可以对颜色值进行处理，例如颜色的变亮、变暗、渐变颜色等处理十分的方便。</p>
+<p>sass<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lighten($color, 10%); /* 返回的颜色在$color基础上变亮10% */</span><br><span class="line">darken($color, 10%);  /* 返回的颜色在$color基础上变暗10% */</span><br><span class="line">saturate($color, 10%);   /* 返回的颜色在$color基础上饱和度增加10% */</span><br><span class="line">desaturate($color, 10%); /* 返回的颜色在$color基础上饱和度减少10% */</span><br><span class="line">grayscale($color);  /* 返回$color的灰度色*/</span><br><span class="line">complement($color); /* returns complement color of $color */</span><br><span class="line">invert($color);     /* 返回$color的反相色 */</span><br><span class="line">mix($color1, $color2, 50%); /* mix $color1 with $color2 with a weight of 50% */</span><br></pre></td></tr></table></figure></p>
+<p>这只是sass中颜色函数的一个简单列表,更多详细的介绍你可以阅读 sass文档 。</p>
+<p>颜色函数何以运用到任何一个元素上都是一个有颜色的CSS属性，下面是一个简单的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$color: #0982C1;</span><br><span class="line">h1 &#123;</span><br><span class="line">  background: $color;</span><br><span class="line">  border: 3px solid darken($color, 50%);/*边框颜色在$color的基础上变暗50%*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>less<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">lighten(@color, 10%); /* 返回的颜色在@color基础上变亮10% */</span><br><span class="line">darken(@color, 10%);  /* 返回的颜色在@color基础上变暗10%*/</span><br><span class="line">saturate(@color, 10%);   /* 返回的颜色在@color基础上饱和度增加10% */</span><br><span class="line">desaturate(@color, 10%); /* 返回的颜色在@color基础上饱和度降低10%*/</span><br><span class="line">spin(@color, 10);  /* 返回的颜色在@color基础上色调增加10 */</span><br><span class="line">spin(@color, -10); /* 返回的颜色在@color基础上色调减少10 */</span><br><span class="line">mix(@color1, @color2); /* 返回的颜色是@color1和@color2两者的混合色 */</span><br></pre></td></tr></table></figure></p>
+<p>less的完整颜色函数功能，请阅读 less 文档。</p>
+<p>下面是less中如何使用一个颜色函数的简单例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@color: #0982C1;</span><br><span class="line">h1 &#123;</span><br><span class="line">  background: @color;</span><br><span class="line">  border: 3px solid darken(@color, 50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>stylus<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lighten(color, 10%); /* 返回的颜色在&apos;color&apos;基础上变亮10% */</span><br><span class="line">darken(color, 10%);  /* 返回的颜色在&apos;color&apos;基础上变暗10% */</span><br><span class="line">saturate(color, 10%);   /* 返回的颜色在&apos;color&apos;基础上饱和度增加10% */</span><br><span class="line">desaturate(color, 10%); /* 返回的颜色在&apos;color&apos;基础上饱和度降低10% */</span><br></pre></td></tr></table></figure></p>
+<p>有关于stylus的颜色函数介绍，请阅读 stylus文档。</p>
+<p>下面是stylus颜色函数的一个简单实例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">color = #0982C1</span><br><span class="line">h1</span><br><span class="line">  background color</span><br><span class="line">  border 3px solid darken(color, 50%)</span><br></pre></td></tr></table></figure></p>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><p>我们都向往在CSS做一些运算，但是无法实现。但是在CSS预处器中对样式做一些运算是一点问题都没有了，例如：</p>
+<p>sass、less和stylus<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">  margin: (14px/2);</span><br><span class="line">  top: 50px + 100px;</span><br><span class="line">  right: 100px - 50px;</span><br><span class="line">  left: 10 * 10;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注释<br>CSS预处理器支持/ /这样的多行注释方式（类似于CSS的注释方式），也支持//单行注释方式（类似于Javascript的注释方式）。</p>
+<p>需要注意，如果你要压缩文件，你需要把所有注释都删除。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>综上所述，我们对Sass、LESS和Stylus做一个简单的对比总结：</p>
+<p>三者都是开源项目；<br>Sass诞生是最早也是最成熟的CSS预处理器，有Ruby社区和Compass支持；Stylus早期服务器Node JS项目，在该社区得到一定支持者；LESS出现于2009年，支持者远超于Ruby和Node JS社区；<br>Sass和LESS语法较为严谨、严密，而Stylus语法相对散漫，其中LESS学习起来更快一些，因为他更像CSS的标准；<br>Sass和LESS相互影响较大，其中Sass受LESS影响，已经进化到了全面兼容CSS的SCSS；<br>Sass和LESS都有第三方工具提供转译，特别是Sass和Compass是绝配；<br>Sass、LESS和Stylus都具有变量、作用域、混合、嵌套、继承、运算符、颜色函数、导入和注释等基本特性，而且以“变量”、“混合”、“嵌套”、“继承”和“颜色函数”称为五大基本特性，各自特性实现功能基本相似，只是使用规则上有所不同；<br>Sass和Stylus具有类似于语言处理的能力，比如说条件语句、循环语句等，而LESS需要通过When等关键词模拟这些功能，在这一方面略逊一层；</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1711,7 +1848,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

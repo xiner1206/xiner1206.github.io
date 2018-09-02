@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="什么是AjaxAjax是用JavaScript执行异步网络请求，请求是异步执行的，也就是说，要通过回调函数获得响应。在现代浏览器上写AJAX主要依靠XMLHttpRequest对象：12345678910111213141516171819202122232425262728293031323334&amp;apos;use strict&amp;apos;;function success(text) &amp;#12">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ajax">
+<meta property="og:url" content="http://yoursite.com/2018/09/01/AJAX/index.html">
+<meta property="og:site_name" content="xiner">
+<meta property="og:description" content="什么是AjaxAjax是用JavaScript执行异步网络请求，请求是异步执行的，也就是说，要通过回调函数获得响应。在现代浏览器上写AJAX主要依靠XMLHttpRequest对象：12345678910111213141516171819202122232425262728293031323334&amp;apos;use strict&amp;apos;;function success(text) &amp;#12">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-02T09:47:59.268Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ajax">
+<meta name="twitter:description" content="什么是AjaxAjax是用JavaScript执行异步网络请求，请求是异步执行的，也就是说，要通过回调函数获得响应。在现代浏览器上写AJAX主要依靠XMLHttpRequest对象：12345678910111213141516171819202122232425262728293031323334&amp;apos;use strict&amp;apos;;function success(text) &amp;#12">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/01/AJAX/"/>
+
+
+
+
+
+  <title>Ajax | xiner</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">xiner</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/AJAX/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xdd">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiner">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Ajax</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T17:04:31+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="什么是Ajax"><a href="#什么是Ajax" class="headerlink" title="什么是Ajax"></a>什么是Ajax</h3><p>Ajax是用JavaScript执行异步网络请求，请求是异步执行的，也就是说，要通过回调函数获得响应。在现代浏览器上写AJAX主要依靠XMLHttpRequest对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line">function success(text) &#123;</span><br><span class="line">    var textarea = document.getElementById(&apos;test-response-text&apos;);</span><br><span class="line">    textarea.value = text;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function fail(code) &#123;</span><br><span class="line">    var textarea = document.getElementById(&apos;test-response-text&apos;);</span><br><span class="line">    textarea.value = &apos;Error code: &apos; + code;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var request = new XMLHttpRequest(); // 新建XMLHttpRequest对象</span><br><span class="line"></span><br><span class="line">request.onreadystatechange = function () &#123; // 状态发生变化时，函数被回调</span><br><span class="line">    if (request.readyState === 4) &#123; // 成功完成</span><br><span class="line">        // 判断响应结果:</span><br><span class="line">        if (request.status === 200) &#123;</span><br><span class="line">            // 成功，通过responseText拿到返回的数据</span><br><span class="line"></span><br><span class="line">            return success(request.responseText);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            // 失败，根据响应码判断失败原因:</span><br><span class="line">            return fail(request.status);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        // HTTP请求还在继续...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 发送请求:</span><br><span class="line">request.open(&apos;GET&apos;, &apos;/api/categories&apos;);</span><br><span class="line">request.send();</span><br><span class="line"></span><br><span class="line">alert(&apos;请求已发送，请等待响应...&apos;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="详细过程："><a href="#详细过程：" class="headerlink" title="详细过程："></a>详细过程：</h3><pre><code>创建XMLHttpRequest对象，也就是创建一个异步调用对象
+创建一个新的HTTP请求，并指定请求方式、URL、是否异步调用
+设置响应HTTP请求状态变化函数
+发送HTTP请求
+获取异步调用返回的函数
+使用javascript和DOM实现局部刷新
+</code></pre><h4 id="1-创建XMLHttpRequest对象"><a href="#1-创建XMLHttpRequest对象" class="headerlink" title="1.创建XMLHttpRequest对象"></a>1.创建XMLHttpRequest对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//创建XMLHttpRequest对象</span><br><span class="line">var xhr;</span><br><span class="line">if(window.XMLHttpRequest)&#123;</span><br><span class="line">    //for ie7+,firefox,Chrome,Opera,Safari</span><br><span class="line">    xhr=new XMLHttpRequest();</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    //for ie6,ie5</span><br><span class="line">    xhr=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-向服务器发送请求"><a href="#2-向服务器发送请求" class="headerlink" title="2.向服务器发送请求"></a>2.向服务器发送请求</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//向服务器发送请求</span><br><span class="line">//open()规定发送请求的类型，url，是否异步处理</span><br><span class="line">xhr.open(&quot;GET&quot;,&quot;test.txt&quot;,true);</span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure>
+<p>GET和POST,与POST相比，GET传输速度快，效率高，大部分情况下使用GET，在以下几种情况中使用POST：</p>
+<pre><code>无法使用缓存文件(更新服务器上的文件或数据)
+向服务器发送大量数据 (POST没有数据量限制)
+发送包含未知字符的用户输入时，POST比GET更稳定，可靠。
+</code></pre><h4 id="3-服务器响应"><a href="#3-服务器响应" class="headerlink" title="3.服务器响应"></a>3.服务器响应</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//如果来自服务器的响应不是XML文件，使用responseText属性</span><br><span class="line">myDiv.innerHTML=xhr.responseText;</span><br><span class="line"></span><br><span class="line">//如果来自服务器的响应是XML文件</span><br><span class="line">xmlDoc=xhr.responseXML;</span><br><span class="line">txt=&quot;&quot;;</span><br><span class="line">x=xmlDoc.getElementsByTagName(&quot;ARTIST&quot;);</span><br><span class="line">var myDiv= document.getElementById(&quot;myDiv&quot;);</span><br><span class="line">for (i=0;i&lt;x.length;i++)&#123;</span><br><span class="line">  txt=txt + x[i].childNodes[0].nodeValue + &quot;&lt;br /&gt;&quot;;</span><br><span class="line"> &#125;</span><br><span class="line">myDiv.innerHTML=txt;</span><br></pre></td></tr></table></figure>
+<h4 id="4-readyState"><a href="#4-readyState" class="headerlink" title="4.readyState"></a>4.readyState</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//当readyState改变时，就会触发onreadystatechange事件</span><br><span class="line">//readyState属性存有XMLHttpRequest对象的状态信息</span><br><span class="line">//onreadystatechange事件会触发5次，对应readyStates的5个状态(0~4)</span><br><span class="line">xhr.onreadystatechange==function()&#123;</span><br><span class="line">    if(xhr.readyState == 4 &amp;&amp; xhr.status ==200)&#123;</span><br><span class="line">        myDiv.innerHTML=xhr.resopnseText;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//或者使用Callback函数</span><br><span class="line">function myFun()&#123;</span><br><span class="line">    loadXMLDoc(&quot;test.txt&quot;,function()&#123;</span><br><span class="line">        if(xhr.readyState==4 &amp;&amp; xhr.status ==200)&#123;</span><br><span class="line">            myDiv.innerHTML=xhr.resopnseText;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="XMLHttpRequest对象的三个重要属性："><a href="#XMLHttpRequest对象的三个重要属性：" class="headerlink" title="XMLHttpRequest对象的三个重要属性："></a>XMLHttpRequest对象的三个重要属性：</h4><p>onreadystatechange 存储函数，当readyState属性改变时就会调用该函数<br>readyState 存有XMLHttpRequest对象的状态</p>
+<pre><code>0 （未初始化）还没有调用open()方法
+
+1 （载入）已调用send()方法，正在发送请求
+
+2 （载入完成）send()方法完成，已收到全部相应内容
+
+3 （解析）正在解析相应内容
+
+4 （完成）相应内容解析完成，可以在客户端调用了
+</code></pre><p>status</p>
+<pre><code>200 ‘ok’
+
+404 未找到页面
+</code></pre><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ol>
+<li><p>Ajax 最大的优点是无刷新数据读取：能在不刷新整个页面的前提下与服务器通信维护数据。更为迅捷地响应用户交互，避免了发送没有改变的信息，减少用户等待时间，带来非常好的用户体验；</p>
+</li>
+<li><p>异步与服务器通信：AJAX使用异步方式与服务器通信，不需要打断用户的操作，具有更加迅速的响应能力。优化了Browser和Server之间的沟通，减少不必要的数据传输、时间及降低网络上数据流量；</p>
+</li>
+<li><p>前端和后端负载平衡：把一些服务器负担的工作转嫁到客户端，用客户端闲置的能力来处理，减轻服务器和带宽的负担，节约空间和宽带租用成本。这种“按需取数据”的方式，可最大程度的减少冗余请求和对服务器造成的负担，提升站点性能；</p>
+</li>
+<li><p>界面与应用分离：Ajax使WEB中的界面与应用分离（也可以说是数据与呈现分离），有利于分工合作、减少非技术人员对页面的修改造成的WEB应用程序错误、提高效率、适用于现在的发布系统。</p>
+</li>
+</ol>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ol>
+<li><p>AJAX干掉了Back和History功能：动态更新的页面，用户无法回到前一个页面状态，因为浏览器仅能记忆历史记录中的静态页面。解决方案是使用URL片断标识符（通常被称为锚点，即URL中#后面的location. hash）来保持跟踪；</p>
+</li>
+<li><p>AJAX的安全问题：Ajax技术对企业数据建立了一个直接通道。会暴露比以前更多的数据和服务器逻辑。并会隐藏客户端的安全扫描技术，允许黑客从远端服务器上建立新的攻击。还有Ajax也难以避免跨站点脚步攻击、SQL注入攻击和基于Credentials的安全漏洞等等；</p>
+</li>
+<li><p>对搜索引擎支持较弱：对搜索引擎的支持比较弱。如果使用不当，AJAX会增大网络数据的流量，从而降低整个系统的性能。</p>
+</li>
+<li><p>违背URL和资源定位的初衷：你在一个URL地址下面看到的和我在这个URL地址下看到的内容是不同的。这个和资源定位的初衷是相背离的。</p>
+</li>
+</ol>
+<h4 id="Ajax在JQ和JS中的区别"><a href="#Ajax在JQ和JS中的区别" class="headerlink" title="Ajax在JQ和JS中的区别"></a>Ajax在JQ和JS中的区别</h4><p>jquery是将原生的JS封装了的，不同浏览器对Ajax的实现可能不一样，jQuery解决了兼容问题，让我们用同一种方式调用；接口更清晰好用，比如jquery把jsonp（其实是通过script标签绕过同源策略）封装的就像一个普通的ajax请求。</p>
+<h4 id="Ajax修改获取header："><a href="#Ajax修改获取header：" class="headerlink" title="Ajax修改获取header："></a>Ajax修改获取header：</h4><p>利用xmlHttp.setRequestHeader来设置request请求头：例如：xmlHttp.setRequestHeader(‘cache-control’,’no-cache’);</p>
+<p>利用xmlHttp.getResponseHeader来获取response头信息;例如：xmlHttp.getResponseHeader(“Date”)；</p>
+<p>另外 request.setCharacterEncoding(“UTF-8”)也可以设置发送到服务端数据编码格式（一般来说发送的编码格式跟服务端解析格式必须是一致的）</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/01/React diff算法/" rel="next" title="diff">
+                <i class="fa fa-chevron-left"></i> diff
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/01/position属性/" rel="prev" title="position">
+                position <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">xdd</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Ajax"><span class="nav-number">1.</span> <span class="nav-text">什么是Ajax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#详细过程："><span class="nav-number">2.</span> <span class="nav-text">详细过程：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-创建XMLHttpRequest对象"><span class="nav-number">2.1.</span> <span class="nav-text">1.创建XMLHttpRequest对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-向服务器发送请求"><span class="nav-number">2.2.</span> <span class="nav-text">2.向服务器发送请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-服务器响应"><span class="nav-number">2.3.</span> <span class="nav-text">3.服务器响应</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-readyState"><span class="nav-number">2.4.</span> <span class="nav-text">4.readyState</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XMLHttpRequest对象的三个重要属性："><span class="nav-number">2.5.</span> <span class="nav-text">XMLHttpRequest对象的三个重要属性：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优点"><span class="nav-number">2.6.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺点"><span class="nav-number">2.7.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Ajax在JQ和JS中的区别"><span class="nav-number">2.8.</span> <span class="nav-text">Ajax在JQ和JS中的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Ajax修改获取header："><span class="nav-number">2.9.</span> <span class="nav-text">Ajax修改获取header：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xdd</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

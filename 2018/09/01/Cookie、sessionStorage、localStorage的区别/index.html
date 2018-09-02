@@ -79,14 +79,17 @@
 
 
 
+<meta name="description" content="共同点：都是保存在浏览器端，并且是同源的Cookie：cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递。而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下,存储的大小很小只有4K左右。 （key：可以在浏览器和服务器端来">
 <meta property="og:type" content="article">
-<meta property="og:title" content="postaaa">
-<meta property="og:url" content="http://yoursite.com/2018/09/01/postaaa/index.html">
+<meta property="og:title" content="浏览器存储">
+<meta property="og:url" content="http://yoursite.com/2018/09/01/Cookie、sessionStorage、localStorage的区别/index.html">
 <meta property="og:site_name" content="xiner">
+<meta property="og:description" content="共同点：都是保存在浏览器端，并且是同源的Cookie：cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递。而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下,存储的大小很小只有4K左右。 （key：可以在浏览器和服务器端来">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-01T09:04:31.080Z">
+<meta property="og:updated_time" content="2018-09-02T09:52:03.435Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="postaaa">
+<meta name="twitter:title" content="浏览器存储">
+<meta name="twitter:description" content="共同点：都是保存在浏览器端，并且是同源的Cookie：cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递。而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下,存储的大小很小只有4K左右。 （key：可以在浏览器和服务器端来">
 
 
 
@@ -116,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/01/postaaa/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/01/Cookie、sessionStorage、localStorage的区别/"/>
 
 
 
 
 
-  <title>postaaa | xiner</title>
+  <title>浏览器存储 | xiner</title>
   
 
 
@@ -259,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/postaaa/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/Cookie、sessionStorage、localStorage的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xdd">
@@ -276,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">postaaa</h1>
+          <h1 class="post-title" itemprop="name headline">浏览器存储</h1>
         
 
         <div class="post-meta">
@@ -326,7 +329,27 @@
       
 
       
-        
+        <h4 id="共同点：都是保存在浏览器端，并且是同源的"><a href="#共同点：都是保存在浏览器端，并且是同源的" class="headerlink" title="共同点：都是保存在浏览器端，并且是同源的"></a>共同点：都是保存在浏览器端，并且是同源的</h4><p><strong>Cookie</strong>：cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递。而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下,存储的大小很小只有4K左右。 （key：可以在浏览器和服务器端来回传递，存储容量小，只有大约4K左右）</p>
+<h4 id="cookie的作用："><a href="#cookie的作用：" class="headerlink" title="cookie的作用："></a>cookie的作用：</h4><ol>
+<li><p>保存用户登录状态。例如将用户id存储于一个cookie内，这样当用户下次访问该页面时就不需要重新登录了，现在很多论坛和社区都提供这样的功能。 cookie还可以设置过期时间，当超过时间期限后，cookie就会自动消失。因此，系统往往可以提示用户保持登录状态的时间：常见选项有一个月、三个 月、一年等。</p>
+</li>
+<li><p>跟踪用户行为。例如一个天气预报网站，能够根据用户选择的地区显示当地的天气情况。如果每次都需要选择所在地是烦琐的，当利用了 cookie后就会显得很人性化了，系统能够记住上一次访问的地区，当下次再打开该页面时，它就会自动显示上次用户所在地区的天气情况。因为一切都是在后 台完成，所以这样的页面就像为某个用户所定制的一样，使用起来非常方便</p>
+</li>
+<li><p>定制页面。如果网站提供了换肤或更换布局的功能，那么可以使用cookie来记录用户的选项，例如：背景色、分辨率等。当用户下次访问时，仍然可以保存上一次访问的界面风格。</p>
+</li>
+</ol>
+<p><strong>sessionStorage</strong>：仅在当前浏览器窗口关闭前有效，自然也就不可能持久保持，localStorage：始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据；cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭。（key：本身就是一个回话过程，关闭浏览器后消失，session为一个回话，当页面不同即使是同一页面打开两次，也被视为同一次回话）</p>
+<p><strong>localStorage</strong>：localStorage 在所有同源窗口中都是共享的；cookie也是在所有同源窗口中都是共享的。（key：同源窗口都会共享，并且不会失效，不管窗口或者浏览器关闭与否都会始终生效）</p>
+<p>SessionStorage和LocalStorage都属于web storage,其功能却比cookie强大的多。cookie的大小只有4Kb左右（浏览器不同，大小也不同），而web Storage的大小有5MB。其API提供的方法有以下几种：</p>
+<pre><code>setItem (key, value) ——  保存数据，以键值对的方式储存信息。
+getItem (key) ——  获取数据，将键值传入，即可获取到对应的value值。
+removeItem (key) ——  删除单个数据，根据键值移除对应的信息。
+clear () ——  删除所有的数据
+key (index) —— 获取某个索引的key
+</code></pre><p>localStorage例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var storage = null;  </span><br><span class="line">    if(window.localStorage)&#123;              //判断浏览器是否支持localStorage  </span><br><span class="line">       storage = window.localStorage;       </span><br><span class="line">       storage.setItem(&quot;name&quot;, &quot;Rick&quot;);    //调用setItem方法，存储数据  </span><br><span class="line">       alert(storage.getItem(&quot;name&quot;));     //调用getItem方法，弹框显示 name 为 Rick  </span><br><span class="line">       storage.removeItem(&quot;name&quot;);     //调用removeItem方法，移除数据  </span><br><span class="line">       alert(storage.getItem(&quot;name&quot;));   //调用getItem方法，弹框显示 name 为 null  </span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>SessionStorage用法同上，不过区别在于 sessionStorage 在关闭页面后即被清空，而 localStorage 则会一直保存。</p>
+
       
     </div>
     
@@ -350,8 +373,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/01/web安全/" rel="next" title="web安全">
-                <i class="fa fa-chevron-left"></i> web安全
+              <a href="/2018/09/01/css选择器/" rel="next" title="css选择器">
+                <i class="fa fa-chevron-left"></i> css选择器
               </a>
             
           </div>
@@ -360,8 +383,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/01/css预处理器/" rel="prev" title="css预处理器">
-                css预处理器 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/01/React diff算法/" rel="prev" title="diff">
+                diff <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -414,8 +437,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -457,6 +489,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#共同点：都是保存在浏览器端，并且是同源的"><span class="nav-number">1.</span> <span class="nav-text">共同点：都是保存在浏览器端，并且是同源的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cookie的作用："><span class="nav-number">2.</span> <span class="nav-text">cookie的作用：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

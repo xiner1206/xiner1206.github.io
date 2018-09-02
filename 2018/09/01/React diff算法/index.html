@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="React有两大提高性能的神奇特色：虚拟DOM &amp;amp; diff算法。React diff作为Virtual DOM的加速器，其算法的改进优化是React整的界面渲染的基础，以及性能提高的保障。 React diff表示什么？表示React针对传统的diff算法进行了React风格的优化！ 传统diff算法计算一棵树形结构转换成另一棵树形结构的最少操作，是一个复杂且值得研究的问题。 传统 di">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/09/01/hello-world/index.html">
+<meta property="og:title" content="diff">
+<meta property="og:url" content="http://yoursite.com/2018/09/01/React diff算法/index.html">
 <meta property="og:site_name" content="xiner">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="React有两大提高性能的神奇特色：虚拟DOM &amp;amp; diff算法。React diff作为Virtual DOM的加速器，其算法的改进优化是React整的界面渲染的基础，以及性能提高的保障。 React diff表示什么？表示React针对传统的diff算法进行了React风格的优化！ 传统diff算法计算一棵树形结构转换成另一棵树形结构的最少操作，是一个复杂且值得研究的问题。 传统 di">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-01T08:48:32.040Z">
+<meta property="og:updated_time" content="2018-09-02T10:04:26.140Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="diff">
+<meta name="twitter:description" content="React有两大提高性能的神奇特色：虚拟DOM &amp;amp; diff算法。React diff作为Virtual DOM的加速器，其算法的改进优化是React整的界面渲染的基础，以及性能提高的保障。 React diff表示什么？表示React针对传统的diff算法进行了React风格的优化！ 传统diff算法计算一棵树形结构转换成另一棵树形结构的最少操作，是一个复杂且值得研究的问题。 传统 di">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/01/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/01/React diff算法/"/>
 
 
 
 
 
-  <title>Hello World | xiner</title>
+  <title>diff | xiner</title>
   
 
 
@@ -262,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/React diff算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xdd">
@@ -279,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">diff</h1>
         
 
         <div class="post-meta">
@@ -291,7 +291,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T16:48:32+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T17:04:31+08:00">
                 2018-09-01
               </time>
             
@@ -329,15 +329,30 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>React有两大提高性能的神奇特色：虚拟DOM &amp; diff算法。React diff作为Virtual DOM的加速器，其算法的改进优化是React整的界面渲染的基础，以及性能提高的保障。</p>
+<p>React diff表示什么？表示React针对传统的diff算法进行了React风格的优化！</p>
+<h3 id="传统diff算法"><a href="#传统diff算法" class="headerlink" title="传统diff算法"></a>传统diff算法</h3><p>计算一棵树形结构转换成另一棵树形结构的最少操作，是一个复杂且值得研究的问题。</p>
+<p>传统 diff 算法通过循环递归对节点进行依次对比，效率低下，算法复杂度达到 O(n^3)，其中 n 是树中节点的总数。O(n^3) 到底有多可怕，这意味着如果要展示1000个节点，就要依次执行上十亿次的比较。代价太高。</p>
+<p>如果 React 只是单纯的引入 diff 算法而没有任何的优化改进，那么其效率是远远无法满足前端渲染所要求的性能。</p>
+<h3 id="React-diff优化"><a href="#React-diff优化" class="headerlink" title="React diff优化"></a>React diff优化</h3><p>传统的diff算法的复杂度为O(n^3),显然无法满足性能要求。Facebook工程师通过大胆的策略，将O(n^3)复杂度简化成了O(n)</p>
+<h3 id="diff策略"><a href="#diff策略" class="headerlink" title="diff策略"></a>diff策略</h3><p>Web UI 中 DOM 节点跨层级的移动操作特别少，可以忽略不计。<br>拥有相同类的两个组件将会生成相似的树形结构，拥有不同类的两个组件将会生成不同的树形结构。<br>对于同一层级的一组子节点，它们可以通过唯一 id 进行区分。</p>
+<p>基于以上三个前提策略，React团队对传统diff算法优化</p>
+<p>a-&gt;tree diff</p>
+<p>b-&gt;component diff<br>c-&gt;element diffd</p>
+<h3 id="优化策略a-tree-diff"><a href="#优化策略a-tree-diff" class="headerlink" title="优化策略a: tree diff"></a>优化策略a: tree diff</h3><p>基于tree diff策略，React对Virtual DOM树进行 分层比较、层级控制，只对相同颜色框内的节点进行比较(同一父节点的全部子节点)，当发现某一子节点不在了直接删除该节点以及其所有子节点，不会用于进一步的比较，在算法层面上就是说只需要遍历一次就可以了，而无需在进行不必要的比较，便能完成整个DOM树的比较。<br>如图：</p>
+<p>同属于分层比较、层级控制范畴，还会出现DOM节点跨层级的移动操作(React中这种情况DOM节点不稳定，损害性能，所以开发中不推荐这种情况的出现)，React diff怎么解决的呢？如下图情况：</p>
+<p>上面描述的是同一层次不同DOM节点范畴，React diff用趋近于‘暴力’的方式，并不是把A B C 直接拼接到 D 节点上，而是删除A B C 三个节点之后在 D 下面在创建的 A B C。这里不做详细分析，想直观理解该过程，建议阅读这篇用在生命周期里打log的方式展示上述过程</p>
+<h3 id="优化策略b-component-diff"><a href="#优化策略b-component-diff" class="headerlink" title="优化策略b: component diff"></a>优化策略b: component diff</h3><p>React是基于组件构建应用的，对于组件间的比较所采用的策略也是简洁高效。</p>
+<p>对于同一类型的组件，根据Virtual DOM是否变化也分两种，可以用shouldComponentUpdate()判断Virtual DOM是否发生了变化，若没有变化就不需要在进行diff，这样可以节省大量时间，若变化了，就对相关节点进行update<br>对于非同一类的组件，则将该组件判断为 dirty component，从而替换整个组件下的所有子节点。</p>
+<p>如下图，当 component D 改变为 component G 时，即使这两个 component 结构相似，一旦 React 判断 D 和 G 是不同类型的组件，就不会比较二者的结构，而是直接删除 component D，重新创建 component G 以及其子节点。虽然当两个 component 是不同类型但结构相似时，React diff 会影响性能，但正如 React 官方博客所言：不同类型的 component 是很少存在相似 DOM tree 的机会，因此这种极端因素很难在实现开发过程中造成重大影响的。</p>
+<p>而如果上图中左一中的D节点只是单纯的改变什么state，update就好了。</p>
+<h3 id="优化策略c-element-diff"><a href="#优化策略c-element-diff" class="headerlink" title="优化策略c: element diff"></a>优化策略c: element diff</h3><p>所有同一层级的子节点.他们都可以通过key来区分—–并遵循策略a、b。</p>
+<p>没经过优化的算法，实现新老交替的方法是将A B C D全部删除之后，在新建B A D C，这样的实现方法显然很垃圾，React diff怎么优化呢？是通过为每一个节点添加key值标识。</p>
+<p>新老集合所包含的节点，如上图所示，新老集合进行 diff 差异化对比，通过 key 发现新老集合中的节点都是相同的节点，因此无需进行节点删除和创建，只需要将老集合中节点的位置进行移动，更新为新集合中节点的位置，此时 React 给出的 diff 结果为：B、D 不做任何操作，A、C 进行移动操作，即可。</p>
+<p>上述分析的是新老集合中存在相同节点但是位置不同，要是有新加入的节点且有旧节点需要删除呢？这里不再啰嗦，如下图：</p>
+<p>加了key的好处：</p>
+<p>如果不加key，map遍历的时候控制台发出warn，既然是warn就说明不加也能实现遍历，但是是经过删除、创建、插入实现，这样的话损害性能可想而知，而加上key就可以有助于React diff算法结合Virtual DOM找到最合适的方式进行diff，最大限度的实现高效diff，即哪里需要改变，就改变哪里！</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>React 通过分层求异的策略，对 tree diff 进行算法优化；<br>React 通过相同类生成相似树形结构，不同类生成不同树形结构的策略，对 component diff 进行算法优化；<br>React 通过设置唯一 key的策略，对 element diff 进行算法优化；<br>React 通过制定大胆的 diff 策略，将 O(n3) 复杂度的问题转换成 O(n) 复杂度的问题；<br>建议，开发时保持稳定的DOM结构有助于性能的提升；</p>
 
       
     </div>
@@ -362,14 +377,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/09/01/Cookie、sessionStorage、localStorage的区别/" rel="next" title="浏览器存储">
+                <i class="fa fa-chevron-left"></i> 浏览器存储
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/01/关于this/" rel="prev" title="this">
-                this <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/01/AJAX/" rel="prev" title="Ajax">
+                Ajax <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -484,7 +503,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#传统diff算法"><span class="nav-number">1.</span> <span class="nav-text">传统diff算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React-diff优化"><span class="nav-number">2.</span> <span class="nav-text">React diff优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#diff策略"><span class="nav-number">3.</span> <span class="nav-text">diff策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化策略a-tree-diff"><span class="nav-number">4.</span> <span class="nav-text">优化策略a: tree diff</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化策略b-component-diff"><span class="nav-number">5.</span> <span class="nav-text">优化策略b: component diff</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化策略c-element-diff"><span class="nav-number">6.</span> <span class="nav-text">优化策略c: element diff</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>

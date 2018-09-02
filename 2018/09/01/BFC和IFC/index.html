@@ -79,14 +79,17 @@
 
 
 
+<meta name="description" content="BFC 块级格式化上下文BFC布局规则：1、内部的Box会在垂直方向，一个接一个地放置；2、Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠；3、每个元素的margin box的左边，与包含块border box的左边相接触；4、BFC的区域不会与float box重叠；5、BFC就是页面上的一个隔离的独立容器，容器里的子元素不会影响到外面的元素。反">
 <meta property="og:type" content="article">
-<meta property="og:title" content="postaaa">
-<meta property="og:url" content="http://yoursite.com/2018/09/01/postaaa/index.html">
+<meta property="og:title" content="BFC和IFC">
+<meta property="og:url" content="http://yoursite.com/2018/09/01/BFC和IFC/index.html">
 <meta property="og:site_name" content="xiner">
+<meta property="og:description" content="BFC 块级格式化上下文BFC布局规则：1、内部的Box会在垂直方向，一个接一个地放置；2、Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠；3、每个元素的margin box的左边，与包含块border box的左边相接触；4、BFC的区域不会与float box重叠；5、BFC就是页面上的一个隔离的独立容器，容器里的子元素不会影响到外面的元素。反">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-01T09:04:31.080Z">
+<meta property="og:updated_time" content="2018-09-02T09:48:48.055Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="postaaa">
+<meta name="twitter:title" content="BFC和IFC">
+<meta name="twitter:description" content="BFC 块级格式化上下文BFC布局规则：1、内部的Box会在垂直方向，一个接一个地放置；2、Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠；3、每个元素的margin box的左边，与包含块border box的左边相接触；4、BFC的区域不会与float box重叠；5、BFC就是页面上的一个隔离的独立容器，容器里的子元素不会影响到外面的元素。反">
 
 
 
@@ -116,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/01/postaaa/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/01/BFC和IFC/"/>
 
 
 
 
 
-  <title>postaaa | xiner</title>
+  <title>BFC和IFC | xiner</title>
   
 
 
@@ -259,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/postaaa/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/BFC和IFC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xdd">
@@ -276,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">postaaa</h1>
+          <h1 class="post-title" itemprop="name headline">BFC和IFC</h1>
         
 
         <div class="post-meta">
@@ -326,7 +329,18 @@
       
 
       
-        
+        <h3 id="BFC-块级格式化上下文"><a href="#BFC-块级格式化上下文" class="headerlink" title="BFC 块级格式化上下文"></a>BFC 块级格式化上下文</h3><h4 id="BFC布局规则："><a href="#BFC布局规则：" class="headerlink" title="BFC布局规则："></a>BFC布局规则：</h4><p>1、内部的Box会在垂直方向，一个接一个地放置；<br>2、Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠；<br>3、每个元素的margin box的左边，与包含块border box的左边相接触；<br>4、BFC的区域不会与float box重叠；<br>5、BFC就是页面上的一个隔离的独立容器，容器里的子元素不会影响到外面的元素。反之亦如此。<br>6、计算BFC的高度时，浮动元素也参与计算。<br>1、独立渲染区域；<br>2、与这个区域外部毫不相关；<br>3、需要触发（需要写一行声明，来告诉外界声明独立）<br>  建议使用overflow：hidden来声明<br>  在包住的div里触发，要触发哪一个就在哪一个地方写上overfolw:hidden</p>
+<h4 id="哪些元素会生产BFC？"><a href="#哪些元素会生产BFC？" class="headerlink" title="哪些元素会生产BFC？"></a>哪些元素会生产BFC？</h4><p>1、根元素<br>2、float属性不为none<br>3、position为absolute或fixed<br>4、disply为inline-block，table-cell,table-caption,flex,inline-flex<br>5、overflow不为visible</p>
+<h3 id="IFC-行内格式化上下文"><a href="#IFC-行内格式化上下文" class="headerlink" title="IFC 行内格式化上下文"></a>IFC 行内格式化上下文</h3><p>解决垂直居中Vitical-align:middle，要配合line-height：数据，使用</p>
+<p>Box一个接一个的水平排列，起点是包含块的顶部。水平方向上的margin、border和Padding在框之间得到保留。</p>
+<p>框在垂直方向上可以以不同的方式对齐：它们的顶部或底部对齐，或根据其中的文字的基线对齐。包含那些框的长方形区域，会形成一行，叫做行框。</p>
+<p>一个行框的宽度由包含它的元素的宽度和包含它的元素里面有没有float元素来决定，高度的确定由行高度计算规则决定。</p>
+<p>行高的高度足以包含它的内部容器，也可能比它包含的容器们都高（比如在基线对齐的时候），当它包含的内部容器的高度小于行框的高度时，内部容器的垂直位置由vertical属性来确定，这个性质可以用来实现垂直居中。</p>
+<p>当几个行内框在水平方向无法放入一个行内框时，它们可以分配在两个或多个垂直堆叠的行框中。因此，一个段落就是行框在垂直方向上的堆叠。行框在堆叠时没有垂直方向上的分割且永不重叠。</p>
+<p>一个行内框超出包含它的行框的宽度，它将会被分割为几个框。如果一个行框不能被分割，行内框会益处行框。</p>
+<p>如果一个行内框被分割，margin、padding、border在所有分割处没有视觉效果。</p>
+<p>创建一个IFC的环境，让行框的高度是包含块的高度的100%,让行框内部的元素使用Vertical-align：middle,</p>
+
       
     </div>
     
@@ -350,8 +364,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/01/web安全/" rel="next" title="web安全">
-                <i class="fa fa-chevron-left"></i> web安全
+              <a href="/2018/09/01/css预处理器/" rel="next" title="css预处理器">
+                <i class="fa fa-chevron-left"></i> css预处理器
               </a>
             
           </div>
@@ -360,7 +374,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/01/css预处理器/" rel="prev" title="css预处理器">
+              <a href="/2018/09/01/float和清除浮动/" rel="prev" title="css预处理器">
                 css预处理器 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -414,8 +428,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -457,6 +480,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#BFC-块级格式化上下文"><span class="nav-number">1.</span> <span class="nav-text">BFC 块级格式化上下文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#BFC布局规则："><span class="nav-number">1.1.</span> <span class="nav-text">BFC布局规则：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#哪些元素会生产BFC？"><span class="nav-number">1.2.</span> <span class="nav-text">哪些元素会生产BFC？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IFC-行内格式化上下文"><span class="nav-number">2.</span> <span class="nav-text">IFC 行内格式化上下文</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="作用域作用域是什么？其实作用域是针对变量的，一个变量在某个区域内起作用，这份区域就是他的作用域。顺便说一句，在 js中没有块级作用域（ES6除外），比如1234if (true) &amp;#123;    var name = &amp;quot;zhangsan&amp;quot;&amp;#125;console.log (name)      // &amp;quot;zhangsan&amp;quot; 学过java等高级语言的同学肯">
+<meta property="og:type" content="article">
+<meta property="og:title" content="作用域和闭包">
+<meta property="og:url" content="http://yoursite.com/2018/09/01/作用域和闭包/index.html">
+<meta property="og:site_name" content="xiner">
+<meta property="og:description" content="作用域作用域是什么？其实作用域是针对变量的，一个变量在某个区域内起作用，这份区域就是他的作用域。顺便说一句，在 js中没有块级作用域（ES6除外），比如1234if (true) &amp;#123;    var name = &amp;quot;zhangsan&amp;quot;&amp;#125;console.log (name)      // &amp;quot;zhangsan&amp;quot; 学过java等高级语言的同学肯">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-02T10:09:13.494Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="作用域和闭包">
+<meta name="twitter:description" content="作用域作用域是什么？其实作用域是针对变量的，一个变量在某个区域内起作用，这份区域就是他的作用域。顺便说一句，在 js中没有块级作用域（ES6除外），比如1234if (true) &amp;#123;    var name = &amp;quot;zhangsan&amp;quot;&amp;#125;console.log (name)      // &amp;quot;zhangsan&amp;quot; 学过java等高级语言的同学肯">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/01/作用域和闭包/"/>
+
+
+
+
+
+  <title>作用域和闭包 | xiner</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">xiner</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/作用域和闭包/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xdd">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiner">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">作用域和闭包</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T17:04:31+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>作用域是什么？其实作用域是针对变量的，一个变量在某个区域内起作用，这份区域就是他的作用域。顺便说一句，在 js中没有块级作用域（ES6除外），比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (true) &#123;</span><br><span class="line">    var name = &quot;zhangsan&quot;</span><br><span class="line">&#125;</span><br><span class="line">console.log (name)      // &quot;zhangsan&quot;</span><br></pre></td></tr></table></figure></p>
+<p>学过java等高级语言的同学肯定会说这样写岂不是就报错了，但是在js中，这么写是完全ok的，因为js没有块级作用域，但实际上并不推荐这么写。</p>
+<p>在js中，只有函数和全局作用域，比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = 100               </span><br><span class="line">function fn () &#123;</span><br><span class="line">    var a = 200           </span><br><span class="line">    console.log (&apos;fn&apos;,a)</span><br><span class="line">&#125;</span><br><span class="line">console.log (&apos;global&apos;,a)</span><br><span class="line">fn()</span><br></pre></td></tr></table></figure></p>
+<h3 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h3><p>在这里我们讲一个概念：<br>自由变量，即当前作用域没有定义的变量。</p>
+<p>比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = 100</span><br><span class="line">function fn () &#123;</span><br><span class="line">    var b = 200</span><br><span class="line">    console.log (a)</span><br><span class="line">    console.log (b)</span><br><span class="line">&#125;</span><br><span class="line">fn ()</span><br></pre></td></tr></table></figure></p>
+<p>在console.log (a) 中的a就是自由变量，在当前作用域中并没有定义a，所以要去函数定义时的父级作用域中找。我们再来看一个稍微复杂一点点的例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var a = 100</span><br><span class="line">function fn () &#123;</span><br><span class="line">    var b = 200</span><br><span class="line">    function fn1 () &#123;</span><br><span class="line">        var c = 300</span><br><span class="line">        console.log (a)</span><br><span class="line">        console.log (b)</span><br><span class="line">        console.log (c)</span><br><span class="line">    &#125;</span><br><span class="line">    fn1 ()</span><br><span class="line">&#125;</span><br><span class="line">fn ()</span><br></pre></td></tr></table></figure></p>
+<p>在执行console.log (a) 时，由于当前作用域没有定义a，所以要去fn在定义时的父级作用域找，此时它的父级作用域是fn，fn中也没有定义a，所以再去fn在定义时的父级作用域（即全局作用域）中找，此时就能找到a。b，c也是同理。上述过程就形成了一条作用域链，简单来说作用域链就是自由变量的查找，子对象会一级一级地向上寻找所有父对象的变量。</p>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>专业说法：当一个内部函数被其外部函数之外的变量引用时，就形成了一个闭包。（对内部函数的引用会添加到外部函数的活动对象上）</p>
+<p>还可以这么理解：闭包就是一个具有封闭功能与包裹功能的结构，是为了实现具有私有访问空间的函数的，函数可以构成闭包，因为函数内部定义的数据函数外部无法访问，即函数具有封闭性；函数可以封装代码即具有包裹性，所以函数可以构成闭包。创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量。</p>
+<p>而大家普遍认为的闭包是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;(function fn() &#123;&#125;)();</span><br></pre></td></tr></table></figure></p>
+<p>这只是闭包的一种形式而已，也就是闭包的一种应用，这样用闭包的好处是避免变量冲突和污染，能够自动执行；闭包前后最好都要写分号，因为防止多文件集成成一个文件后，高压缩出现语法错误。</p>
+<p>闭包有3个特性：</p>
+<p>1、函数嵌套函数</p>
+<p>2、函数内部可以引用外部的参数和变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function f1() &#123;</span><br><span class="line">   var n=999;</span><br><span class="line">   function f2() &#123;</span><br><span class="line">       alert(n);    // 999</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>f2被包在函数f1内部，f1内的所有局部变量，对f2都是可见的。反过来就不行，f2内的局部变量，对f1就是不可见的。</p>
+<p>3、参数和变量不会被垃圾回收机制回收，让这些变量的值始终保持在内存中。</p>
+<h3 id="闭包有什么用，使用场景："><a href="#闭包有什么用，使用场景：" class="headerlink" title="闭包有什么用，使用场景："></a>闭包有什么用，使用场景：</h3><p>当我们需要在模块中定义一些变量，并希望这些变量一直保存在内存中但又不会“污染”全局的变量时，就可以用闭包来定义这个模块。</p>
+<h3 id="使用闭包的注意点："><a href="#使用闭包的注意点：" class="headerlink" title="使用闭包的注意点："></a>使用闭包的注意点：</h3><p>由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。<br>闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，不要随便改变父函数内部变量的值。<br>函数套函数就是闭包吗？<br>不是！当一个内部函数被其外部函数之外的变量引用时，才会形成了一个闭包。</p>
+<p>经典面试题：创建10个a标签，点击时弹出相应的序号<br>在这里我给大家说两种方法，其中一种就是和我们这篇文章的知识点相关的方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var i</span><br><span class="line">for (var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">    (function (i) &#123;</span><br><span class="line">        var a = document.createElement(&quot;a&quot;)</span><br><span class="line">        a.innerHTML = i + &quot;&lt;br&gt;&quot;</span><br><span class="line">        a.addEventListener(&quot;click&quot;, function (e) &#123;</span><br><span class="line">            e.preventDefault()</span><br><span class="line">            alert(i)</span><br><span class="line">        &#125;)</span><br><span class="line">        document.body.appendChild(a)</span><br><span class="line">    &#125;)(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我们把参数 i 作为传给立即执行函数，这样，i的值就传给了立即执行函数的局部变量 i 了。立即执行函数会直接执行，但是其活动不会销毁，因为里面有个匿名函数。执行后局部变量 i 与全局变量i 联系就切断了，也就是执行的时候，传进去的变量i是多少，立即执行函数的局部变量 i 就是多少，并且该局部变量 i仍然没有消失，因为匿名函数的存在。</p>
+<p>这时候，return中的匿名函数的作用域链中会有两个变量 i。当点击a的时候，它向上搜索 i 的时候，它找到立即执行函数的局部变量 i ，就停止向上查找了，因此最后的结果就不会是全局变量 i 的值10了。</p>
+<p>还有一种方法是创建索引值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var i</span><br><span class="line">for (var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">    var a = document.createElement(&quot;a&quot;)</span><br><span class="line">    a.innerHTML = i + &quot;&lt;br&gt;&quot;</span><br><span class="line">    a.index = i;</span><br><span class="line">    a.addEventListener(&quot;click&quot;, function (e) &#123;</span><br><span class="line">        e.preventDefault()</span><br><span class="line">        alert(this.index)</span><br><span class="line">    &#125;)</span><br><span class="line">    document.body.appendChild(a)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/01/关于this/" rel="next" title="this">
+                <i class="fa fa-chevron-left"></i> this
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/01/react组件编写规范/" rel="prev" title="react组件编写规范">
+                react组件编写规范 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">xdd</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域"><span class="nav-number">1.</span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域链"><span class="nav-number">2.</span> <span class="nav-text">作用域链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包"><span class="nav-number">3.</span> <span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包有什么用，使用场景："><span class="nav-number">4.</span> <span class="nav-text">闭包有什么用，使用场景：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用闭包的注意点："><span class="nav-number">5.</span> <span class="nav-text">使用闭包的注意点：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xdd</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="在这篇文章中,我们将介绍三种不同CSS预处器的蛮量、功能以及他们的好处—— sass 、 less 和 stylus。 介绍CSS预处理器是一种语言，用来编写一些CSS的特性,而且无需考虑浏览器兼容性的问题。他们通过编译的代码编写成一般的CSS。 语法这三种CSS预处器的语法和CSS都差不多。 sass和lesssass和less都使用的是标准的CSS语法。这使用CSS预处器非常容易的将预处器代码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css预处理器">
+<meta property="og:url" content="http://yoursite.com/2018/09/01/css预处理器/index.html">
+<meta property="og:site_name" content="xiner">
+<meta property="og:description" content="在这篇文章中,我们将介绍三种不同CSS预处器的蛮量、功能以及他们的好处—— sass 、 less 和 stylus。 介绍CSS预处理器是一种语言，用来编写一些CSS的特性,而且无需考虑浏览器兼容性的问题。他们通过编译的代码编写成一般的CSS。 语法这三种CSS预处器的语法和CSS都差不多。 sass和lesssass和less都使用的是标准的CSS语法。这使用CSS预处器非常容易的将预处器代码">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-02T09:58:31.894Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css预处理器">
+<meta name="twitter:description" content="在这篇文章中,我们将介绍三种不同CSS预处器的蛮量、功能以及他们的好处—— sass 、 less 和 stylus。 介绍CSS预处理器是一种语言，用来编写一些CSS的特性,而且无需考虑浏览器兼容性的问题。他们通过编译的代码编写成一般的CSS。 语法这三种CSS预处器的语法和CSS都差不多。 sass和lesssass和less都使用的是标准的CSS语法。这使用CSS预处器非常容易的将预处器代码">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/01/css预处理器/"/>
+
+
+
+
+
+  <title>css预处理器 | xiner</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">xiner</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/css预处理器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xdd">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiner">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">css预处理器</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T17:04:31+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在这篇文章中,我们将介绍三种不同CSS预处器的蛮量、功能以及他们的好处—— sass 、 less 和 stylus。</p>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>CSS预处理器是一种语言，用来编写一些CSS的特性,而且无需考虑浏览器兼容性的问题。他们通过编译的代码编写成一般的CSS。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>这三种CSS预处器的语法和CSS都差不多。</p>
+<h3 id="sass和less"><a href="#sass和less" class="headerlink" title="sass和less"></a>sass和less</h3><p>sass和less都使用的是标准的CSS语法。这使用CSS预处器非常容易的将预处器代码转换成CSS代码。默认sass使用.scss扩展名，而less使用.less扩展名。sass和less基本设置可以像下面所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/* style.scss 或者 style.less */</span><br><span class="line"></span><br><span class="line">h1 &#123;</span><br><span class="line">  color: #0982C1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>重要的一点是，sass也同时支持老的语法,就是不使用花括号和分号，而且文件使用.sass扩展名，他的语法类似于：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">/* style.sass */</span><br><span class="line"></span><br><span class="line">h1</span><br><span class="line">  color: #0982c1</span><br><span class="line">stylus</span><br><span class="line">stylus的语法花样多一些，它使用.styl的扩展名，stylus也接受标准的CSS语法，但是他也接受不带花括号和分号的语法，如下所示：</span><br><span class="line"></span><br><span class="line">/* style.styl */</span><br><span class="line">h1 &#123;</span><br><span class="line">  color: #0982C1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 省略花括号 */</span><br><span class="line">h1</span><br><span class="line">  color: #0982C1;</span><br><span class="line"></span><br><span class="line">/* 省略花括号和分号 */</span><br><span class="line">h1</span><br><span class="line">  color #0982C1</span><br></pre></td></tr></table></figure></p>
+<p>你也可以在同一个样式单中使用不同的变量，例如下面的写法也不会报错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">h1 &#123;</span><br><span class="line">  color #0982c1</span><br><span class="line">&#125;</span><br><span class="line">h2</span><br><span class="line">  font-size: 1.2em</span><br></pre></td></tr></table></figure></p>
+<h3 id="变量-Variables"><a href="#变量-Variables" class="headerlink" title="变量(Variables)"></a>变量(Variables)</h3><p>你可以在CSS预处理器中声明变量,并在整个样式表中使用。CSS预处理器支持任何变量（例如：颜色、数值（不管是否包括单位）、文本）,并且可以在任意地方引用变量。</p>
+<p>sass</p>
+<p>sass声明变量必须是$开头，后面紧跟变量名和变量值，而且变量名和变量值需要使用冒号:隔开，就像CSS属性一样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$mainColor: #0982c1;</span><br><span class="line">$siteWidth: 1024px;</span><br><span class="line">$borderStyle: dotted;</span><br><span class="line">body &#123;</span><br><span class="line">  color: $mainColor;</span><br><span class="line">  border: 1px $borderStyle $mainColor;</span><br><span class="line">  max-width: $siteWidth;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>less</p>
+<p>less声明变量和sass声明变量一样，唯一区别是变量名前面使用是的@字符：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@mainColor: #0982c1;</span><br><span class="line">@siteWidth: 1024px;</span><br><span class="line">@borderStyle: dotted;</span><br><span class="line">body &#123;</span><br><span class="line">  color: @mainColor;</span><br><span class="line">  border: 1px @borderStyle @mainColor;</span><br><span class="line">  max-width: @siteWidth;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>stylus</p>
+<p>stylus声明变量没有任何限定，你可以使用$符号开始，结尾的分号;可有可无，但变量名和变量值之间的等号=是需要的。有一点需要注意的是，如果我们使用@符号开头来声明变量，stylus会进行编译，但其对应的值并不会赋值给变量。换句话说，在stylus中不要使用@符号开头声明变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mainColor = #0982c1</span><br><span class="line">siteWidth = 1024px</span><br><span class="line">$borderStyle = dotted</span><br><span class="line">body</span><br><span class="line">  color mainColor</span><br><span class="line">  border 1px $borderStyle mainColor</span><br><span class="line">  max-width siteWidth</span><br></pre></td></tr></table></figure></p>
+<p>转译出来的CSS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">  color: #0982c1;</span><br><span class="line">  border: 1px dotted #0982c1;</span><br><span class="line">  max-width: 1024px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h3><p>如果我们在CSS中多个元素有一个相同的父元素，那么写样式会变得很乏味，我们需要一遍一遍的在每个元素前写这个父元素。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">section &#123;</span><br><span class="line">  margin: 10px;</span><br><span class="line">&#125;</span><br><span class="line">section nav &#123;</span><br><span class="line">  height: 25px;</span><br><span class="line">&#125;</span><br><span class="line">section nav a &#123;</span><br><span class="line">  color: #0982C1;</span><br><span class="line">&#125;</span><br><span class="line">section nav a:hover &#123;</span><br><span class="line">  text-decoration: underline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>相反，使用CSS预处理器，我们可以在父元素的花括号{}写这些元素，同时可以使用&amp;符号来引用父选择器。</p>
+<p>sass、less和stylus<br>对于嵌套选择器来说，三个CSS预处器都具有相同的语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">section &#123;</span><br><span class="line">  margin: 10px;</span><br><span class="line">  nav &#123;</span><br><span class="line">    height: 25px;</span><br><span class="line">    a &#123;</span><br><span class="line">      color: #0982C1;</span><br><span class="line">      &amp;:hover &#123;</span><br><span class="line">        text-decoration: underline;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="混合（Mixins）"><a href="#混合（Mixins）" class="headerlink" title="混合（Mixins）"></a>混合（Mixins）</h3><p>Mixins是预处器中的函数。平时你在写样式时肯定有碰到过，某段CSS样式经常要用到多个元素中，这样你就需要重复的写多次。在CSS预处器中，你可以为这些公用的CSS样式定义一个Mixin，然后在你CSS需要使用这些样式的地方，直接调用你定义好的Mixin。这是一个非常有用的特性。Mixins是一个公认的选择器，还可以在Mixins中定义变量或者是默认参数。</p>
+<p>sass<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/* Sass定义了一个名叫error的mixin，这个error设置了一个参数“$borderWidth”,在没特别定义外，这个参数的值是默认值2px*/</span><br><span class="line">@mixin error($borderWidth: 2px) &#123;</span><br><span class="line">  border: $borderWidth solid #F00;</span><br><span class="line">  color: #F00;</span><br><span class="line">&#125;</span><br><span class="line">.generic-error &#123;</span><br><span class="line">  padding: 20px;</span><br><span class="line">  margin: 4px;</span><br><span class="line">  @include error(); /* 调用error mixins */</span><br><span class="line">&#125;</span><br><span class="line">.login-error &#123;</span><br><span class="line">  left: 12px;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 20px;</span><br><span class="line">  @include error(5px); /* 调用error mixins，并将参数$borderWidth的值指定为5px*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>less<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/* LESS 定义了一个名叫error的mixin，这个error设置了一个参数“$borderWidth”,在没特别定义外，这个参数的值是默认值2px */</span><br><span class="line">.error(@borderWidth: 2px) &#123;</span><br><span class="line">  border: @borderWidth solid #F00;</span><br><span class="line">  color: #F00;</span><br><span class="line">&#125;</span><br><span class="line">.generic-error &#123;</span><br><span class="line">  padding: 20px;</span><br><span class="line">  margin: 4px;</span><br><span class="line">  .error(); /* 调用error mixins */</span><br><span class="line">&#125;</span><br><span class="line">.login-error &#123;</span><br><span class="line">  left: 12px;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 20px;</span><br><span class="line">  .error(5px); /* 调用error mixins，并将参数$borderWidth的值指定为5px */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>stylus<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/* Stylus 定义了一个名叫error的mixin，这个error设置了一个参数“$borderWidth”,在没特别定义外，这个参数的值是默认值2px */</span><br><span class="line">error(borderWidth= 2px) &#123;</span><br><span class="line">  border: borderWidth solid #F00;</span><br><span class="line">  color: #F00;</span><br><span class="line">&#125;</span><br><span class="line">.generic-error &#123;</span><br><span class="line">  padding: 20px;</span><br><span class="line">  margin: 4px;</span><br><span class="line">  error(); /* 调用error mixins */</span><br><span class="line">&#125;</span><br><span class="line">.login-error &#123;</span><br><span class="line">  left: 12px;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 20px;</span><br><span class="line">  error(5px); /* 调用error mixins，并将参数$borderWidth的值指定为5px */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>转译出来的CSS<br>上面三种CSS预处器转译出来的CSS代码都是一样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.generic-error &#123;</span><br><span class="line">  padding: 20px;</span><br><span class="line">  margin: 4px;</span><br><span class="line">  border: 2px solid #f00;</span><br><span class="line">  color: #f00;</span><br><span class="line">&#125;</span><br><span class="line">.login-error &#123;</span><br><span class="line">  left: 12px;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 20px;</span><br><span class="line">  border: 5px solid #f00;</span><br><span class="line">  color: #f00;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Mixins在三种预处器中都有所不同：</p>
+<p>sass：在sass定义Mixins和less、stylus有所不同，在声明Mixins时需要使用“@mixin”,然后后面紧跟Mixins的名，他也可以定义参数，同时可以给这个参数设置一个默认值，但参数名是使用“$”符号开始，而且和参数值之间需要使用冒号（：）分开。另外在sass中调用Mixins需要使用“@include”，然后在其后紧跟你要调用的Mixins名。</p>
+<p>less：less中声明Mixins和CSS定义样式非常类似，可以将Mixins看成是一个选择器，当然Mixins也可以设置参数，并给参数设置默认值。不过设置参数的变量名是使用“@”开始，同样参数和默认参数值之间需要使用冒号（：）分开。</p>
+<p>stylus：stylus和前两者也略有不同，他可以不使用任何符号，就是直接定义Mixins名，然后在定义参数和默认值之间用等号（=）来连接。<br>上面只是Mixins在三个CSS预处器的简单区别，详细的还可以进入他们的官网了解，或者对比一下上面的三段代码。</p>
+<h3 id="继承（Inheritance）"><a href="#继承（Inheritance）" class="headerlink" title="继承（Inheritance）"></a>继承（Inheritance）</h3><p>在多个元素应用相同的样式时，我们在CSS通常都是这样写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">p,</span><br><span class="line">ul,</span><br><span class="line">ol &#123;</span><br><span class="line">  /* 样式写在这 */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样做非常的好，但往往我们需要给单独元素添加另外的样式，这个时候我们就需要把其中选择器单独出来写样式，这样一回来我们维护样式就相当的麻烦。为了应对这个问题，CSS预处理器可以从一个选择继承另一个选择器下的所有样式。</p>
+<p>sass和stylus<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.block &#123;</span><br><span class="line">  margin: 10px 5px;</span><br><span class="line">  padding: 2px;</span><br><span class="line">&#125;</span><br><span class="line">p &#123;</span><br><span class="line">  @extend .block; /* 继承.block所有样式 */</span><br><span class="line">  border: 1px solid #EEE;</span><br><span class="line">&#125;</span><br><span class="line">ul, ol &#123;</span><br><span class="line">  @extend .block; /* 继承.block所有样式 */</span><br><span class="line">  color: #333;</span><br><span class="line">  text-transform: uppercase;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>转译出来的CSS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.block, p, ul, ol &#123;</span><br><span class="line">  margin: 10px 5px;</span><br><span class="line">  padding: 2px;</span><br><span class="line">&#125;</span><br><span class="line">p &#123;</span><br><span class="line">  border: 1px solid #EEE;</span><br><span class="line">&#125;</span><br><span class="line">ul, ol &#123;</span><br><span class="line">  color: #333;</span><br><span class="line">  text-transform: uppercase;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>less</p>
+<p>less支持的继承和sass与stylus不一样,他不是在选择器上继承，而是将Mixins中的样式嵌套到每个选择器里面。这种方法的缺点就是在每个选择器中会有重复的样式产生。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> .block &#123;</span><br><span class="line">  margin: 10px 5px;</span><br><span class="line">  padding: 2px;</span><br><span class="line">&#125;</span><br><span class="line">p &#123;</span><br><span class="line">  .block; /* 继承 &apos;.block&apos;中的样式 */</span><br><span class="line">  border: 1px solid #EEE;</span><br><span class="line">&#125;</span><br><span class="line">ul, ol &#123;</span><br><span class="line">  .block; /*继承&apos;.block&apos; 中的样式*/</span><br><span class="line">  color: #333;</span><br><span class="line">  text-transform: uppercase;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>转译出来的CSS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">.block &#123;</span><br><span class="line">  margin: 10px 5px;</span><br><span class="line">  padding: 2px;</span><br><span class="line">&#125;</span><br><span class="line">p &#123;</span><br><span class="line">  margin: 10px 5px;</span><br><span class="line">  padding: 2px;</span><br><span class="line">  /* 继承 &apos;.block&apos;中的样式 */</span><br><span class="line">  border: 1px solid #EEE;</span><br><span class="line">&#125;</span><br><span class="line">ul,</span><br><span class="line">ol &#123;</span><br><span class="line">  margin: 10px 5px;</span><br><span class="line">  padding: 2px;</span><br><span class="line">  /*继承&apos;.block&apos; 中的样式*/</span><br><span class="line">  color: #333;</span><br><span class="line">  text-transform: uppercase;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h3><p>在CSS中，并不喜欢用@import来导入样式，因为这样的做法会增加HTTP的请求。但是在CSS预处理器中的导入@import规则和CSS的有所不同，它只是在语义上导入不同的文件，但最终结果是生成一个CSS文件。如果你是通过@import ‘file.css’导入file.css样式文件，那效果跟普通CSS导入样式文件一样。注意：导入文件中定义了变量、混合等信息也将会被引入到主样式文件中，因此需要避免他们的相互冲突。</p>
+<p>sass、less和stylus<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/* file.&#123;type&#125; */</span><br><span class="line">body &#123;</span><br><span class="line">  background: #EEE;</span><br><span class="line">&#125;</span><br><span class="line">@import &quot;reset.css&quot;;</span><br><span class="line">@import &quot;file.&#123;type&#125;&quot;;</span><br><span class="line">p &#123;</span><br><span class="line">  background: #0982C1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>转译出来的CSS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@import &quot;reset.css&quot;;</span><br><span class="line">body &#123;</span><br><span class="line">  background: #EEE;</span><br><span class="line">&#125;</span><br><span class="line">p &#123;</span><br><span class="line">  background: #0982C1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="颜色函数"><a href="#颜色函数" class="headerlink" title="颜色函数"></a>颜色函数</h3><p>颜色函数是CSS预处里器中内置的颜色函数功能，这些功能可以对颜色值进行处理，例如颜色的变亮、变暗、渐变颜色等处理十分的方便。</p>
+<p>sass<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lighten($color, 10%); /* 返回的颜色在$color基础上变亮10% */</span><br><span class="line">darken($color, 10%);  /* 返回的颜色在$color基础上变暗10% */</span><br><span class="line">saturate($color, 10%);   /* 返回的颜色在$color基础上饱和度增加10% */</span><br><span class="line">desaturate($color, 10%); /* 返回的颜色在$color基础上饱和度减少10% */</span><br><span class="line">grayscale($color);  /* 返回$color的灰度色*/</span><br><span class="line">complement($color); /* returns complement color of $color */</span><br><span class="line">invert($color);     /* 返回$color的反相色 */</span><br><span class="line">mix($color1, $color2, 50%); /* mix $color1 with $color2 with a weight of 50% */</span><br></pre></td></tr></table></figure></p>
+<p>这只是sass中颜色函数的一个简单列表,更多详细的介绍你可以阅读 sass文档 。</p>
+<p>颜色函数何以运用到任何一个元素上都是一个有颜色的CSS属性，下面是一个简单的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$color: #0982C1;</span><br><span class="line">h1 &#123;</span><br><span class="line">  background: $color;</span><br><span class="line">  border: 3px solid darken($color, 50%);/*边框颜色在$color的基础上变暗50%*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>less<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">lighten(@color, 10%); /* 返回的颜色在@color基础上变亮10% */</span><br><span class="line">darken(@color, 10%);  /* 返回的颜色在@color基础上变暗10%*/</span><br><span class="line">saturate(@color, 10%);   /* 返回的颜色在@color基础上饱和度增加10% */</span><br><span class="line">desaturate(@color, 10%); /* 返回的颜色在@color基础上饱和度降低10%*/</span><br><span class="line">spin(@color, 10);  /* 返回的颜色在@color基础上色调增加10 */</span><br><span class="line">spin(@color, -10); /* 返回的颜色在@color基础上色调减少10 */</span><br><span class="line">mix(@color1, @color2); /* 返回的颜色是@color1和@color2两者的混合色 */</span><br></pre></td></tr></table></figure></p>
+<p>less的完整颜色函数功能，请阅读 less 文档。</p>
+<p>下面是less中如何使用一个颜色函数的简单例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@color: #0982C1;</span><br><span class="line">h1 &#123;</span><br><span class="line">  background: @color;</span><br><span class="line">  border: 3px solid darken(@color, 50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>stylus<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lighten(color, 10%); /* 返回的颜色在&apos;color&apos;基础上变亮10% */</span><br><span class="line">darken(color, 10%);  /* 返回的颜色在&apos;color&apos;基础上变暗10% */</span><br><span class="line">saturate(color, 10%);   /* 返回的颜色在&apos;color&apos;基础上饱和度增加10% */</span><br><span class="line">desaturate(color, 10%); /* 返回的颜色在&apos;color&apos;基础上饱和度降低10% */</span><br></pre></td></tr></table></figure></p>
+<p>有关于stylus的颜色函数介绍，请阅读 stylus文档。</p>
+<p>下面是stylus颜色函数的一个简单实例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">color = #0982C1</span><br><span class="line">h1</span><br><span class="line">  background color</span><br><span class="line">  border 3px solid darken(color, 50%)</span><br></pre></td></tr></table></figure></p>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><p>我们都向往在CSS做一些运算，但是无法实现。但是在CSS预处器中对样式做一些运算是一点问题都没有了，例如：</p>
+<p>sass、less和stylus<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">  margin: (14px/2);</span><br><span class="line">  top: 50px + 100px;</span><br><span class="line">  right: 100px - 50px;</span><br><span class="line">  left: 10 * 10;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注释<br>CSS预处理器支持/ /这样的多行注释方式（类似于CSS的注释方式），也支持//单行注释方式（类似于Javascript的注释方式）。</p>
+<p>需要注意，如果你要压缩文件，你需要把所有注释都删除。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>综上所述，我们对Sass、LESS和Stylus做一个简单的对比总结：</p>
+<p>三者都是开源项目；<br>Sass诞生是最早也是最成熟的CSS预处理器，有Ruby社区和Compass支持；Stylus早期服务器Node JS项目，在该社区得到一定支持者；LESS出现于2009年，支持者远超于Ruby和Node JS社区；<br>Sass和LESS语法较为严谨、严密，而Stylus语法相对散漫，其中LESS学习起来更快一些，因为他更像CSS的标准；<br>Sass和LESS相互影响较大，其中Sass受LESS影响，已经进化到了全面兼容CSS的SCSS；<br>Sass和LESS都有第三方工具提供转译，特别是Sass和Compass是绝配；<br>Sass、LESS和Stylus都具有变量、作用域、混合、嵌套、继承、运算符、颜色函数、导入和注释等基本特性，而且以“变量”、“混合”、“嵌套”、“继承”和“颜色函数”称为五大基本特性，各自特性实现功能基本相似，只是使用规则上有所不同；<br>Sass和Stylus具有类似于语言处理的能力，比如说条件语句、循环语句等，而LESS需要通过When等关键词模拟这些功能，在这一方面略逊一层；</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/01/postaaa/" rel="next" title="postaaa">
+                <i class="fa fa-chevron-left"></i> postaaa
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/01/BFC和IFC/" rel="prev" title="BFC和IFC">
+                BFC和IFC <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">xdd</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">2.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sass和less"><span class="nav-number">3.</span> <span class="nav-text">sass和less</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量-Variables"><span class="nav-number">4.</span> <span class="nav-text">变量(Variables)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#嵌套"><span class="nav-number">5.</span> <span class="nav-text">嵌套</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#混合（Mixins）"><span class="nav-number">6.</span> <span class="nav-text">混合（Mixins）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#继承（Inheritance）"><span class="nav-number">7.</span> <span class="nav-text">继承（Inheritance）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导入"><span class="nav-number">8.</span> <span class="nav-text">导入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#颜色函数"><span class="nav-number">9.</span> <span class="nav-text">颜色函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符"><span class="nav-number">10.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">11.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xdd</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

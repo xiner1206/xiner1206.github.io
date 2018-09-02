@@ -79,14 +79,17 @@
 
 
 
+<meta name="description" content="XSS攻击者往页面里插入恶意HTML标签或者JS代码，窃取cookie中的用户私密信息；或者攻击者在论坛加一个恶意表单。 防范对用户输入的地方检查长度对相关的标签字符予以过滤任何内容写到页面之前都必须加以encode，避免标签泄露避免直接在cookie中泄露用户隐私，例如email，密码尽量采用POST而非GET提交表单 CSRF基本步骤:登录受信任网站A，并在本地生成Cookie，在不登出A的情">
 <meta property="og:type" content="article">
-<meta property="og:title" content="postaaa">
-<meta property="og:url" content="http://yoursite.com/2018/09/01/postaaa/index.html">
+<meta property="og:title" content="web安全">
+<meta property="og:url" content="http://yoursite.com/2018/09/01/web安全/index.html">
 <meta property="og:site_name" content="xiner">
+<meta property="og:description" content="XSS攻击者往页面里插入恶意HTML标签或者JS代码，窃取cookie中的用户私密信息；或者攻击者在论坛加一个恶意表单。 防范对用户输入的地方检查长度对相关的标签字符予以过滤任何内容写到页面之前都必须加以encode，避免标签泄露避免直接在cookie中泄露用户隐私，例如email，密码尽量采用POST而非GET提交表单 CSRF基本步骤:登录受信任网站A，并在本地生成Cookie，在不登出A的情">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-01T09:04:31.080Z">
+<meta property="og:updated_time" content="2018-09-02T10:07:36.531Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="postaaa">
+<meta name="twitter:title" content="web安全">
+<meta name="twitter:description" content="XSS攻击者往页面里插入恶意HTML标签或者JS代码，窃取cookie中的用户私密信息；或者攻击者在论坛加一个恶意表单。 防范对用户输入的地方检查长度对相关的标签字符予以过滤任何内容写到页面之前都必须加以encode，避免标签泄露避免直接在cookie中泄露用户隐私，例如email，密码尽量采用POST而非GET提交表单 CSRF基本步骤:登录受信任网站A，并在本地生成Cookie，在不登出A的情">
 
 
 
@@ -116,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/01/postaaa/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/01/web安全/"/>
 
 
 
 
 
-  <title>postaaa | xiner</title>
+  <title>web安全 | xiner</title>
   
 
 
@@ -259,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/postaaa/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/web安全/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xdd">
@@ -276,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">postaaa</h1>
+          <h1 class="post-title" itemprop="name headline">web安全</h1>
         
 
         <div class="post-meta">
@@ -326,7 +329,18 @@
       
 
       
-        
+        <h3 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h3><p>攻击者往页面里插入恶意HTML标签或者JS代码，窃取cookie中的用户私密信息；或者攻击者在论坛加一个恶意表单。</p>
+<h4 id="防范"><a href="#防范" class="headerlink" title="防范"></a>防范</h4><p>对用户输入的地方检查长度对相关的标签字符予以过滤<br>任何内容写到页面之前都必须加以encode，避免标签泄露<br>避免直接在cookie中泄露用户隐私，例如email，密码<br>尽量采用POST而非GET提交表单</p>
+<h3 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h3><p>基本步骤:<br>登录受信任网站A，并在本地生成Cookie，在不登出A的情况下，访问受害网站B</p>
+<h4 id="攻击类型："><a href="#攻击类型：" class="headerlink" title="攻击类型："></a>攻击类型：</h4><p>使用Get更新请求资源，容易在危险网站B使用标签进行攻击<br>前端使用Post请求更新资源，而后端$_REQUEST去获取请求的数据，既可以获取GET请求，也可以获取POST请求的数据，这就造成了在后台处理程序无法区分这到底是GET请求的数据还是POST请求的数据<br>前端使用Post请求更新资源，后端也只接受获取post请求的数据，但是危险网站B通过iframe等手段同样造成攻击</p>
+<h4 id="防范手段："><a href="#防范手段：" class="headerlink" title="防范手段："></a>防范手段：</h4><p>验证码：每次的用户提交都需要用户在表单中填写一个图片上的随机字符串，易用性差<br>添加隐藏输入框：包含token，服务端验证是否匹配<br>服务端验证HTTP Referer字段：Http请求的来源地址不是业务域名，直接过滤掉请求</p>
+<h3 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h3><p>通过把sql命令插入到web表单递交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的sql命令</p>
+<h4 id="防范："><a href="#防范：" class="headerlink" title="防范："></a>防范：</h4><p>对用户的输入进行校验，可以通过正则表达式，或限制长度，对单引号和&lt;&gt;进行转换等<br>永远不要使用动态拼装SQL，可以使用参数化的sql或者直接使用存储过程进行数据查询存取<br>永远不要使用管理员权限的数据库连接，为每个应用使用单独的权限有限的数据库连接<br>不要把机密信息明文存放，加密或者hash掉密码和敏感的信息</p>
+<h3 id="CSP"><a href="#CSP" class="headerlink" title="CSP"></a>CSP</h3><p>被设计为一个完整的框架来防御XSS和CSRF攻击，旨在减少XSS</p>
+<p>CSP是一种由开发者定义的安全性政策性申明，通过CSP所约束的规则制定可信的内容来源（脚本，图片，iframe，fton，style等可能远程的资源）。通过CSP协定，让web处于一个安全的运行环境中</p>
+<p>实例：</p>
+<p><code>Content-Security-Policy:default-src&quot;self&quot;</code><br>只允许本站资源<br><code>Content-Security-Policy:default-src&quot;self&quot;;img-src*;script-src http://trustedscripts.example.com</code><br>只允许本站的资源及任意位置的图片以及指定网址下的脚本。</p>
+
       
     </div>
     
@@ -350,8 +364,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/01/web安全/" rel="next" title="web安全">
-                <i class="fa fa-chevron-left"></i> web安全
+              <a href="/2018/09/01/react组件编写规范/" rel="next" title="react组件编写规范">
+                <i class="fa fa-chevron-left"></i> react组件编写规范
               </a>
             
           </div>
@@ -360,8 +374,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/01/css预处理器/" rel="prev" title="css预处理器">
-                css预处理器 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/01/postaaa/" rel="prev" title="postaaa">
+                postaaa <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -414,8 +428,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -457,6 +480,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#XSS"><span class="nav-number">1.</span> <span class="nav-text">XSS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#防范"><span class="nav-number">1.1.</span> <span class="nav-text">防范</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSRF"><span class="nav-number">2.</span> <span class="nav-text">CSRF</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#攻击类型："><span class="nav-number">2.1.</span> <span class="nav-text">攻击类型：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#防范手段："><span class="nav-number">2.2.</span> <span class="nav-text">防范手段：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL注入"><span class="nav-number">3.</span> <span class="nav-text">SQL注入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#防范："><span class="nav-number">3.1.</span> <span class="nav-text">防范：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSP"><span class="nav-number">4.</span> <span class="nav-text">CSP</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

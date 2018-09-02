@@ -259,737 +259,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/float和清除浮动/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xdd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiner">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/02/float和清除浮动/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T17:08:49+08:00">
-                2018-09-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>浮动的定义：<br>浮动元素脱离文档流，按照指定方向移动，遇到父级边界或者相邻的浮动元素停了下来</p>
-<p>浮动的特征：<br>浮动元素会从普通文档流中脱离，但浮动元素影响的不仅是自己，它会影响周围的元素对齐进行环绕。<br>不管一个元素是行内元素还是块级元素，如果被设置了浮动，那浮动元素会生成一个块级框，可以设置它的width和height，因此float常常用于制作横向配列的菜单，可以设置大小并且横向排列。<br>浮动会导致父元素高度塌陷<br>高度塌陷：浮动元素父元素高度自适应（父元素不写高度时，子元素写了浮动后，父元素会发生高度塌陷）<br>浮动元素的展示在不同情况下会有不同的规则：<br>浮动元素在浮动的时候，其margin不会超过包含块的padding。PS：如果想要元素超出，可以设置margin属性<br>如果两个元素一个向左浮动，一个向右浮动，左浮动元素的marginRight不会和右浮动元素的marginLeft相邻。<br>如果有多个浮动元素，浮动元素会按顺序排下来而不会发生重叠的现象。<br>如果有多个浮动元素，后面的元素高度不会超过前面的元素，并且不会超过包含块。<br>如果有非浮动元素和浮动元素同时存在，并且非浮动元素在前，则浮动元素不会高于非浮动元素<br>浮动元素会尽可能地向顶端对齐、向左或向右对齐<br>重叠问题<br>行内元素与浮动元素发生重叠，其边框，背景和内容都会显示在浮动元素之上<br>块级元素与浮动元素发生重叠时，边框和背景会显示在浮动元素之下，内容会显示在浮动元素之上<br>1、 对内联元素float之后的改变：<br>当display不等于none引起对象浮动时，对象将被视作块对象(block-level)，即display属性等于block。也就是说，浮动对象的display特性将被忽略。float在绝对定位和display为none时不会被应用。对应的脚本特性为stylefloat（ie）或cssfloat（非ie）。(注意这里为stylefloat或cssfloat，而不是float)<br>因为只有块元素才会有物理属性，在css世界里边，有三种形态的东西，<br>块元素。 特性：有物理属性，width,height写值起作用，而且要占据一行。<br>内联元素。 特性：没有物理属性。但是margin，padding值有用。不占据一行，后边可以有兄弟元素。<br>即是块又是内联，根据兄弟元素决定。<br>为什么是float之后才会有物理属性，这就是块与内联元素相互转化的问题。</p>
-<p>块元素 -&gt; 内联元素：　display:inline;</p>
-<p>内联元素 -&gt; 块元素：　display:block;</p>
-<p>float就是隐性的把内联元素转化为块元素，这是对内部的特性就是有物理特性，但是他不占据一行。对外是内联元素的属性。他有个坏处就是会影响兄弟元素。相当于：display:inline-block;</p>
-<p>2、对块元素float之后的改变<br>其实和内联元素一样，但相当于变成了：inline-block元素，最明显的是宽度自适应发生了变化<br>当div的默认宽度是width:auto;意思是自动调整宽度。在不带float的情况下,div的宽度会自动调整至最大化,而在带float的情况下则正好相反,它会自动调整至最小化。</p>
-<p>一个重要的div+css的布局方法：</p>
-<p>左右分开的网页,左侧的宽度固定,右侧的宽度随分辨率自动适应,并占满右侧的空间.</p>
-<p>方法就是左侧的div用float:left.而右侧的div不带float.这样就可以实现这个效果了.</p>
-<p>清除浮动<br>浮动会使当前标签产生向上浮的效果，同时会影响到前后标签、父级标签的位置及 width height 属性。而且同样的代码，在各种浏览器中显示效果也有可能不相同，这样让清除浮动更难了。解决浮动引起的问题有多种方法，但有些方法在浏览器兼容性方面还有问题。</p>
-<p>父级div定义 height</p>
-<p>原理：父级div手动定义height，就解决了父级div无法自动获取到高度的问题</p>
-<p>优点：简单、代码少、容易掌握</p>
-<p>缺点：只适合高度固定的布局，要给出精确的高度，如果高度和父级div不一样时，会产生问题</p>
-<p>建议：不建议使用，只建议高度固定的布局时使用</p>
-<p>结尾处加空div标签 clear:both</p>
-<p>原理：添加一个空div，利用css提高的clear:both清除浮动，让父级div能自动获取到高度</p>
-<p>优点：简单、代码少、浏览器支持好、不容易出现怪问题</p>
-<p>缺点：不少初学者不理解原理；如果页面浮动布局多，就要增加很多空div，让人感觉很不好</p>
-<p>建议：不推荐使用，但此方法是以前主要使用的一种清除浮动方法</p>
-<p>父级div定义 伪类:after 和 zoom</p>
-<p>zoom</p>
-<p>原理：IE8以上和非IE浏览器才支持:after，原理和方法2有点类似，zoom(IE转有属性)可解决ie6,ie7浮动问题</p>
-<p>优点：浏览器支持好、不容易出现怪问题（目前：大型网站都有使用，如：腾迅，网易，新浪等等）</p>
-<p>缺点：代码多、不少初学者不理解原理，要两句代码结合使用才能让主流浏览器都支持。</p>
-<p>建议：推荐使用，建议定义公共类，以减少CSS代码。</p>
-<p>父级div定义 overflow：hidden</p>
-<p>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:hidden时，浏览器会自动检查浮动区域的高度</p>
-<p>优点：简单、代码少、浏览器支持好</p>
-<p>缺点：不能和position配合使用，因为超出的尺寸的会被隐藏。</p>
-<p>建议：只推荐没有使用position或对overflow:hidden理解比较深的朋友使用。</p>
-<p>父级div定义 overflow:auto</p>
-<p>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:auto时，浏览器会自动检查浮动区域的高度</p>
-<p>优点：简单、代码少、浏览器支持好</p>
-<p>缺点：内部宽高超过父级div时，会出现滚动条。</p>
-<p>建议：不推荐使用，如果你需要出现滚动条或者确保你的代码不会出现滚动条就使用吧。</p>
-<p>父级div 也一起浮动</p>
-<p>原理：所有代码一起浮动，就变成了一个整体</p>
-<p>优点：没有优点</p>
-<p>缺点：会产生新的浮动问题</p>
-<p>推荐：不推荐使用，只做了解</p>
-<p>父级div定义 display:table</p>
-<p>原理：将div属性变成表格</p>
-<p>优点：没有优点</p>
-<p>缺点：会产生新的未知问题</p>
-<p>建议：不推荐使用，只做了解</p>
-<p>结尾处加 br 标签 clear：both</p>
-<p>原理：父级div定义zoom:1来解决IE浮动问题，结尾处加 br标签 clear:both</p>
-<p>建议：不推荐使用，只作了解。</p>
-<p>外边距塌陷<br>原理：</p>
-<p>在css中，相邻的两个或者多个盒子（可以是兄弟或者祖先关系）的外边距会组合成为一个共同的外边距。这个过程成为外边距塌陷，产生的边距成为塌陷边距。外边距的高度等于两个发生叠加的外边距的高度中的较大者，根据规范，一个盒子如果没有上补白（padding-top）和上边框（border-top），那么这个盒子的上边距会和其内部文档流中的第一个子元素的上边距重叠。</p>
-<p>注意：</p>
-<p>只有普通文档流中块框的垂直外边距才会发生外边距合并。行内框，浮动框，或绝对定位之间的外边距不会合并。</p>
-<p>解决办法：</p>
-<p>在父级元素加入overflow：hidden<br>在父级元素用padding-top<br>在父级元素中加position:absolute</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/css预处理器/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xdd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiner">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/02/css预处理器/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T17:08:49+08:00">
-                2018-09-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在这篇文章中,我们将介绍三种不同CSS预处器的蛮量、功能以及他们的好处—— sass 、 less 和 stylus。</p>
-<p>介绍<br>CSS预处理器是一种语言，用来编写一些CSS的特性,而且无需考虑浏览器兼容性的问题。他们通过编译的代码编写成一般的CSS。</p>
-<p>语法<br>这三种CSS预处器的语法和CSS都差不多。</p>
-<p>sass和less<br>sass和less都使用的是标准的CSS语法。这使用CSS预处器非常容易的将预处器代码转换成CSS代码。默认sass使用.scss扩展名，而less使用.less扩展名。sass和less基本设置可以像下面所示：</p>
-<p>/<em> style.scss 或者 style.less </em>/</p>
-<p>h1 {<br>  color: #0982C1;<br>}<br>重要的一点是，sass也同时支持老的语法,就是不使用花括号和分号，而且文件使用.sass扩展名，他的语法类似于：</p>
-<p>/<em> style.sass </em>/</p>
-<p>h1<br>  color: #0982c1<br>stylus<br>stylus的语法花样多一些，它使用.styl的扩展名，stylus也接受标准的CSS语法，但是他也接受不带花括号和分号的语法，如下所示：</p>
-<p>/<em> style.styl </em>/<br>h1 {<br>  color: #0982C1;<br>}</p>
-<p>/<em> 省略花括号 </em>/<br>h1<br>  color: #0982C1;</p>
-<p>/<em> 省略花括号和分号 </em>/<br>h1<br>  color #0982C1<br>你也可以在同一个样式单中使用不同的变量，例如下面的写法也不会报错：</p>
-<p>h1 {<br>  color #0982c1<br>}<br>h2<br>  font-size: 1.2em<br>变量(Variables)<br>你可以在CSS预处理器中声明变量,并在整个样式表中使用。CSS预处理器支持任何变量（例如：颜色、数值（不管是否包括单位）、文本）,并且可以在任意地方引用变量。</p>
-<p>sass</p>
-<p>sass声明变量必须是$开头，后面紧跟变量名和变量值，而且变量名和变量值需要使用冒号:隔开，就像CSS属性一样：</p>
-<p>$mainColor: #0982c1;<br>$siteWidth: 1024px;<br>$borderStyle: dotted;<br>body {<br>  color: $mainColor;<br>  border: 1px $borderStyle $mainColor;<br>  max-width: $siteWidth;<br>}<br>less</p>
-<p>less声明变量和sass声明变量一样，唯一区别是变量名前面使用是的@字符：</p>
-<p>@mainColor: #0982c1;<br>@siteWidth: 1024px;<br>@borderStyle: dotted;<br>body {<br>  color: @mainColor;<br>  border: 1px @borderStyle @mainColor;<br>  max-width: @siteWidth;<br>}<br>stylus</p>
-<p>stylus声明变量没有任何限定，你可以使用$符号开始，结尾的分号;可有可无，但变量名和变量值之间的等号=是需要的。有一点需要注意的是，如果我们使用@符号开头来声明变量，stylus会进行编译，但其对应的值并不会赋值给变量。换句话说，在stylus中不要使用@符号开头声明变量。</p>
-<p>mainColor = #0982c1<br>siteWidth = 1024px<br>$borderStyle = dotted<br>body<br>  color mainColor<br>  border 1px $borderStyle mainColor<br>  max-width siteWidth<br>转译出来的CSS</p>
-<p>body {<br>  color: #0982c1;<br>  border: 1px dotted #0982c1;<br>  max-width: 1024px;<br>}<br>嵌套<br>如果我们在CSS中多个元素有一个相同的父元素，那么写样式会变得很乏味，我们需要一遍一遍的在每个元素前写这个父元素。</p>
-<p>section {<br>  margin: 10px;<br>}<br>section nav {<br>  height: 25px;<br>}<br>section nav a {<br>  color: #0982C1;<br>}<br>section nav a:hover {<br>  text-decoration: underline;<br>}<br>相反，使用CSS预处理器，我们可以在父元素的花括号{}写这些元素，同时可以使用&amp;符号来引用父选择器。</p>
-<p>sass、less和stylus<br>对于嵌套选择器来说，三个CSS预处器都具有相同的语法：</p>
-<p>section {<br>  margin: 10px;<br>  nav {<br>    height: 25px;<br>    a {<br>      color: #0982C1;<br>      &amp;:hover {<br>        text-decoration: underline;<br>      }<br>    }<br>  }<br>}<br>混合（Mixins）<br>Mixins是预处器中的函数。平时你在写样式时肯定有碰到过，某段CSS样式经常要用到多个元素中，这样你就需要重复的写多次。在CSS预处器中，你可以为这些公用的CSS样式定义一个Mixin，然后在你CSS需要使用这些样式的地方，直接调用你定义好的Mixin。这是一个非常有用的特性。Mixins是一个公认的选择器，还可以在Mixins中定义变量或者是默认参数。</p>
-<p>sass</p>
-<p>/<em> Sass定义了一个名叫error的mixin，这个error设置了一个参数“$borderWidth”,在没特别定义外，这个参数的值是默认值2px</em>/<br>@mixin error($borderWidth: 2px) {<br>  border: $borderWidth solid #F00;<br>  color: #F00;<br>}<br>.generic-error {<br>  padding: 20px;<br>  margin: 4px;<br>  @include error(); /<em> 调用error mixins </em>/<br>}<br>.login-error {<br>  left: 12px;<br>  position: absolute;<br>  top: 20px;<br>  @include error(5px); /<em> 调用error mixins，并将参数$borderWidth的值指定为5px</em>/<br>}<br>less</p>
-<p>/<em> LESS 定义了一个名叫error的mixin，这个error设置了一个参数“$borderWidth”,在没特别定义外，这个参数的值是默认值2px </em>/<br>.error(@borderWidth: 2px) {<br>  border: @borderWidth solid #F00;<br>  color: #F00;<br>}<br>.generic-error {<br>  padding: 20px;<br>  margin: 4px;<br>  .error(); /<em> 调用error mixins </em>/<br>}<br>.login-error {<br>  left: 12px;<br>  position: absolute;<br>  top: 20px;<br>  .error(5px); /<em> 调用error mixins，并将参数$borderWidth的值指定为5px </em>/<br>}<br>stylus</p>
-<p>/<em> Stylus 定义了一个名叫error的mixin，这个error设置了一个参数“$borderWidth”,在没特别定义外，这个参数的值是默认值2px </em>/<br>error(borderWidth= 2px) {<br>  border: borderWidth solid #F00;<br>  color: #F00;<br>}<br>.generic-error {<br>  padding: 20px;<br>  margin: 4px;<br>  error(); /<em> 调用error mixins </em>/<br>}<br>.login-error {<br>  left: 12px;<br>  position: absolute;<br>  top: 20px;<br>  error(5px); /<em> 调用error mixins，并将参数$borderWidth的值指定为5px </em>/<br>}<br>转译出来的CSS<br>上面三种CSS预处器转译出来的CSS代码都是一样的</p>
-<p>.generic-error {<br>  padding: 20px;<br>  margin: 4px;<br>  border: 2px solid #f00;<br>  color: #f00;<br>}<br>.login-error {<br>  left: 12px;<br>  position: absolute;<br>  top: 20px;<br>  border: 5px solid #f00;<br>  color: #f00;<br>}<br>Mixins在三种预处器中都有所不同：</p>
-<p>sass：在sass定义Mixins和less、stylus有所不同，在声明Mixins时需要使用“@mixin”,然后后面紧跟Mixins的名，他也可以定义参数，同时可以给这个参数设置一个默认值，但参数名是使用“$”符号开始，而且和参数值之间需要使用冒号（：）分开。另外在sass中调用Mixins需要使用“@include”，然后在其后紧跟你要调用的Mixins名。</p>
-<p>less：less中声明Mixins和CSS定义样式非常类似，可以将Mixins看成是一个选择器，当然Mixins也可以设置参数，并给参数设置默认值。不过设置参数的变量名是使用“@”开始，同样参数和默认参数值之间需要使用冒号（：）分开。</p>
-<p>stylus：stylus和前两者也略有不同，他可以不使用任何符号，就是直接定义Mixins名，然后在定义参数和默认值之间用等号（=）来连接。<br>上面只是Mixins在三个CSS预处器的简单区别，详细的还可以进入他们的官网了解，或者对比一下上面的三段代码。</p>
-<p>继承（Inheritance）<br>在多个元素应用相同的样式时，我们在CSS通常都是这样写：</p>
-<p>p,<br>ul,<br>ol {<br>  /<em> 样式写在这 </em>/<br>}<br>这样做非常的好，但往往我们需要给单独元素添加另外的样式，这个时候我们就需要把其中选择器单独出来写样式，这样一回来我们维护样式就相当的麻烦。为了应对这个问题，CSS预处理器可以从一个选择继承另一个选择器下的所有样式。</p>
-<p>sass和stylus</p>
-<p>.block {<br>  margin: 10px 5px;<br>  padding: 2px;<br>}<br>p {<br>  @extend .block; /<em> 继承.block所有样式 </em>/<br>  border: 1px solid #EEE;<br>}<br>ul, ol {<br>  @extend .block; /<em> 继承.block所有样式 </em>/<br>  color: #333;<br>  text-transform: uppercase;<br>}<br>转译出来的CSS</p>
-<p>.block, p, ul, ol {<br>  margin: 10px 5px;<br>  padding: 2px;<br>}<br>p {<br>  border: 1px solid #EEE;<br>}<br>ul, ol {<br>  color: #333;<br>  text-transform: uppercase;<br>}<br>less</p>
-<p>less支持的继承和sass与stylus不一样,他不是在选择器上继承，而是将Mixins中的样式嵌套到每个选择器里面。这种方法的缺点就是在每个选择器中会有重复的样式产生。</p>
-<p> .block {<br>  margin: 10px 5px;<br>  padding: 2px;<br>}<br>p {<br>  .block; /<em> 继承 ‘.block’中的样式 </em>/<br>  border: 1px solid #EEE;<br>}<br>ul, ol {<br>  .block; /<em>继承’.block’ 中的样式</em>/<br>  color: #333;<br>  text-transform: uppercase;<br>}<br>转译出来的CSS</p>
-<p>.block {<br>  margin: 10px 5px;<br>  padding: 2px;<br>}<br>p {<br>  margin: 10px 5px;<br>  padding: 2px;<br>  /<em> 继承 ‘.block’中的样式 </em>/<br>  border: 1px solid #EEE;<br>}<br>ul,<br>ol {<br>  margin: 10px 5px;<br>  padding: 2px;<br>  /<em>继承’.block’ 中的样式</em>/<br>  color: #333;<br>  text-transform: uppercase;<br>}<br>导入<br>在CSS中，并不喜欢用@import来导入样式，因为这样的做法会增加HTTP的请求。但是在CSS预处理器中的导入@import规则和CSS的有所不同，它只是在语义上导入不同的文件，但最终结果是生成一个CSS文件。如果你是通过@import ‘file.css’导入file.css样式文件，那效果跟普通CSS导入样式文件一样。注意：导入文件中定义了变量、混合等信息也将会被引入到主样式文件中，因此需要避免他们的相互冲突。</p>
-<p>sass、less和stylus</p>
-<p>/<em> file.{type} </em>/<br>body {<br>  background: #EEE;<br>}<br>@import “reset.css”;<br>@import “file.{type}”;<br>p {<br>  background: #0982C1;<br>}<br>转译出来的CSS</p>
-<p>@import “reset.css”;<br>body {<br>  background: #EEE;<br>}<br>p {<br>  background: #0982C1;<br>}<br>颜色函数<br>颜色函数是CSS预处里器中内置的颜色函数功能，这些功能可以对颜色值进行处理，例如颜色的变亮、变暗、渐变颜色等处理十分的方便。</p>
-<p>sass</p>
-<p>lighten($color, 10%); /<em> 返回的颜色在$color基础上变亮10% </em>/<br>darken($color, 10%);  /<em> 返回的颜色在$color基础上变暗10% </em>/<br>saturate($color, 10%);   /<em> 返回的颜色在$color基础上饱和度增加10% </em>/<br>desaturate($color, 10%); /<em> 返回的颜色在$color基础上饱和度减少10% </em>/<br>grayscale($color);  /<em> 返回$color的灰度色</em>/<br>complement($color); /<em> returns complement color of $color </em>/<br>invert($color);     /<em> 返回$color的反相色 </em>/<br>mix($color1, $color2, 50%); /<em> mix $color1 with $color2 with a weight of 50% </em>/<br>这只是sass中颜色函数的一个简单列表,更多详细的介绍你可以阅读 sass文档 。</p>
-<p>颜色函数何以运用到任何一个元素上都是一个有颜色的CSS属性，下面是一个简单的例子：</p>
-<p>$color: #0982C1;<br>h1 {<br>  background: $color;<br>  border: 3px solid darken($color, 50%);/<em>边框颜色在$color的基础上变暗50%</em>/<br>}<br>less</p>
-<p>lighten(@color, 10%); /<em> 返回的颜色在@color基础上变亮10% </em>/<br>darken(@color, 10%);  /<em> 返回的颜色在@color基础上变暗10%</em>/<br>saturate(@color, 10%);   /<em> 返回的颜色在@color基础上饱和度增加10% </em>/<br>desaturate(@color, 10%); /<em> 返回的颜色在@color基础上饱和度降低10%</em>/<br>spin(@color, 10);  /<em> 返回的颜色在@color基础上色调增加10 </em>/<br>spin(@color, -10); /<em> 返回的颜色在@color基础上色调减少10 </em>/<br>mix(@color1, @color2); /<em> 返回的颜色是@color1和@color2两者的混合色 </em>/<br>less的完整颜色函数功能，请阅读 less 文档。</p>
-<p>下面是less中如何使用一个颜色函数的简单例子</p>
-<p>@color: #0982C1;<br>h1 {<br>  background: @color;<br>  border: 3px solid darken(@color, 50%);<br>}<br>stylus</p>
-<p>lighten(color, 10%); /<em> 返回的颜色在’color’基础上变亮10% </em>/<br>darken(color, 10%);  /<em> 返回的颜色在’color’基础上变暗10% </em>/<br>saturate(color, 10%);   /<em> 返回的颜色在’color’基础上饱和度增加10% </em>/<br>desaturate(color, 10%); /<em> 返回的颜色在’color’基础上饱和度降低10% </em>/<br>有关于stylus的颜色函数介绍，请阅读 stylus文档。</p>
-<p>下面是stylus颜色函数的一个简单实例</p>
-<p>color = #0982C1<br>h1<br>  background color<br>  border 3px solid darken(color, 50%)<br>运算符<br>我们都向往在CSS做一些运算，但是无法实现。但是在CSS预处器中对样式做一些运算是一点问题都没有了，例如：</p>
-<p>sass、less和stylus</p>
-<p>body {<br>  margin: (14px/2);<br>  top: 50px + 100px;<br>  right: 100px - 50px;<br>  left: 10 * 10;<br>}<br>注释<br>CSS预处理器支持/ /这样的多行注释方式（类似于CSS的注释方式），也支持//单行注释方式（类似于Javascript的注释方式）。</p>
-<p>需要注意，如果你要压缩文件，你需要把所有注释都删除。</p>
-<p>总结<br>综上所述，我们对Sass、LESS和Stylus做一个简单的对比总结：</p>
-<p>三者都是开源项目；<br>Sass诞生是最早也是最成熟的CSS预处理器，有Ruby社区和Compass支持；Stylus早期服务器Node JS项目，在该社区得到一定支持者；LESS出现于2009年，支持者远超于Ruby和Node JS社区；<br>Sass和LESS语法较为严谨、严密，而Stylus语法相对散漫，其中LESS学习起来更快一些，因为他更像CSS的标准；<br>Sass和LESS相互影响较大，其中Sass受LESS影响，已经进化到了全面兼容CSS的SCSS；<br>Sass和LESS都有第三方工具提供转译，特别是Sass和Compass是绝配；<br>Sass、LESS和Stylus都具有变量、作用域、混合、嵌套、继承、运算符、颜色函数、导入和注释等基本特性，而且以“变量”、“混合”、“嵌套”、“继承”和“颜色函数”称为五大基本特性，各自特性实现功能基本相似，只是使用规则上有所不同；<br>Sass和Stylus具有类似于语言处理的能力，比如说条件语句、循环语句等，而LESS需要通过When等关键词模拟这些功能，在这一方面略逊一层；</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/css选择器/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xdd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiner">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/02/css选择器/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T17:08:48+08:00">
-                2018-09-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>css有三大特性：继承，优先级，层叠<br>继承：即子元素可以继承父元素的样式<br>优先级：指不同类别样式的权重比较<br>层叠：指当数量相同时，通过层叠（后者覆盖前者）的样式<br>首先，我们来看一下css选择器都有哪些：</p>
-<p>标签选择器（div，p，ul）<br>类选择器（class=”logo”）<br>ID选择器（id=”btn”）<br>全局选择器（<em>）<br>组合选择器(如：.div .btn,注意两选择器用空格键分开)<br>后代选择器 (如：#header .nav ul li 从父集到子孙集的选择器)<br>群组选择器 div,span,img {color:Red} 即具有相同样式的标签分组显示<br>继承选择器(如：div p,注意两选择器用空格键分开)<br>伪类选择器(如：就是链接样式,a元素的伪类，4种不同的状态：link（默认）、visited（已访问的）、active（鼠标按下）、hover（鼠标悬停处）。)<br>字符串匹配的属性选择符(^ $ </em>三种，分别对应开始、结尾、包含)<br>子选择器 (如：div&gt;p ,带大于号&gt;)<br>CSS 相邻兄弟选择器器 (如：h1+p,带加号+)<br>css优先级</p>
-<p>当两个规则都作用到了同一个HTML元素上，如果定义的属性有冲突，那么应该用谁的值呢？</p>
-<p>不同级别：<br>1.在属性后面使用 !important 会覆盖页面内任何位置定义的元素样式。<br>2.作为style属性写在元素内的样式<br>3.id选择器<br>4.类选择器<br>5.标签选择器<br>6.通配符选择器<br>7.浏览器自定义或继承</p>
-<p>总结排序：!important &gt; 行内样式&gt;ID选择器 &gt; 类选择器 &gt; 标签 &gt; 通配符 &gt; 继承 &gt; 浏览器默认属性</p>
-<p>同一级别<br>在同一级别中，到底div是应用那条规则呢，我们可以用权值来计算，权值实际并不是按十进制，用数字表示只是说明思想，一万个class也不如一个id权值高。</p>
-<p>内联样式表的权值为 1000<br>ID 选择器的权值为 100<br>Class 类选择器的权值为 10<br>HTML 标签选择器的权值为 1<br>我们可以把选择器中规则对应做加法，比较权值，如果权值相同那就后面的覆盖前面的了.</p>
-<p>css选择器使用强烈建议采用低权重原则，利于充分发挥css的继承性，复用性，模块化、组件化。</p>
-<p>####简洁、高效的css</p>
-<p>所谓高效就是让浏览器查找更少的元素标签来确定匹配的style元素。</p>
-<p>不要再ID选择器前使用标签名<br>解释：ID选择是唯一的，加上标签名相当于画蛇添足了，没必要。<br>不要在类选择器前使用标签名<br>解释：如果没有相同的名字出现就是没必要，但是如果存在多个相同名字的类选择器则有必要添加标签名防止混淆如（p.colclass{color：red;} 和 span.colclass{color:red;}<br>尽量少使用层级关系；<br>使用类选择器代替层级关系</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/Cookie、sessionStorage、localStorage的区别/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xdd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiner">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/02/Cookie、sessionStorage、localStorage的区别/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T17:08:48+08:00">
-                2018-09-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>共同点：都是保存在浏览器端，并且是同源的</p>
-<p>Cookie：cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递。而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下,存储的大小很小只有4K左右。 （key：可以在浏览器和服务器端来回传递，存储容量小，只有大约4K左右）</p>
-<p>cookie的作用：</p>
-<p>保存用户登录状态。例如将用户id存储于一个cookie内，这样当用户下次访问该页面时就不需要重新登录了，现在很多论坛和社区都提供这样的功能。 cookie还可以设置过期时间，当超过时间期限后，cookie就会自动消失。因此，系统往往可以提示用户保持登录状态的时间：常见选项有一个月、三个 月、一年等。</p>
-<p>跟踪用户行为。例如一个天气预报网站，能够根据用户选择的地区显示当地的天气情况。如果每次都需要选择所在地是烦琐的，当利用了 cookie后就会显得很人性化了，系统能够记住上一次访问的地区，当下次再打开该页面时，它就会自动显示上次用户所在地区的天气情况。因为一切都是在后 台完成，所以这样的页面就像为某个用户所定制的一样，使用起来非常方便</p>
-<p>定制页面。如果网站提供了换肤或更换布局的功能，那么可以使用cookie来记录用户的选项，例如：背景色、分辨率等。当用户下次访问时，仍然可以保存上一次访问的界面风格。</p>
-<p>sessionStorage：仅在当前浏览器窗口关闭前有效，自然也就不可能持久保持，localStorage：始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据；cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭。（key：本身就是一个回话过程，关闭浏览器后消失，session为一个回话，当页面不同即使是同一页面打开两次，也被视为同一次回话）</p>
-<p>localStorage：localStorage 在所有同源窗口中都是共享的；cookie也是在所有同源窗口中都是共享的。（key：同源窗口都会共享，并且不会失效，不管窗口或者浏览器关闭与否都会始终生效）</p>
-<p>SessionStorage和LocalStorage都属于web storage,其功能却比cookie强大的多。cookie的大小只有4Kb左右（浏览器不同，大小也不同），而web Storage的大小有5MB。其API提供的方法有以下几种：</p>
-<p>setItem (key, value) ——  保存数据，以键值对的方式储存信息。<br>getItem (key) ——  获取数据，将键值传入，即可获取到对应的value值。<br>removeItem (key) ——  删除单个数据，根据键值移除对应的信息。<br>clear () ——  删除所有的数据<br>key (index) —— 获取某个索引的key<br>localStorage例子：</p>
-<p>var storage = null;<br>    if(window.localStorage){              //判断浏览器是否支持localStorage<br>       storage = window.localStorage;<br>       storage.setItem(“name”, “Rick”);    //调用setItem方法，存储数据<br>       alert(storage.getItem(“name”));     //调用getItem方法，弹框显示 name 为 Rick<br>       storage.removeItem(“name”);     //调用removeItem方法，移除数据<br>       alert(storage.getItem(“name”));   //调用getItem方法，弹框显示 name 为 null  </p>
-<pre><code>} 
-</code></pre><p>SessionStorage用法同上，不过区别在于 sessionStorage 在关闭页面后即被清空，而 localStorage 则会一直保存。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/aaa/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xdd">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiner">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/01/aaa/" itemprop="url">aaa</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T17:04:48+08:00">
-                2018-09-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/postaaa/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1062,6 +331,551 @@
         
           
             
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/web安全/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xdd">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiner">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/01/web安全/" itemprop="url">web安全</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T17:04:31+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h3><p>攻击者往页面里插入恶意HTML标签或者JS代码，窃取cookie中的用户私密信息；或者攻击者在论坛加一个恶意表单。</p>
+<h4 id="防范"><a href="#防范" class="headerlink" title="防范"></a>防范</h4><p>对用户输入的地方检查长度对相关的标签字符予以过滤<br>任何内容写到页面之前都必须加以encode，避免标签泄露<br>避免直接在cookie中泄露用户隐私，例如email，密码<br>尽量采用POST而非GET提交表单</p>
+<h3 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h3><p>基本步骤:<br>登录受信任网站A，并在本地生成Cookie，在不登出A的情况下，访问受害网站B</p>
+<h4 id="攻击类型："><a href="#攻击类型：" class="headerlink" title="攻击类型："></a>攻击类型：</h4><p>使用Get更新请求资源，容易在危险网站B使用标签进行攻击<br>前端使用Post请求更新资源，而后端$_REQUEST去获取请求的数据，既可以获取GET请求，也可以获取POST请求的数据，这就造成了在后台处理程序无法区分这到底是GET请求的数据还是POST请求的数据<br>前端使用Post请求更新资源，后端也只接受获取post请求的数据，但是危险网站B通过iframe等手段同样造成攻击</p>
+<h4 id="防范手段："><a href="#防范手段：" class="headerlink" title="防范手段："></a>防范手段：</h4><p>验证码：每次的用户提交都需要用户在表单中填写一个图片上的随机字符串，易用性差<br>添加隐藏输入框：包含token，服务端验证是否匹配<br>服务端验证HTTP Referer字段：Http请求的来源地址不是业务域名，直接过滤掉请求</p>
+<h3 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h3><p>通过把sql命令插入到web表单递交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的sql命令</p>
+<h4 id="防范："><a href="#防范：" class="headerlink" title="防范："></a>防范：</h4><p>对用户的输入进行校验，可以通过正则表达式，或限制长度，对单引号和&lt;&gt;进行转换等<br>永远不要使用动态拼装SQL，可以使用参数化的sql或者直接使用存储过程进行数据查询存取<br>永远不要使用管理员权限的数据库连接，为每个应用使用单独的权限有限的数据库连接<br>不要把机密信息明文存放，加密或者hash掉密码和敏感的信息</p>
+<h3 id="CSP"><a href="#CSP" class="headerlink" title="CSP"></a>CSP</h3><p>被设计为一个完整的框架来防御XSS和CSRF攻击，旨在减少XSS</p>
+<p>CSP是一种由开发者定义的安全性政策性申明，通过CSP所约束的规则制定可信的内容来源（脚本，图片，iframe，fton，style等可能远程的资源）。通过CSP协定，让web处于一个安全的运行环境中</p>
+<p>实例：</p>
+<p><code>Content-Security-Policy:default-src&quot;self&quot;</code><br>只允许本站资源<br><code>Content-Security-Policy:default-src&quot;self&quot;;img-src*;script-src http://trustedscripts.example.com</code><br>只允许本站的资源及任意位置的图片以及指定网址下的脚本。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/react组件编写规范/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xdd">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiner">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/01/react组件编写规范/" itemprop="url">react组件编写规范</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T17:04:31+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>组件的私有方法都用 _ 开头，所有事件监听的方法都用 handle 开头。把事件监听方法传给组件的时候，属性名用 on 开头。例如：</p>
+<commentinput onsubmit="{this.handleSubmitComment.bind(this)}">
+
+<p>这样统一规范处理事件命名会给我们带来语义化组件的好处，监听（on）CommentInput 的 Submit 事件，并且交给 this 去处理（handle）。这种规范在多人协作的时候也会非常方便。</p>
+<p>另外，组件的内容编写顺序如下：</p>
+<p>static 开头的类属性，如 defaultProps、propTypes。<br>构造函数，constructor。<br>getter/setter（还不了解的同学可以暂时忽略）。<br>组件生命周期。<br>_ 开头的私有方法。<br>事件监听方法，handle<em>。<br>render</em>开头的方法，有时候 render() 方法里面的内容会分开到不同函数里面进行，这些函数都以render*开头。<br>render() 方法。</p>
+</commentinput>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/作用域和闭包/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xdd">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiner">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/01/作用域和闭包/" itemprop="url">作用域和闭包</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T17:04:31+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>作用域是什么？其实作用域是针对变量的，一个变量在某个区域内起作用，这份区域就是他的作用域。顺便说一句，在 js中没有块级作用域（ES6除外），比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (true) &#123;</span><br><span class="line">    var name = &quot;zhangsan&quot;</span><br><span class="line">&#125;</span><br><span class="line">console.log (name)      // &quot;zhangsan&quot;</span><br></pre></td></tr></table></figure></p>
+<p>学过java等高级语言的同学肯定会说这样写岂不是就报错了，但是在js中，这么写是完全ok的，因为js没有块级作用域，但实际上并不推荐这么写。</p>
+<p>在js中，只有函数和全局作用域，比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = 100               </span><br><span class="line">function fn () &#123;</span><br><span class="line">    var a = 200           </span><br><span class="line">    console.log (&apos;fn&apos;,a)</span><br><span class="line">&#125;</span><br><span class="line">console.log (&apos;global&apos;,a)</span><br><span class="line">fn()</span><br></pre></td></tr></table></figure></p>
+<h3 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h3><p>在这里我们讲一个概念：<br>自由变量，即当前作用域没有定义的变量。</p>
+<p>比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = 100</span><br><span class="line">function fn () &#123;</span><br><span class="line">    var b = 200</span><br><span class="line">    console.log (a)</span><br><span class="line">    console.log (b)</span><br><span class="line">&#125;</span><br><span class="line">fn ()</span><br></pre></td></tr></table></figure></p>
+<p>在console.log (a) 中的a就是自由变量，在当前作用域中并没有定义a，所以要去函数定义时的父级作用域中找。我们再来看一个稍微复杂一点点的例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var a = 100</span><br><span class="line">function fn () &#123;</span><br><span class="line">    var b = 200</span><br><span class="line">    function fn1 () &#123;</span><br><span class="line">        var c = 300</span><br><span class="line">        console.log (a)</span><br><span class="line">        console.log (b)</span><br><span class="line">        console.log (c)</span><br><span class="line">    &#125;</span><br><span class="line">    fn1 ()</span><br><span class="line">&#125;</span><br><span class="line">fn ()</span><br></pre></td></tr></table></figure></p>
+<p>在执行console.log (a) 时，由于当前作用域没有定义a，所以要去fn在定义时的父级作用域找，此时它的父级作用域是fn，fn中也没有定义a，所以再去fn在定义时的父级作用域（即全局作用域）中找，此时就能找到a。b，c也是同理。上述过程就形成了一条作用域链，简单来说作用域链就是自由变量的查找，子对象会一级一级地向上寻找所有父对象的变量。</p>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>专业说法：当一个内部函数被其外部函数之外的变量引用时，就形成了一个闭包。（对内部函数的引用会添加到外部函数的活动对象上）</p>
+<p>还可以这么理解：闭包就是一个具有封闭功能与包裹功能的结构，是为了实现具有私有访问空间的函数的，函数可以构成闭包，因为函数内部定义的数据函数外部无法访问，即函数具有封闭性；函数可以封装代码即具有包裹性，所以函数可以构成闭包。创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量。</p>
+<p>而大家普遍认为的闭包是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;(function fn() &#123;&#125;)();</span><br></pre></td></tr></table></figure></p>
+<p>这只是闭包的一种形式而已，也就是闭包的一种应用，这样用闭包的好处是避免变量冲突和污染，能够自动执行；闭包前后最好都要写分号，因为防止多文件集成成一个文件后，高压缩出现语法错误。</p>
+<p>闭包有3个特性：</p>
+<p>1、函数嵌套函数</p>
+<p>2、函数内部可以引用外部的参数和变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function f1() &#123;</span><br><span class="line">   var n=999;</span><br><span class="line">   function f2() &#123;</span><br><span class="line">       alert(n);    // 999</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>f2被包在函数f1内部，f1内的所有局部变量，对f2都是可见的。反过来就不行，f2内的局部变量，对f1就是不可见的。</p>
+<p>3、参数和变量不会被垃圾回收机制回收，让这些变量的值始终保持在内存中。</p>
+<h3 id="闭包有什么用，使用场景："><a href="#闭包有什么用，使用场景：" class="headerlink" title="闭包有什么用，使用场景："></a>闭包有什么用，使用场景：</h3><p>当我们需要在模块中定义一些变量，并希望这些变量一直保存在内存中但又不会“污染”全局的变量时，就可以用闭包来定义这个模块。</p>
+<h3 id="使用闭包的注意点："><a href="#使用闭包的注意点：" class="headerlink" title="使用闭包的注意点："></a>使用闭包的注意点：</h3><p>由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。<br>闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，不要随便改变父函数内部变量的值。<br>函数套函数就是闭包吗？<br>不是！当一个内部函数被其外部函数之外的变量引用时，才会形成了一个闭包。</p>
+<p>经典面试题：创建10个a标签，点击时弹出相应的序号<br>在这里我给大家说两种方法，其中一种就是和我们这篇文章的知识点相关的方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var i</span><br><span class="line">for (var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">    (function (i) &#123;</span><br><span class="line">        var a = document.createElement(&quot;a&quot;)</span><br><span class="line">        a.innerHTML = i + &quot;&lt;br&gt;&quot;</span><br><span class="line">        a.addEventListener(&quot;click&quot;, function (e) &#123;</span><br><span class="line">            e.preventDefault()</span><br><span class="line">            alert(i)</span><br><span class="line">        &#125;)</span><br><span class="line">        document.body.appendChild(a)</span><br><span class="line">    &#125;)(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我们把参数 i 作为传给立即执行函数，这样，i的值就传给了立即执行函数的局部变量 i 了。立即执行函数会直接执行，但是其活动不会销毁，因为里面有个匿名函数。执行后局部变量 i 与全局变量i 联系就切断了，也就是执行的时候，传进去的变量i是多少，立即执行函数的局部变量 i 就是多少，并且该局部变量 i仍然没有消失，因为匿名函数的存在。</p>
+<p>这时候，return中的匿名函数的作用域链中会有两个变量 i。当点击a的时候，它向上搜索 i 的时候，它找到立即执行函数的局部变量 i ，就停止向上查找了，因此最后的结果就不会是全局变量 i 的值10了。</p>
+<p>还有一种方法是创建索引值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var i</span><br><span class="line">for (var i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">    var a = document.createElement(&quot;a&quot;)</span><br><span class="line">    a.innerHTML = i + &quot;&lt;br&gt;&quot;</span><br><span class="line">    a.index = i;</span><br><span class="line">    a.addEventListener(&quot;click&quot;, function (e) &#123;</span><br><span class="line">        e.preventDefault()</span><br><span class="line">        alert(this.index)</span><br><span class="line">    &#125;)</span><br><span class="line">    document.body.appendChild(a)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/关于this/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xdd">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiner">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/01/关于this/" itemprop="url">this</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-01T17:04:31+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h3><p>每一个函数都有自己的执行上下文EC（执行环境 execution context），并且每个执行上下文中都有它自己的变量对象VO（Variable object），用于存储执行上下文中的变量 、函数声明 、函数参数，这解释了js如何找到我们定义的函数和变量。并且函数是js中唯一一个能创建出作用域的，注意：for，if()else()不能创建作用域。看一段代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log (a)       // undefined</span><br><span class="line">var a = 10</span><br></pre></td></tr></table></figure></p>
+<p>此时打开控制台就会打印undefined，这是因为在代码还没执行之前，a会被提前声明，此时的代码可以理解为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a </span><br><span class="line">console.log (a)      // undefined</span><br><span class="line">var a = 10</span><br></pre></td></tr></table></figure></p>
+<p>代码执行到console.log (a) 时a只声明了，并没有赋值，所以结果当然是undefined。再来看一段代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fn (&quot;zhangsan&quot;,20)</span><br><span class="line">function fn (name) &#123;</span><br><span class="line">    age = 20</span><br><span class="line">    console.log (name,age)      // &quot;zhangsan&quot; 20</span><br><span class="line">    var age</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>此时打印的结果就是“zhangsan”，20。我们可以将代码理解为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function fn (name) &#123;</span><br><span class="line">    var age</span><br><span class="line">    age = 20</span><br><span class="line">    console.log (name,age)        // &quot;zhangsan&quot; 20</span><br><span class="line">&#125;</span><br><span class="line">fn (&quot;zhangsan&quot;,20)</span><br></pre></td></tr></table></figure></p>
+<p>一段或者一个函数都会生成执行上下文，针对一段会生成全局的执行上下文，在执行之前先将变量定义和函数声明提前，针对一个函数会生成一个函数执行上下文，在函数执行之前，将函数中的变量定义，函数声明，this，arguments拿出来。<br>要注意的是函数声明和函数表达式的区别，看代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">function fn () &#123; &#125;          // 函数的声明</span><br><span class="line">var fn = function () &#123; &#125;    // 函数表达式</span><br></pre></td></tr></table></figure></p>
+<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><p>其实本质上来说，js里面的this是一个指向函数执行环境的指针<br>，this在哪个函数里面，就指向这个函数的context，this永远指向最后调用它的对象，并且this要在执行时才能确认值，定义时无法确认。 例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;</span><br><span class="line">    name :  &quot;A&quot;,</span><br><span class="line">    fn : function （） &#123;</span><br><span class="line">        console.log (this.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">a.fn()                          // this === a</span><br><span class="line">a.fn.call (&#123;name : &quot;B&quot;&#125;)        // this === &#123;name : &quot;B&quot;&#125;，</span><br><span class="line">var fn1 = a.fn</span><br><span class="line">fn1()                           // this === window</span><br></pre></td></tr></table></figure></p>
+<p>第一种情况，是a调用了fn()，所以此时的this为a；</p>
+<p>第二种情况，使用call()，将this的值指定为了{name : “B”}；</p>
+<p>第三种情况，把a.fn赋给了fn1，但是调用时却是window在调用，所以this === window</p>
+<p>this其实有好几种使用场景，在这里我们主要介绍其中四种</p>
+<p>作为构造函数执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function  Foo (name,age) &#123;</span><br><span class="line">    this.name = name           // this === f</span><br><span class="line">    this.age = age             // this === f</span><br><span class="line">    //return  this</span><br><span class="line">&#125;</span><br><span class="line">var f = new Foo (&quot;zhangsan&quot;,20)</span><br></pre></td></tr></table></figure></p>
+<p>在这里new操作符会改变函数this的指向问题，指向创建的对象f。</p>
+<p>为什么this会指向f？</p>
+<p>首先new关键字会创建一个空的对象，然后会自动调用一个函数apply方法，将this指向这个空对象，这样的话函数内部的this就会被这个空的对象替代。</p>
+<p>若构造函数中返回this或返回值是基本类型（number、string、boolean、null、undefined）的值，则返回新实例对象；若返回值是引用类型的值，则实际返回值为这个引用类型。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">function Fn()  </span><br><span class="line">&#123;  </span><br><span class="line">    this.user = &apos;Jay&apos;;  </span><br><span class="line">    return &#123;&#125;;  </span><br><span class="line">&#125;</span><br><span class="line">var a = new Fn();  </span><br><span class="line">console.log(a.user);     //undefined</span><br><span class="line"></span><br><span class="line">function Fn()  </span><br><span class="line">&#123;  </span><br><span class="line">    this.user = &apos;Jay&apos;;  </span><br><span class="line">    return function () &#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line">var a = new Fn;  </span><br><span class="line">console.log(a.user);    //undefined</span><br><span class="line"></span><br><span class="line">function Fn()  </span><br><span class="line">&#123;  </span><br><span class="line">    this.user = &apos;Jay&apos;;  </span><br><span class="line">    return 1;</span><br><span class="line">&#125;</span><br><span class="line">var a = new Fn();  </span><br><span class="line">console.log(a.user);    // Jay</span><br></pre></td></tr></table></figure></p>
+<p>还有一点就是虽然null也是对象，但是在这里this还是指向那个函数的实例，因为null比较特殊。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function Fn()  </span><br><span class="line">&#123;  </span><br><span class="line">    this.user = &apos;Jay&apos;;  </span><br><span class="line">    return null;</span><br><span class="line">&#125;</span><br><span class="line">var a = new Fn;  </span><br><span class="line">console.log(a.user);          // Jay</span><br></pre></td></tr></table></figure></p>
+<p>知识点补充：在严格版中的默认的this不再是window，而是undefined</p>
+<p>作为普通函数执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function  fn () &#123;</span><br><span class="line">   console.log (this)       // this === window</span><br><span class="line">&#125;</span><br><span class="line">fn ()</span><br></pre></td></tr></table></figure></p>
+<p>作为对象属性执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    name : &quot;A&quot;,</span><br><span class="line">    printName : function () &#123;</span><br><span class="line">        console.log (this.name)        // this === obj</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.printName ()</span><br></pre></td></tr></table></figure></p>
+<h3 id="call-、apply-、bind"><a href="#call-、apply-、bind" class="headerlink" title="call()、apply()、bind()"></a>call()、apply()、bind()</h3><p>这三种方法都可以改变函数体内部this的指向，但是又存在一些差异。下面，我们看一个例子让你完全搞懂这三个方法的异同点。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var name  = &quot;小明&quot; , age = &quot;17&quot;</span><br><span class="line">var obj = &#123;</span><br><span class="line">    name : &quot;安妮&quot;,</span><br><span class="line">    objAge ：this.age,</span><br><span class="line">    fun : function () &#123;</span><br><span class="line">        console.log ( this.name + &quot;今年&quot; + this.age )    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(obj.objAge)          // 17</span><br><span class="line">obj.fun()                        // 安妮今年undefined</span><br></pre></td></tr></table></figure></p>
+<p>出现这样的结果是因为，在obj.objAge中，this的指向是obj，但是这句话外部没有函数包着，所以这里的执行环境是全局的；在obj.fun()中，this的指向也是obj，但是obj中没有定义age，所以是undefined。再来看第二个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var name1  = &quot;Jay&quot; </span><br><span class="line">function show () &#123;</span><br><span class="line">    console.log (this.name1)  </span><br><span class="line">&#125; </span><br><span class="line">show()         // Jay</span><br></pre></td></tr></table></figure></p>
+<p>这个很明显this指向的是window，所以打印的结果就是Jay。<br>下面我们分别用这三个方法重新定义this，看看是什么结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var name  = &quot;小明&quot; , age = &quot;17&quot;</span><br><span class="line">var obj = &#123;</span><br><span class="line">    name : &quot;安妮&quot;,</span><br><span class="line">    objAge ：this.age,</span><br><span class="line">    fun : function () &#123;</span><br><span class="line">        console.log ( this.name + &quot;今年&quot; + this.age )    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var a = &#123;</span><br><span class="line">    name : &quot;Jay&quot;,</span><br><span class="line">    age : 23</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj.fun.call(a)              // Jay今年23</span><br><span class="line">obj.fun.apply(a)             // Jay今年23</span><br><span class="line">obj.fun.bind(a)()            // Jay今年23</span><br></pre></td></tr></table></figure></p>
+<p>我们会发现这三个方法的结果都一致，只有bind返回的是一个新的函数，你必须调用它才会被执行。<br>再来对比一下传参的情况：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var name  = &quot;小明&quot; , age = &quot;17&quot;</span><br><span class="line">var obj = &#123;</span><br><span class="line">  name : &quot;安妮&quot;,</span><br><span class="line">  objAge ：this.age,</span><br><span class="line">  fun : function (like,dislike) &#123;</span><br><span class="line">    console.log (this.name + &quot;今年&quot; + this.age ，&quot;喜欢吃&quot; + like + &quot;不喜欢吃&quot; + dislike)   </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var a = &#123;</span><br><span class="line">    name : &quot;Jay&quot;,</span><br><span class="line">    age : 23</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj.fun.call(a,&quot;苹果&quot;,&quot;香蕉&quot;)              // Jay今年23 喜欢吃苹果不喜欢吃香蕉</span><br><span class="line">obj.fun.apply(a,[&quot;苹果&quot;,&quot;香蕉&quot;])           // Jay今年23 喜欢吃苹果不喜欢吃香蕉</span><br><span class="line">obj.fun.bind(a,&quot;苹果&quot;,&quot;香蕉&quot;)()            // Jay今年23 喜欢吃苹果不喜欢吃香蕉</span><br></pre></td></tr></table></figure></p>
+<p>call，bind，apply 这三个函数的第一个参数都是 this 的指向对象，注意如果call和apply的第一个参数写的是null，那么this指向的是window对象；</p>
+<p>第二个参数有区别：</p>
+<p>① call的参数是直接放进去的，用逗号分隔；</p>
+<p>② apply的所有参数都必须放在一个数组里面传进去；</p>
+<p>③ bind除了返回是函数以外，它的参数和call一样。当然，三者的参数不限定是string类型，允许是各种类型，包括函数 、 object 等等。</p>
+<p>call和apply都是改变上下文中的this并立即执行这个函数，bind方法可以让对应的函数想什么时候调就什么时候调用，并且可以将参数在执行的时候添加。</p>
+<p>在非严格模式下，call和apply的第一个参数如果指定为null或undefined时，会自动指向全局对象。</p>
+
           
         
       
@@ -1274,7 +1088,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
